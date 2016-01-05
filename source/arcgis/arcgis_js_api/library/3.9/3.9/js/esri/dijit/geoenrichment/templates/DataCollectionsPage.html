@@ -1,0 +1,15 @@
+﻿<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="row: 0">
+    <div style="margin-bottom: 2em;" data-dojo-attach-point="countryDiv">
+        ${nls.chooseCountry}
+        <select data-dojo-type="dijit/form/Select"
+            data-dojo-attach-point="countrySelect"
+            data-dojo-props="maxHeight: 151"
+            data-dojo-attach-event="onChange: _onCountryChanged"
+            style="width: 150px"></select>
+    </div>
+    ${nls.chooseDataCollection}
+</div>
+<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="row: 1">
+    <div data-dojo-attach-point="itemsRoot" style="min-height: 70px;"></div>
+    <div data-dojo-attach-point="progressDiv" class="Wizard_Progress"></div>
+</div>

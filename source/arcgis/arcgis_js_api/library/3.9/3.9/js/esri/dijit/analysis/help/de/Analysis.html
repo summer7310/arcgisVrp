@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="SummarizeDataCategory" class="regularsize">
+        <h2>Daten zusammenfassen</h2>
+        <hr/>
+        <p>Mit diesen Werkzeugen werden Gesamtzahlen, L&auml;ngen, Fl&auml;chen und grundlegende beschreibende Statistiken von Features und ihren Attributen innerhalb von Fl&auml;chen oder in der N&auml;he anderer Features berechnet.
+            <ul>
+                <li> <b>Punkte aggregieren</b> berechnet Statistiken zu Punkten, die sich innerhalb bestimmter Bereiche befinden.
+                </li>
+                <li> <b>Zusammenfassen (in der N&auml;he)</b> berechnet Statistiken f&uuml;r Features und ihre Attribute, die sich innerhalb einer angegebenen Entfernung befinden.
+                </li>
+                <li> <b>Zusammenfassen (innerhalb)</b> berechnet Statistiken f&uuml;r Fl&auml;chen-Features und Attribute, die sich &uuml;berlappen.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="AggregatePointsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Punkte aggregieren</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Dieses Werkzeug ermittelt anhand eines Punkt-Feature-Layers und eines Fl&auml;chen-Feature-Layers, welche Punkte sich innerhalb der einzelnen Bereiche befinden, und berechnet Statistiken zu allen Punkten in jedem Bereich. Beispiel:
+                <ul>
+                    <li>Anhand der Punktpositionen von Kriminaldelikten die Anzahl der Delikte pro Landkreis oder Verwaltungsbezirk ermitteln.
+                    </li>
+                    <li>Die h&ouml;chsten und niedrigsten Umsatzzahlen f&uuml;r Franchise-Standorte pro Bundesstaat ermitteln.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeNearbyTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Zusammenfassen (in der Nähe)</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Sucht Features, die sich innerhalb einer angegebenen Entfernung von Features im Analyse-Layer befinden. Die Entfernung kann als geradlinige Entfernung oder Fahrzeitentfernung gemessen werden (z.&nbsp;B. innerhalb von 10 Minuten). Anschlie&szlig;end werden Statistiken f&uuml;r die nahe gelegenen Features berechnet. Beispiel:
+                <ul>
+                    <li>Die Gesamtbev&ouml;lkerungszahl innerhalb der zeitlichen Entfernung von f&uuml;nf Minuten von einem vorgeschlagenen neuen Ladenstandort ermitteln.
+                    </li>
+                    <li>Die Anzahl der Autobahnzufahrten innerhalb der zeitlichen Entfernung von f&uuml;nf Minuten von einem vorgeschlagenen neuen Ladenstandort ermitteln, um diese als Ma&szlig; f&uuml;r die Erreichbarkeit von Gesch&auml;ften zu verwenden.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeWithinTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Zusammenfassen (innerhalb)</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Findet Fl&auml;chen (und Teile von Fl&auml;chen), die sich zwischen zwei Layern &uuml;berlappen, und berechnet Statistiken zu der &Uuml;berlappung. Beispiel:
+                <ul>
+                    <li>Anhand eines Layers mit Wassereinzugsgebieten und eines Layers mit Landnutzungsfl&auml;chen nach Landnutzungstyp die Gesamtlandwirtschaftsfl&auml;che des Landnutzungstyps f&uuml;r jedes Wassereinzugsgebiet ermitteln. 
+                    </li>
+                    <li>Den Durchschnittswert unbebauter Flurst&uuml;cke innerhalb jeder Stadt anhand eines Flurst&uuml;cks-Layers in einem Landkreis und eines Stadtgrenzen-Layers zusammenfassen.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+    <div id="EnrichLocationsCategory" class="regularsize">
+        <h2>Datenanreicherung</h2>
+        <hr/>
+        <p>Mit diesen Werkzeugen k&ouml;nnen Sie die Eigenschaften von Gebieten erkunden. F&uuml;r die ausgew&auml;hlten Gebiete werden detaillierte demografische Daten und Statistiken zur&uuml;ckgegeben. F&uuml;r ausgedehnte Bereiche wie Landkreise oder Bundesstaaten k&ouml;nnen auch Vergleichsinformationen angegeben werden.
+            <ul>
+                <li>Mit  <b>Layer anreichern</b> werden Informationen zu Personen, Orten und Unternehmen in einem bestimmten Gebiet oder innerhalb einer Entfernung oder Fahrzeit von einem Standort abgerufen.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="EnrichLayerTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Layer anreichern</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Mit dieser Funktion werden Informationen zu Personen, Orten und Unternehmen in einem bestimmten Gebiet oder innerhalb einer Entfernung oder Fahrzeit von einem Standort abgerufen.
+
+            </p>
+            <br/>
+        </div>
+    <div id="FindLocationsCategory" class="largesize">
+        <h2>Positionen suchen</h2>
+        <hr/>
+        <p>Diese Werkzeuge werden zum Identifizieren von Fl&auml;chen
+verwendet- gem&auml;&szlig; einer Reihe von unterschiedlichen Kriterien entsprechen, die Sie angeben.  Diese Kriterien k&ouml;nnen auf Attributabfragen (beispielsweise unbebaute Flurst&uuml;cke) und r&auml;umlichen Abfragen (beispielsweise innerhalb einer Entfernung von einem Kilometer von einem Fluss) basieren.  Die
+gefundenen Fl&auml;chen k&ouml;nnen aus vorhandenen Features (wie vorhandene
+Flurst&uuml;cke) ausgew&auml;hlt oder es k&ouml;nnen neue Features dort
+erstellt werden, wo alle Anforderungen erf&uuml;llt sind.
+            <ul>
+                <li>Mit der Option  <b>Vorhandene Positionen suchen</b> werden vorhandene Fl&auml;chen in einem Analyse-Layer gesucht, die eine Reihe von Kriterien erf&uuml;llen.
+                </li>
+                <li> <b>Neue Positionen ableiten</b> erstellt neue Fl&auml;chen aus Positionen des
+Untersuchungsgebiets, die eine Reihe von Kriterien erf&uuml;llen.
+                </li>
+                <li> <b>&Auml;hnliche Positionen suchen</b> sucht Features auf der Grundlage der angegebenen Kriterien, die die gr&ouml;&szlig;te oder geringste &Auml;hnlichkeit mit mindestens einem Ziel-Feature aufweisen.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindExistingLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Vorhandene Positionen suchen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Mit dieser Funktion werden vorhandene Features im
+Untersuchungsgebiet ausgew&auml;hlt, die den angegebenen Kriterien entsprechen. Diese Kriterien k&ouml;nnen auf Attributabfragen (beispielsweise unbebaute Flurst&uuml;cke) und r&auml;umlichen Abfragen (beispielsweise innerhalb einer Entfernung von einem Kilometer von einem Fluss) basieren.
+
+            </p>
+            <br/>
+        </div>
+        <div id="DeriveNewLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Neue Positionen ableiten</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Mit dieser Funktion werden neue Features
+im Untersuchungsgebiet erstellt, die den angegebenen Kriterien entsprechen. Diese Kriterien k&ouml;nnen auf Attributabfragen (beispielsweise unbebaute Flurst&uuml;cke) und r&auml;umlichen Abfragen (beispielsweise innerhalb einer Entfernung von einem Kilometer von einem Fluss) basieren.
+
+            </p>
+            <br/>
+        </div>
+        <div id="FindSimilarLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Ähnliche Positionen suchen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Sucht Features auf Grundlage der angegebenen Kriterien, die die gr&ouml;&szlig;te oder geringste &Auml;hnlichkeit mit mindestens einem Ziel-Feature aufweisen.
+            </p>
+            <br/>
+        </div>
+    <div id="AnalyzePatternsCategory" class="smallsize">
+        <h2>Muster analysieren</h2>
+        <hr/>
+        <p>Mit diesen Werkzeugen k&ouml;nnen Sie r&auml;umliche Muster in Ihren Daten identifizieren, quantifizieren und visualisieren, indem Sie die Fl&auml;chen statistisch signifikanter Cluster ermitteln.  
+            <ul>
+                <li>Mit  <b>Hot Spots suchen</b> werden statistisch signifikante Cluster im r&auml;umlichen Muster Ihrer Daten identifiziert.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindHotSpotsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Hot Spots suchen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Dieses Werkzeug erstellt eine Karte mit statistisch signifikanten Clustern, die in den Daten vorhanden ist. Verwenden Sie dieses Werkzeug, um beispielsweise unerwartete Hot Spots (rot) und Cold Spots (blau) hoher und niedriger Haushaltseinkommen, Kriminalit&auml;tsdichte, Verkehrsunfallzahlen mit Todesopfern, Arbeitslosigkeit oder Biodiversit&auml;t aufzudecken.
+            </p>
+            <br/>
+        </div>
+        <div id="ExploreCorrelationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Korrelationen suchen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Dieses Werkzeug dient zur &Uuml;berpr&uuml;fung der St&auml;rke von Beziehungen zwischen den numerischen Attributen Ihrer Features. Sie w&auml;hlen eine im Zentrum der Analyse stehende Variable sowie bis zu zehn andere numerische Attribute, die ausgewertet werden sollen. Dieses Werkzeug berechnet anschlie&szlig;end die Korrelation zwischen der im Zentrum stehenden Variable und den anderen ausgew&auml;hlten Variablen, und gibt die St&auml;rke, Konsistenz und den Beziehungstyp (positiv oder negativ) aus.  
+            </p>
+            <br/>
+        </div>
+    <div id="UseProximityCategory" class="largesize">
+        <h2>Nachbarschaftsanalyse verwenden</h2>
+        <hr/>
+        <p> Mit diesen Werkzeugen k&ouml;nnen Sie eine der am h&auml;ufigsten gestellten Fragen im Zusammenhang mit r&auml;umlichen Analysen beantworten: &quot;Welche Elemente befinden sich in r&auml;umlicher N&auml;he zueinander?&quot;
+            <ul>
+                <li>Mit  <b>Startpunkten mit Zielen verbinden</b> wird die Fahrzeit oder Entfernung zwischen Startpunkt-Ziel-Paaren gemessen.
+                </li>
+                <li> <b>Puffer erstellen</b> erstellt Gebiete mit gleicher Entfernung von Features.
+                </li>
+                <li> <b>Fahrzeitgebiete erstellen</b> findet Gebiete um Standorte, die innerhalb eines bestimmten Zeitraums erreicht werden k&ouml;nnen.
+                </li>
+                <li> <b>N&auml;chstgelegene suchen</b> identifiziert die Orte, die bekannten Standorten am n&auml;chsten gelegen sind.
+                </li>
+                <li> <b>Route planen</b> ermittelt die optimale Methode zum Erstellen von Routen f&uuml;r eine Fahrzeugflotte, die viele Stopps anfahren muss.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="ConnectOriginsToDestinationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Startpunkte mit Zielen verbinden</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Berechnet die Fahrzeit und Entfernung zwischen Startpunkt-Ziel-Paaren. Sie k&ouml;nnen beispielsweise ermitteln, welche Entfernungen Kunden zur&uuml;cklegen, um Ihre Gesch&auml;fte aufzusuchen, die erwartete Kilometerzahl Ihrer Lkw-Flotte berechnen oder die Fahrten eines Kollegen vom Wohnort zum Arbeitsplatz zusammenfassen.
+            </p>
+            <br/>
+        </div>
+        <div id="CreateBuffersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Puffer erstellen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Ein Puffer ist ein Bereich, der eine angegebene Entfernung von einem Punkt, einer Linie oder einem Fl&auml;chen-Feature abdeckt. 
+            </p>
+            <p>Puffer werden in der Regel zum Erstellen von Bereichen verwendet, die anhand anderer Werkzeuge wie &quot;Layer &uuml;berlagern&quot; weiter analysiert werden k&ouml;nnen. Beispielsweise kann die Antwort auf die Frage &quot;Welche Geb&auml;ude befinden sich innerhalb einer Entfernung von einem Kilometer von der Schule?&quot; gefunden werden, indem ein Puffer von einem Kilometer um die Schule erstellt und der Puffer mit dem Layer der Geb&auml;udegrundrisse &uuml;berlagert wird. Das Endergebnis ist ein Layer mit allen Geb&auml;uden, die innerhalb eines Kilometers von der Schule entfernt liegen.  
+            </p>
+            <br/>
+        </div>
+        <div id="CreateDriveTimeAreasTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Fahrzeitgebiete erstellen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Ein Fahrzeitgebiet ist der Bereich, der innerhalb einer angegebenen Fahrzeit oder Fahrentfernung erreicht werden kann. Mithilfe von Fahrzeitgebieten k&ouml;nnen beispielsweise die folgenden Fragen beantwortet werden:
+                <ul>
+                    <li>Welche Orte kann ich von diesem Standort aus innerhalb einer Fahrzeit von 30 Minuten erreichen?
+                    </li>
+                    <li>Welche Orte kann ich von diesem Standort aus innerhalb einer Fahrzeit von 30 Minuten um 18:00 Uhr w&auml;hrend der Hauptverkehrszeit erreichen?
+                    </li>
+                    <li>Welche Gebiete kann die Feuerwehr innerhalb von f&uuml;nf Minuten erreichen? Wie k&ouml;nnte die Fl&auml;chendeckung bei der Brandbek&auml;mpfung durch die Einrichtung einer neuen Feuerwache verbessert werden?
+                    </li>
+                    <li>Welche Markteinzugsbereiche deckt mein Gesch&auml;ft ab? Welche Gebiete liegen innerhalb von 10 Meilen von meinen Gesch&auml;ften?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="FindNearestTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Nächstgelegene suchen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Misst die Reisekosten zwischen Ereignissen und Einrichtungen und bestimmt, welches jeweils die n&auml;chstgelegene Einrichtung ist. Das Ergebnis ist ein Layer, der die besten Routen zwischen Ereignissen und Einrichtungen mit den entsprechenden Reisekosten (Zeit und Entfernung) jeder Route anzeigt. Mit diesem Werkzeug k&ouml;nnen Sie beispielsweise das einem Unfallort n&auml;chstgelegene Krankenhaus oder den Ihrem aktuellen Standort n&auml;chstgelegenen Geldautomat finden.
+            </p>
+            <br/>
+        </div>
+        <div id="PlanRoutesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Routen planen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Sie geben eine Reihe von Stopps und die Anzahl der zum Anfahren der Stopps verf&uuml;gbaren Fahrzeuge an und &quot;Routen planen&quot; bestimmt, wie die Stopps den Fahrzeugen effizient zugewiesen und Routen f&uuml;r die Fahrzeuge zu den Stopps erstellt werden.
+            </p>
+            <p>Verwenden Sie dieses Werkzeug f&uuml;r die Arbeitsplanung eines mobilen Teams von Inspektoren, Gutachtern, In-Home Supportive Services-Anbietern usw., f&uuml;r die Lieferung oder Abholung von Artikeln an entfernten Standorten oder die Bereitstellung von Dienstleistungen der Personenbef&ouml;rderung.
+            </p>
+            <br/>
+        </div>
+    <div id="ManageDataCategory" class="largesize">
+        <h2>Daten verwalten</h2>
+        <hr/>
+        <p>Diese Werkzeuge werden f&uuml;r die t&auml;gliche Verwaltung geographischer Daten und zum Kombinieren von Daten vor Analysen herangezogen.  
+            <ul>
+                <li> <b>Feldberechnung</b> berechnet neue Feldwerte anhand von vorhandenen Feldwerten und Formeln.
+                </li>
+                <li> <b>Grenzen zusammenf&uuml;hren</b> f&uuml;hrt Fl&auml;chen mit gemeinsamer Grenze und gemeinsamem Attributwert zusammen.
+                </li>
+                <li> <b>Daten extrahieren</b> erstellt neue Datasets, indem Features aus vorhandenen Daten extrahiert werden.
+                </li>
+                <li> <b>Layer zusammenf&uuml;hren</b> kopiert alle Features aus mindestens zwei vorhandenen Layern in einen neuen Layer.
+                </li>
+                <li> <b>Layer &uuml;berlagern</b> kombiniert mindestens zwei Layer zu einem einzelnen Layer. Sie k&ouml;nnen sich eine &Uuml;berlagerung als einen Stapel von Karten vorstellen, durch den Sie hindurchsehen und anhand dessen Sie eine einzelne Karte erstellen, die alle Informationen aus diesem Stapel enth&auml;lt.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="FieldCalculatorTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Feldberechnung</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Aktualisiert Werte f&uuml;r vorhandene Felder oder neue Felder auf Basis einer angegebenen Formel.
+            </p>
+            <br/>
+        </div>
+        <div id="DissolveBoundariesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Grenzen zusammenführen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Fl&auml;chen, die sich &uuml;berlappen oder eine gemeinsame Grenze haben, werden zu einer Fl&auml;che zusammengef&uuml;hrt.    
+            </p>
+            <p>Durch Angabe eines Feldes k&ouml;nnen Sie steuern, welche Grenzen zusammengef&uuml;hrt werden. Wenn Sie beispielsweise &uuml;ber einen Landkreis-Layer verf&uuml;gen und jeder Landkreis das Attribut  <i>State_Name</i> aufweist, k&ouml;nnen Sie Grenzen anhand des Attributs <i>State_Name</i> aufl&ouml;sen. Benachbarte Landkreise werden zusammengef&uuml;hrt, wenn sie den gleichen Wert f&uuml;r <i>State_Name</i> haben. Das Endresultat ist ein Landesgrenzen-Layer.
+            </p>
+            <br/>
+        </div>
+        <div id="ExtractDataTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Daten extrahieren</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Erstellt eine ZIP-Datei oder ein Layer-Paket aus den Daten des Layers sowie einen angegebenen Interessenbereich.
+
+            </p>
+            <br/>
+        </div>
+        <div id="MergeLayersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Layer zusammenführen</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Kopiert Features aus mindestens zwei vorhandenen Layern in einen neuen Layer. Beispiel:
+                <ul>
+                    <li>Sie verf&uuml;gen &uuml;ber drei Layer, f&uuml;r England, Wales und Schottland, und Sie m&ouml;chten einen einzelnen Gro&szlig;britannien-Layer erstellen. 
+                    </li>
+                    <li>Sie verf&uuml;gen &uuml;ber 12 Layer, die jeweils Flurst&uuml;cksinformationen f&uuml;r zusammenh&auml;ngende Townships enthalten. Sie m&ouml;chten sie zu einem einzelnen Layer zusammenf&uuml;hren und nur die Attribute beibehalten, die in den 12 Eingabe-Layern den gleichen Namen und Typ aufweisen.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="OverlayLayersTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Layer überlagern</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Bei einer &Uuml;berlagerung werden zwei oder mehr Layer zu einem einzelnen Layer kombiniert. Sie k&ouml;nnen sich eine &Uuml;berlagerung als einen Stapel von Karten vorstellen, durch den Sie hindurchsehen und anhand dessen Sie eine einzelne Karte erstellen, die alle Informationen aus diesem Stapel enth&auml;lt. Beispiel:
+                <ul>
+                    <li>Welche Flurst&uuml;cke befinden sich in einem 100-Jahres-&Uuml;berschwemmungsgebiet? (&quot;In&quot; ist hier nur ein Synonym f&uuml;r &quot;&uuml;ber&quot; bzw. &quot;&uuml;berlagern&quot;.)
+                          
+                    </li>
+                    <li>Welche Stra&szlig;en befinden sich in welchen Landkreisen?
+                    </li>
+                    <li>Welche Landnutzung liegt &uuml;ber welchem Bodentyp?
+                         
+                    </li>
+                    <li>Welche Quellen befinden sich in aufgegebenen milit&auml;rischen Einrichtungen?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+</div>
+</html>

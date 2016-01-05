@@ -1,0 +1,29 @@
+/*
+ COPYRIGHT 2009 ESRI
+
+ TRADE SECRETS: ESRI PROPRIETARY AND CONFIDENTIAL
+ Unpublished material - all rights reserved under the
+ Copyright Laws of the United States and applicable international
+ laws, treaties, and conventions.
+
+ For additional information, contact:
+ Environmental Systems Research Institute, Inc.
+ Attn: Contracts and Legal Services Department
+ 380 New York Street
+ Redlands, California, 92373
+ USA
+
+ email: contracts@esri.com
+ */
+//>>built
+define("esri/dijit/geoenrichment/AgePyramid","../../declare require dojo/_base/lang ./BaseSelectComparison dojo/dom-construct dojo/number dojo/dom-class ./utils ./theme dojox/charting/Chart dojox/charting/axis2d/Default dojox/charting/plot2d/Bars dojox/charting/plot2d/Lines dojox/charting/action2d/Tooltip dojox/charting/action2d/Highlight dojox/charting/SimpleTheme dojo/i18n!../../nls/jsapi".split(" "),function(u,C,k,v,e,m,n,w,p,x,y,z,A,q,r,B,c){c=c.geoenrichment.dijit.AgePyramid;return u("esri.dijit.geoenrichment.AgePyramid",
+[v],{chart:null,_currentTheme:null,_themeChangeHandle:null,updateUI:function(){this.inherited(arguments);this._themeChangeHandle||(this._themeChangeHandle=p.on("change",k.hitch(this,this._onThemeChange)));this._currentTheme?this._doUpdateUI():p.load("AgePyramid").then(k.hitch(this,this._onThemeLoad))},_onThemeChange:function(){this._currentTheme=null;this._destroyChart();this.updateUI()},_onThemeLoad:function(a){this._currentTheme=a;this._currentTheme.theme=new B(a.theme);this._doUpdateUI()},_doUpdateUI:function(){this.ensureChart();
+var a=this.getDataFields();this.maleIndices=[];this.femaleIndices=[];for(var b=a.length/2,d=Number.NEGATIVE_INFINITY,f=Number.POSITIVE_INFINITY,s,t,g=!0,h=!0,l=0;l<a.length;l++){var e=l<b;e?this.maleIndices.push(a[l]):this.femaleIndices.push(a[l]);var c=this.getValueByIndex(0,a[l]);c>d?(d=c,s=this.getFieldByIndex(a[l]).alias,g=e):c<f&&(f=c,t=this.getFieldByIndex(a[l]).alias,h=e)}a=this.setSeriesData(this.chart.getSeries("male_bars"),0,this.maleIndices,-1);b=this.setSeriesData(this.chart.getSeries("female_bars"),
+0,this.femaleIndices,1);this.expanded?(f=this._getComparisonRow(),d=this.setSeriesData(this.chart.getSeries("male_lines"),f,this.maleIndices,-1),f=this.setSeriesData(this.chart.getSeries("female_lines"),f,this.femaleIndices,1)):(this.chart.getSeries("male_lines").update([]),this.chart.getSeries("female_lines").update([]),f=d=Number.NEGATIVE_INFINITY);this.extreme=w.getCeiling(Math.max(a,b,d,f),!0);this.chart.removeAxis("y");this.chart.addAxis("y",{type:y,min:-this.extreme,max:this.extreme,minorTicks:!1,
+labelFunc:k.hitch(this,this.getAxisLabel)});this.chart.render();this.expanded&&(g?n.replace(this.max,"AgePyramid_TextMale","AgePyramid_TextFemale"):n.replace(this.max,"AgePyramid_TextFemale","AgePyramid_TextMale"),h?n.replace(this.min,"AgePyramid_TextMale","AgePyramid_TextFemale"):n.replace(this.min,"AgePyramid_TextFemale","AgePyramid_TextMale"),this.max.innerHTML=s,this.min.innerHTML=t)},getAxisLabel:function(a,b,d){b=Math.abs(b);return b!=this.extreme?m.format(b,{places:0}):m.format(b/100,{places:0,
+type:"percent"})},resize:function(){this.inherited(arguments);this.chart&&this.chart.resize()},ensureChart:function(){if(!this.chart){var a=this._currentTheme,b=this.chart=new x(this.chartDiv);b.setTheme(a.theme);b.addPlot("lines",{type:A,markers:!0});b.addPlot("bars",{type:z,gap:this.expanded?1.5:1});b.addSeries("male_bars",[],k.mixin({plot:"bars"},a.male));b.addSeries("female_bars",[],k.mixin({plot:"bars"},a.female));b.addSeries("male_lines",[],k.mixin({plot:"lines"},a.line));b.addSeries("female_lines",
+[],k.mixin({plot:"lines"},a.line));var d={text:k.hitch(this,this.getTooltip)};new q(b,"bars",d);new q(b,"lines",d);new r(b,"bars",{duration:1});new r(b,"lines",{duration:1,highlight:a.highlight})}},getTooltip:function(a){var b=this._currentTheme,d,f;switch(a.run.name){case "male_bars":d=this.maleIndices[a.index];f=0;break;case "female_bars":d=this.femaleIndices[a.index];f=0;break;case "male_lines":d=this.maleIndices[a.index];f=this._getComparisonRow();break;case "female_lines":d=this.femaleIndices[a.index];
+f=this._getComparisonRow();break;default:return""}var c=this.getFeatureTitle(f),e=this.getFieldByIndex(d).alias;d=m.format(this.getValueByIndex(f,d),{places:0});a=m.format(Math.abs("lines"===a.plot.name?a.x:a.y)/100,{places:1,type:"percent"});return"\x3cdiv class\x3d'AgePyramid_Tooltip_Content'\x3e\x3cspan style\x3d'font:"+b.font+"; color:"+b.color+";'\x3e\x3cb\x3e"+c+"\x3c/b \x3e \x3cbr / \x3e "+e+"\x3cbr/\x3e"+d+" ("+a+")\x3c/span\x3e\x3c/div\x3e"},setSeriesData:function(a,b,d,f){for(var c=[],e=
+0,g=0;g<d.length;g++){var h=this.getValueByIndex(b,d[g]);c.push(h);e+=h}b=Number.NEGATIVE_INFINITY;for(g=0;g<d.length;g++)h=100*(c[g]/e),c[g]=h*f,h>b&&(b=h);if("lines"===a.plot)for(g=0;g<c.length;g++)c[g]={x:c[g],y:g+1};a.update(c);return b},createUI:function(a){this.inherited(arguments);a.contentClass.push("AgePyramid_ContentPane");this.chartDiv=a.addContent("div",{"class":"AgePyramid_Chart"})},createUIExpanded:function(a){this.inherited(arguments);var b=a.addContent("div",{"class":"AgePyramid_MinMax"});
+e.create("div",{innerHTML:c.maxLabel},b);this.max=e.create("div",{"class":"AgePyramid_Text"},b);e.create("div",{"class":"AgePyramid_MinLabel",innerHTML:c.minLabel},b);this.min=e.create("div",{"class":"AgePyramid_Text"},b);b=a.addContent("div",{"class":"AgePyramid_Comparison"});e.create("div",{"class":"AgePyramid_ComparisonLabel",innerHTML:c.compLabel},b);this._createComboBox(b)},createUICollapsed:function(a){this.inherited(arguments);e.create("div",{"class":"MenLabel",innerHTML:c.menLabel},this.chartDiv);
+e.create("div",{"class":"WomenLabel",innerHTML:c.womenLabel},this.chartDiv)},destroy:function(){this._destroyChart();this._themeChangeHandle&&(this._themeChangeHandle.remove(),this._themeChangeHandle=null);this.inherited(arguments)},_destroyChart:function(){this.chart&&(this.chart.destroy(),this.chart=null)}})});

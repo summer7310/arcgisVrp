@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="regularsize">
+        <h2>フィールド演算（Field Calculator）</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>指定した計算式に基づき、フィールド（属性）の値を計算します。
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>式</h2></div>
+        <hr/>
+        <div>
+            <p>新規または既存のフィールド（属性）の値を計算する式を作成できます。
+            </p>
+            <p>式を作成するには、フィールドを選択してから、条件式ボックスをクリックして  <b>[式の設定]</b> を開きます。 <b>[式の設定]</b> では、他のフィールド、数値演算子、Python 関数、数値および文字列を自由に組み合わせて式を作成できます。新しいフィールドの値を計算する場合、エイリアスやフィールド タイプ、そしてテキスト属性の場合はフィールドに含まれるテキストの長さなど、フィールドのプロパティを定義する必要があります。  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>結果レイヤ名</h2></div>
+        <hr/>
+        <div>
+            <p>これは、 <b>[マイ コンテンツ]</b> で作成され、マップに追加されるレイヤの名前です。デフォルト名は、解析レイヤの名前に基づきます。レイヤがすでに存在する場合、そのレイヤを上書きするかどうか確認を求められます。
+            </p>
+            <p> <b>[結果の保存先]</b> ドロップダウン ボックスを使用して、結果を保存する <b>[マイ コンテンツ]</b> 内のフォルダの名前を指定できます。
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

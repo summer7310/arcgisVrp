@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Rasti panaias vietas</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Based on criteria you specify, the Find Similar Locations tool measures the similarity of locations in your candidate search layer to one or more reference locations.  Įrankis gali atsakyti į tokius klausimus kaip
+        <ul>
+            <li>Kurios parduotuvės yra panaiausios į pirmaujančias pagal klientų grupes?
+            </li>
+            <li>Pagal gyvenviečių, kuriose iplito liga, po˛ymius, kurios kitos gyvenvietės patenka į did˛iausios rizikos grupę? 
+            </li>
+        </ul>
+        Norint atsakyti į iuos klausimus, reikia nurodyti pradinių vietų duomenis, paiekos vietų rinkinį ir laukus, atitinkančius u˛duotus kriterijus.  Pasirinktas sluoksnis (analizės sluoksnis) turi būti sudarytas i etaloninių ar atskaitos objektų.  Pavyzd˛iui, tai gali būti sluoksnis, sudarytas i pirmaujančių parduotuvių ar gyvenviečių, kuriose iplito liga.  Tuomet nurodomas paiekos vietų sluoksnis.  Tai gali būti kitos parduotuvės ar gyvenvietės.  Galiausiai, nurodomi laukai, naudojami panaumo nustatymui.  Rasti Panaias Vietas įrankis visiems paiekos sluoksnio objektams suteiks panaumo į analizės objektus įvertį pagal visus nurodytus laukus.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="inputLayer">
+        <div><h2>Galima naudoti visus objektus arba irinkti:</h2></div>
+        <hr/>
+        <div>
+            <p>Naudokite irinkimo mygtukus analizės objektų atrinkimui.  Pavyzd˛iui, jei įvesties sluoksnį sudaro visos vietos&mdash;tiek atskaitos objektai, tiek paiekos objektai&mdash;reikės atrinkti atskaitos objektus naudojant irinkimo įrankius.   Jei sukurti du sluoksniai, vienas su atskaitos objektais ir kitas su paiekos objektais, irinkimo atlikti nereikės.
+
+            </p>
+            <p>Jei yra daugiau nei vienas atskaitos objektas, panaumo nustatymui bus sukurtas vienas objektas, atitinkantis kriterijų vidutinę reikmę.
+            </p>
+        </div>
+    </div>
+    <div id="searchLayer">
+        <div><h2>Iekoti panaių vietų:</h2></div>
+        <hr/>
+        <div>
+            <p>Objektai iame sluoksnyje bus įvertinti nuo panaiausio iki ma˛iausiai panaaus.  Panaumas remiasi tuo, kiek kiekvienas paiekos objektas atitinka atskaitos objektus pagal kiekvieną i nurodytų kriterijų.
+
+            </p>
+        </div>
+    </div>
+    <div id="analysisFields">
+        <div><h2>Panaumas pagal:</h2></div>
+        <hr/>
+        <div>
+            <p>Laukai, pagal kuriuos bus nustatomas panaumas.  Jei pasirinkti gyventojų skaičiaus ir pajamų laukai, paiekos objektai su ˛emiausiu (geriausiu) rodikliu bus tie, kurie turės į atskaitos objektus panaiausias gyventojų skaičiaus ir pajamų reikmes.
+
+            </p>
+        </div>
+    </div>
+    <div id="numberOfResults">
+        <div><h2>Rodyti:</h2></div>
+        <hr/>
+        <div>
+            <p>Galima pasirinkti rodyti visus paiekos objektus nuo panaiausio iki ma˛iausiai panaaus arba nurodyti rezultato objektų kiekį.
+
+                <ul>
+                    <li> <b>visos vietos nuo panaiausios iki ma˛iausiai panaios</b>&mdash;bus įtraukti visi paiekos objektai pagal panaumo eilę
+                    </li>
+                    <li> <b>pirmieji </b> <code>1</code>&mdash;galite nurodyti, kiek panaiausių objektų įtraukti į rezultato sluoksnį.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Rezultatų sluoksnio vardas</h2></div>
+        <hr/>
+        <div>
+            <p>Pateikite pavadinimą sluoksnio, kuris bus sukurtas ir patalpintas  <b>Mano Turinyje</b> bei pridėtas į ˛emėlapį. Rezultato sluoksnis bus sudarytas i atskaitos vietų ir nurodyto paiekos objektų skaičiaus.   Jei toks sluoksnio pavadinimas jau egzistuoja, galėsite pasirinkti jį perrayti.
+            </p>
+            <p>Naudodami  <b>Rezultatą įrayti į</b> sąraą, galite nurodyti <b>Mano Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

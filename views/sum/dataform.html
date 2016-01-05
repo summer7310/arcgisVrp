@@ -1,0 +1,88 @@
+<div class="alert alert-info" role="alert" style="font-size:17px;"><span class="glyphicon glyphicon-bookmark"></span>物流配送参数设置
+</div>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">种群个体数</label>
+    <div class=" col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="种群个体数">
+    </div>
+    <label  class="control-label">个</label>
+  </div>
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">交叉概率</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="交叉概率">
+    </div>
+    <label  class="control-label">%</label>
+  </div>  
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">变异概率</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="变异概率">
+    </div>
+    <label  class="control-label">%</label>
+  </div>
+<!--   <div class="form-group">
+  <label  class="col-sm-4 control-label">调度车辆数</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" id="inputtext3" placeholder="调度车辆数">
+  </div>
+  <label  class="control-label">辆</label>
+</div>   -->
+  <div class="form-group">
+    <label for="inputtext4" class="col-sm-4 control-label">货车车型选择</label>
+    <div class="col-sm-4">
+      <select class="form-control">
+        <option>微型货车</option>
+        <option>小型货车</option>
+        <option>中型货车</option>
+        <option>重型货车</option>
+      </select>
+    </div>
+  </div>
+<!--   <div class="form-group">
+   <label  class="col-sm-4 control-label">发车成本</label>
+   <div class="col-sm-4">
+     <input type="text" class="form-control" id="inputtext3" placeholder="发车成本">
+   </div>
+   <label  class="control-label">CNY</label>
+ </div>  --> 
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">最大适应值</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="最大适应值">
+    </div>
+    <label  class="control-label"></label>
+  </div> 
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">单位运输成本</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="单位运输成本">
+    </div>
+    <label  class="control-label">CNY</label>
+  </div>  
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">单车最大行驶距离</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="单车最大行驶距离">
+    </div>
+    <label  class="control-label">公里</label>
+  </div>
+  <div class="form-group">
+    <label  class="col-sm-4 control-label">车辆最大载货量</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputtext3" placeholder="车辆最大载货量">
+    </div>
+    <label  class="control-label">吨</label>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-6">
+      <button id="vrp" type="button" class="btn btn-primary" ng-click="startVrp()"><span class="glyphicon glyphicon-ok-circle"></span> 确定</button>
+      <button id="trackoff" type="button" class="btn btn-danger" ng-click="clearVrp()"><span class="glyphicon glyphicon-remove-circle"></span> 关闭</button>
+      
+      <!-- <button type="reset" class="btn btn-info">取消</button> -->
+    </div>
+  </div>
+</form>

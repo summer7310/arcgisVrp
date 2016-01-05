@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Katmanı Zenginleştir</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Katmanı Zenginleştir">
+    </p>
+    <p>Bu ara&ccedil;, veri konumlarınızı &ccedil;evreleyen insanlar, yerler ve şirketler hakkında bilgiler ekleyerek verinizi zenginleştirir ve tek başına haritalar ile yanıtlayamadığınız yeni soruları yanıtlamanızı sağlayabilir. &Ouml;rneğin: Burada ne t&uuml;r insanlar yaşar? İnsanlar bu b&ouml;lgede neler yapmaktan hoşlanır? Alışkanlıkları ve yaşam tarzları nelerdir? Bu b&ouml;lgede ne t&uuml;r şirketler bulunur?
+    </p>
+    <p>Sonu&ccedil;, verilen veri koleksiyonlarından elde edilen t&uuml;m demografik ve coğrafi bilgileri i&ccedil;eren yeni bir katman olacaktır. Bu yeni bilgi tabloya alanlar olarak eklenir.
+    </p>
+    <p> <b>Eğer işaretli ise ge&ccedil;erli harita kapsamını kullan</b> işaretli ise, yalnızca analizdeki detaylar ve ge&ccedil;erli harita kapsamında g&ouml;r&uuml;n&uuml;r olan alan katmanı analiz edilecektir. İşaretli değilse hem analiz katmanı hem de alan katmanındaki t&uuml;m detaylar, ge&ccedil;erli harita kapsamının dışında olsa bile analiz edilecektir.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Kullanılabilir veriyi göster</h2></div>
+        <hr/>
+        <div>
+            <p>B&ouml;lgenizi se&ccedil;in ve kullanılabilir veri koleksiyonlarının bir listesini ve veri koleksiyonları i&ccedil;indeki &ouml;znitelikleri edinin. T&uuml;m bir koleksiyonu se&ccedil;ebilir ya da koleksiyonu genişletip koleksiyondan bir ya da daha fazla &ouml;zniteliği se&ccedil;ebilirsiniz. Se&ccedil;ilen veri koleksiyonları ve &ouml;znitelikleri sonu&ccedil; katmanına eklenir. 
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Zenginleştirilecek alanları tanımla</h2></div>
+        <hr/>
+        <div>
+            <p>Bunlar veri koleksiyonunda bulunan ek bilgi ile zenginleştirilecek alanlardır. Analiz katmanınız noktalar ya da &ccedil;izgiler i&ccedil;eriyorsa, alanlar her nokta ya da &ccedil;izgi &ccedil;evresinde, d&uuml;z bir &ccedil;izgi mesafesi ya da bir s&uuml;r&uuml;ş zamanı kullanılarak oluşturulur. 
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Sonuç katmanı adı</h2></div>
+        <hr/>
+        <div>
+            <p>Bu  <b>İ&ccedil;eriğim</b> alanınızda oluşturulacak ve haritaya eklenecek katmanın adıdır. Varsayılan ad, analiz katmanı adına g&ouml;redir. Katman zaten varsa &uuml;zerine yazma isteğinizi onaylamanız istenecektir.
+            </p>
+            <p> <b>Sonu&ccedil;ları kaydet</b> a&ccedil;ılır kutusunu kullanarak <b>İ&ccedil;eriğim</b> alanında sonucun kaydedileceği bir klas&ouml;r adı belirleyebilirsiniz.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

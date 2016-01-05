@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Calculatrice de valeurs de champs</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Calcule les valeurs d'un champ (attribut) en fonction d'une formule que vous sp&eacute;cifiez.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Expressions</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez cr&eacute;er des expressions pour calculer les valeurs de champs (attributs) nouveaux ou existants.
+            </p>
+            <p>Apr&egrave;s avoir s&eacute;lectionn&eacute; un champ, vous pouvez cr&eacute;er une expression en cliquant dans la zone Expression pour lancer le  <b>G&eacute;n&eacute;rateur d&rsquo;expressions</b>. Dans le <b>G&eacute;n&eacute;rateur d'expressions</b>, une expression peut &ecirc;tre cr&eacute;&eacute;e &agrave; partir de n'importe quelle combinaison d'autres champs, op&eacute;rateurs num&eacute;riques, fonctions Python et valeurs num&eacute;riques et de cha&icirc;ne. Pour calculer les valeurs d'un nouveau champ, vous devez d&eacute;finir les propri&eacute;t&eacute;s du champ, notamment l'alias, le type de champ et, pour les attributs textuels, la longueur du texte que le champ contiendra.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nom de la couche résultat</h2></div>
+        <hr/>
+        <div>
+            <p>Il s'agit du nom de la couche qui sera cr&eacute;&eacute;e dans la page  <b>Mes contenus</b> et ajout&eacute;e &agrave; la carte. Le nom par d&eacute;faut repose sur le nom de la couche d'analyse. Si la couche existe d&eacute;j&agrave;, vous serez amen&eacute; &agrave; confirmer son remplacement.
+            </p>
+            <p>La zone de liste d&eacute;roulante  <b>Enregistrer le r&eacute;sultat dans</b> vous permet de sp&eacute;cifier le nom d'un dossier dans <b>Mes contenus</b> o&ugrave; le r&eacute;sultat sera enregistr&eacute;.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

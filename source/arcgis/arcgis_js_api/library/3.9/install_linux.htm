@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Install notes for the ArcGIS API for JavaScript&#153</title>
+<link href="../../jsdoc.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+<body id="theBody" >
+<div id="pageBanner">Install notes for the ArcGIS API for JavaScript&#153</div>
+
+<div id="nstext"><H4 class=dtH4>Installing the ArcGIS API for JavaScript&#153 Library on Linux</H4>
+
+
+<p>The instructions below assume that you are installing the ArcGIS JavaScript API library in the following location on an Apache Tomcat Web Server, "http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/" where &lt;myserver&gt; is the domain name of your Web site and '8080' is the default Web server port. This port number, of course, can be changed for your instance if you choose to not use this default port. After copying files to your Web server, you will need to edit some files to include the URL to the server and directory that you are planning to install to. </p>
+
+<p>Please go <a href="install.htm">here</a> for instructions on deploying the library on IIS for Windows. </p>
+
+<p>Copy <code>\arcgis_js_api\library</code> and all its contents from the DVD to your Web server.  In this example the files are copied to
+  	<p><code>
+	&lt;apache_tomcat_home&gt;/webapps/arcgis_js_api/library
+	</code></p></p>
+
+<h3>Install the Normal or Compact Build</h3>
+<p>ArcGIS JSAPI 3.9 contains two builds--a normal build and a compact build.  The compact build removes the Dojo Dijit dependancy and minimizes the non-essential ArcGIS JSAPI classes.  Please see the  <a href='../../sdk/jshelp/inside_compactbuild.html'>documentation</a> for more details.</p>
+
+<p>Your directions may differ depending on your server configuration or Web server, but the process is the same.</p>
+
+<b>Configuration options for normal build:</b>
+<ol>
+<li>Open <code>&lt;apache_tomcat_home&gt;\webapps\arcgis_js_api\library\3.9\jsapi\init.js</code> in a text editor and search for the text <code>'[HOSTNAME_AND_PATH_TO_JSAPI]'</code>, and replace this text with <code>"&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/"</code></li>
+
+<li>Open <code>&lt;apache_tomcat_home&gt;\webapps\arcgis_js_api\library\3.9\jsapi\dojo\dojo\dojo.js</code>	in a text editor and search for the text <code>'[HOSTNAME_AND_PATH_TO_JSAPI]'</code>, and replace this text with <code>'&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/'</code></li>
+
+</ol>
+
+<b>Configuration options for compact build:</b>
+<ol>
+<li>Open <code>&lt;apache_tomcat_home&gt;\webapps\arcgis_js_api\library\3.9\jsapicompact\init.js</code> in a text editor and search for the text <code>'[HOSTNAME_AND_PATH_TO_JSAPI]'</code>, and replace this text with <code>"&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapicompact/"</code></li>
+
+<li>Open  <code>&lt;apache_tomcat_home&gt;\webapps\arcgis_js_api\library\3.9\jsapicompact\js\dojo\dojo\dojo.js</code>	in a text editor and search for the text <code>'[HOSTNAME_AND_PATH_TO_JSAPI]'</code>, and replace this text with <code>'&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapicompact/'</code></li>
+</ol>
+
+
+<h3>Test the Install</h3>
+<p>Now you should be able to access the ArcGIS JavaScript library from your Web server using the following URL:
+
+<p><code>http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapicompact/</code></p> and <p><code>http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/</code></p>
+</p>
+
+  <div class="detailSample">
+  <pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"/&gt;
+    &lt;title&gt;Simple Map&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/js/dojo/dijit/themes/tundra/tundra.css"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/js/esri/css/esri.css" /&gt;
+    &lt;script type="text/javascript" src="http://&lt;myserver&gt;:8080/arcgis_js_api/library/3.9/jsapi/init.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+      dojo.require("esri.map");
+      function init() {
+        var myMap = new esri.Map("mapDiv");
+        //note that if you do not have public Internet access then you will need to point this url to your own locally accesible cached service.
+        var myTiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/NGS_Topo_US_2D/MapServer");
+        myMap.addLayer(myTiledMapServiceLayer);
+      }
+      dojo.addOnLoad(init);
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body class="tundra"&gt;
+    &lt;div id="mapDiv" style="width:900px; height:600px; border:1px solid #000;"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+</div>
+<h2>Change the ArcGIS Services Directory &quot;View In JavaScript&quot; URL.</h2>
+<p> The Services Directory allows you to view Map and Image services using the JavaScript API. Set the following values in the rest-config.properties file to use the local install:
+<pre>
+#JS API URLs
+jsapi.arcgis=http://<server_name>/arcgis_js_api/library/3.9/jsapi/
+jsapi.arcgis.sdk=http://<server_name>/arcgis_js_sdk/sdk/
+jsapi.arcgis.css=http://<server_name>/arcgis_js_api/library/3.9/jsapi/js/dojo/dijit/themes/tundra/tundra.css
+
+</pre>
+
+
+<P>View the <a href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000pw000000">Configuring the Rest API</a> help topic for more details. </p>
+
+<H3 class=dtH4>Installing the ArcGIS JavaScript API SDK</H3>
+The ArcGIS JavaScript API SDK can be copied in its entirety to your Web server directory.  This SDK is equivalent to the version found on the <a href="https://developers.arcgis.com/en/javascript/" target="_blank">ArcGIS for Developers JavaScript</a> site.
+
+
+<ol>
+<li>Copy <code>\arcgis_js_api\sdk</code> and all its contents from the DVD to your Web server.  In this example the files are copied to
+  	<p><code>
+	&lt;apache_tomcat_home&gt;/webapps/arcgis_js_api/sdk
+	</code></p>
+
+</li>
+
+</ol>
+
+
+</div>
+</body>
+</html>

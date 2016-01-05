@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Noktaları Birleştir</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Bu ara&ccedil; nokta katmanı detayları (analiz katmanı) ve alan katmanı detaylari ile &ccedil;alışır. &Ouml;nce her bir alana hangi noktaların d&uuml;şeceğini belirler. Bu &quot;alan i&ccedil;inde nokta&quot; mekansal ilişkisini belirledikten sonra, alandaki t&uuml;m noktaların istatistikleri hesaplanır ve alana atanır. En temel istatistik alan i&ccedil;indeki nokta sayısıdır, ancak diğer istatistikleri de alabilirsiniz. 
+    </p>
+    <p>&Ouml;rneğin elinizde kahve d&uuml;kkanı konumlarının nokta &ouml;zellikleri ve &uuml;lkelerin alan &ouml;zellikleri var ve &uuml;lkeye g&ouml;re kahve satışlarını &ouml;zetlemek istiyorsunuz. Varsayalım kahve d&uuml;kkanlarının bir  <i>TOTAL_SALES</i> &ouml;zniteliği olsun, her &uuml;lkedeki t&uuml;m <i>TOTAL_SALES</i> &ouml;zetini ya da her &uuml;lkedeki minimum ya da maksimum <i>TOTAL_SALES</i>
+ sayısını ya da her &uuml;lkedeki t&uuml;m satışların standart sapmasını elde edebilirsiniz.
+    </p>
+    <p>Sonu&ccedil;ta, her alanın renginin, alanın boyutuna g&ouml;re b&ouml;l&uuml;nen toplam nokta sayısına dayandırıldığı bir harita elde edilir. Sayıların alana g&ouml;re b&ouml;l&uuml;nmesine normalizasyon denir ve bu, kartografların her zaman veriyi alanlara g&ouml;re g&ouml;r&uuml;nt&uuml;lemek i&ccedil;in kullandığı bir tekniktir. Normalizasyon mekansal modellerin daha iyi anlaşılmasına yardımcı olur, zira alanlar birbiri ile g&ouml;rsel olarak karşılaştırıldığında alanın boyutu hesaba katılır.
+    </p>
+    <p> <b>Eğer işaretli ise ge&ccedil;erli harita kapsamını kullan</b> ,yalnızca analizdeki detaylar ve ge&ccedil;erli harita kapsamında g&ouml;r&uuml;n&uuml;r olan alan katmanı analiz edilecektir. İşaretli değilse hem analiz katmanı hem de alan katmanındaki t&uuml;m detaylar, ge&ccedil;erli harita kapsamının dışında olsa bile analiz edilecektir.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="PolygonLayer">
+        <div><h2>Alan seç</h2></div>
+        <hr/>
+        <div>
+            <p> Web haritasından, noktaların toplanacağı bir alan katmanı se&ccedil;in. Web haritasında sınır katmanları yoksa, ArcGIS Online'da mevcut sınır katmanları listesinden se&ccedil;im yapabilirsiniz. Bu katmanda, alanların sınırları i&ccedil;ine d&uuml;şen t&uuml;m noktalar sayılacak ve isteğe bağlı istatistik se&ccedil;imleriniz kullanılarak &ouml;zetlenecektir.
+            </p>
+        </div>
+    </div>
+    <div id="KeepBoundaryNoPoints">
+        <div><h2>Noktaları olmayan alanları koru</h2></div>
+        <hr/>
+        <div>
+            <p>Noktaları olmayan alanların sonu&ccedil; katmanında g&ouml;r&uuml;n&uuml;p g&ouml;r&uuml;nmeyeceğini belirler. İşaretlenmezse, noktaları olmayan alanlar sonu&ccedil; i&ccedil;inde g&ouml;r&uuml;nmez. İşaretlenirse, noktaları olmayan alanlar sonu&ccedil; i&ccedil;inde g&ouml;r&uuml;n&uuml;r. 
+            </p>
+        </div>
+    </div>
+    <div id="SummaryFields">
+        <div><h2>İstatistik ekle</h2></div>
+        <hr/>
+        <div>
+            <p>Giriş noktası katmanının toplam, ortalama, minimum, maksimum ve standart sapma gibi &ouml;znitelikleri hakkındaki istatistiklerini hesaplayabilirsiniz. Sonu&ccedil; katmanı hesaplanan her istatistik i&ccedil;in yeni bir &ouml;z nitelik i&ccedil;erecektir. Herhangi bir sayıda istatistik bir &ouml;znitelik ve istatistik eklenerek (yeni bir a&ccedil;ılır kutu g&ouml;r&uuml;n&uuml;r) eklenebilir.
+
+ 
+            </p>
+        </div>
+    </div>
+    <div id="GroupByField">
+        <div><h2>Gruplanacak alanları seçme kriteri</h2></div>
+        <hr/>
+        <div>
+            <p>Analiz katmanında bir &ouml;znitelik kullanarak istatistiksel gruplar oluşturabilirsiniz. &Ouml;rneğin su&ccedil;ları komşu sınırlara topluyorsanız, beş farklı su&ccedil; t&uuml;r&uuml;ne sahip bir  <i>Crime_type</i> &ouml;zniteliğiniz olabilir. Her benzersiz su&ccedil; t&uuml;r&uuml; bir grup oluşturur ve se&ccedil;tiğiniz istatistikler her bir benzersiz <i>Crime_type</i> değeri i&ccedil;in hesaplanacaktır. Bir gruplama &ouml;zniteliği se&ccedil;iğinizde, iki sonu&ccedil; oluşturulur: Sonu&ccedil; katmanı ve her bir benzersiz grubu i&ccedil;eren tablo.
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Sonuç katmanı adı</h2></div>
+        <hr/>
+        <div>
+            <p>Bu  <b>İ&ccedil;eriğim</b> alanınızda oluşturulacak ve haritaya eklenecek katmanın adıdır. Varsayılan ad analiz t&uuml;r&uuml;ne ve analiz katmanı adına g&ouml;redir. Katman zaten varsa &uuml;zerine yazma isteğinizi onaylamanız istenecektir.
+            </p>
+            <p> <b>Sonu&ccedil;ları kaydet</b> a&ccedil;ılır kutusunu kullanarak <b>İ&ccedil;eriğim</b> alanında sonucun kaydedileceği bir klas&ouml;r adı belirleyebilirsiniz.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

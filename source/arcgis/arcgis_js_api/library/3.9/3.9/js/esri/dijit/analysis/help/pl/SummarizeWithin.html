@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Sumuj w obrębie</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Narzędzie wyszukuje obiekty (i części obiekt&oacute;w), kt&oacute;re znajdują się w granicach obszar&oacute;w w warstwie analizy.  Na przykład:
+        <ul>
+            <li>Mając warstwę wododział&oacute;w i warstwę granic użytkowania terenu według typu użytkowania terenu, oblicz całkowity areał typ&oacute;w użytkowania terenu dla każdego działu wodnego. 
+            </li>
+            <li>Uwzględniając warstwę działek w hrabstwie i warstwę granic miast, podsumuj średnią wartość działek wystawionych na sprzedaż w granicach każdego miasta.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jeśli jest zaznaczona opcja  <b>Użyj bieżącego zasięgu mapy</b>, przeanalizowane zostaną tylko obiekty w warstwie analizy i warstwie sumowania widoczne w bieżącym zasięgu mapy.  Jeśli powyższa opcja nie jest zaznaczona, analizowane będą wszystkie obiekty w warstwie analizy i warstwie sumowania, nawet jeśli będą poza bieżącym zasięgiem mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Wybierz warstwę do sumowania</h2></div>
+        <hr/>
+        <div>
+            <p>Zsumowane zostaną obiekty w tej warstwie, kt&oacute;re mieszczą się w granicach obiekt&oacute;w warstwy analizy. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można też obliczyć dane statystyczne dla atrybut&oacute;w numerycznych punkt&oacute;w, kt&oacute;re są zawarte w granicach obiekt&oacute;w. 
+            </p>
+            <p>Jeśli zaznaczona jest opcja  <b>Liczba punkt&oacute;w</b>, obliczona zostanie całkowita liczba punkt&oacute;w w granicach każdego obszaru.  Ponadto można obliczyć dane statystyczne dla atrybut&oacute;w numerycznych punkt&oacute;w, kt&oacute;re mieszczą się w granicach każdego obszaru.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia dla określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości w określonym polu.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można także obliczyć dane statystyczne dla atrybut&oacute;w numerycznych pobliskich linii. 
+            </p>
+            <p>Jeśli opcja  <b>Całkowita długość linii w</b> jest zaznaczona, obliczona zostanie całkowita długość linii w granicach każdego obszaru.  Ponadto można obliczyć dane statystyczne dla atrybut&oacute;w numerycznych linii, kt&oacute;re mieszczą się w granicach każdego obszaru.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia dla określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości w określonym polu.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można także obliczyć dane statystyczne dla atrybut&oacute;w numerycznych pobliskich obszar&oacute;w. 
+            </p>
+            <p>Jeśli zaznaczona jest opcja  <b>Sumuj obszary używając</b>, obliczona zostanie całkowita powierzchnia obiekt&oacute;w, kt&oacute;re mieszczą się w granicach każdego obszaru w warstwie analizy.  Ponadto można obliczyć dane statystyczne dla atrybut&oacute;w numerycznych obiekt&oacute;w, kt&oacute;re mieszczą się w granicach każdego obszaru.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia dla określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości w określonym polu.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Wybierz pole, według którego wykonane będzie grupowanie</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to atrybut  <b>Sumowania</b> obiekt&oacute;w, kt&oacute;rego można użyć, aby obliczyć dane statystyczne dla wartości każdego unikalnego atrybutu. Na przykład, zał&oacute;żmy że warstwa analizy zawiera granice miasta, a obiekty <b>Sumowania</b> to działki.  Jeden z atrybut&oacute;w działek to <i>Status</i>, kt&oacute;ry zawiera dwie wartości: WOLNA i ZAJĘTA. Aby obliczyć całkowitą powierzchnię wolnych i zajętych działek w granicach miast, użyj atrybutu <i>Status</i> jako grupy według atrybut&oacute;w.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Nazwa warstwy wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w zakładce  <b>Moje zasoby</b> i dodana do mapy.  Domyślna nazwa jest tworzona na podstawie nazwy warstwy analizy. Jeśli ta warstwa już istnieje, wyświetli się komunikat z pytaniem, czy ma zostać nadpisana.
+            </p>
+            <p>Używając menu rozwijalnego  <b>Zapisz wynik w</b>, można wybrać folder w zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

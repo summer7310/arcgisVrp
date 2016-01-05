@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Laukų skaičiuotuvas</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Apskaičiuoja atributinių laukų reik&scaron;mes pagal nurodytą formulę.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Išraiškos</h2></div>
+        <hr/>
+        <div>
+            <p>Galite sukurti i&scaron;rai&scaron;kas naujų arba esamų laukų reik&scaron;mėms apskaičiuoti.
+            </p>
+            <p>Pasirinke lauką ir spragtelėję i&scaron;rai&scaron;kos lauke galėsite sukurti i&scaron;rai&scaron;ką naudodami  <b>I&scaron;rai&scaron;kų kūrimo priemonę</b>. <b>I&scaron;rai&scaron;kų kūrimo priemonėje</b> i&scaron;rai&scaron;ka gali būti suformuota i&scaron; kitų laukų, aritmetinių veiksmų, Python funkcijų, skaitinių ir tekstinių reik&scaron;mių.  Jei reik&scaron;mės skaičiuojamos naujam laukui, pirmiausia turite nurodyti to lauko savybes: lauko sinonimą, tipą, tekstinio lauko ženklų skaičių.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultatų sluoksnio vardas</h2></div>
+        <hr/>
+        <div>
+            <p>Tai sluoksnio, kuris bus sukurtas ir patalpintas  <b>Mano Turinyje</b> ir pridėtas į žemėlapį, pavadinimas.  Pavadinimas pagal nutylėjimą formuojamas i&scaron; analizuojamo sluoksnio pavadinimo. Jei sluoksnis jau egzistuoja, galėsite pasirinkti jį perra&scaron;yti.
+            </p>
+            <p>Naudodami  <b>Rezultatą įra&scaron;yti į</b> sąra&scaron;ą, galite nurodyti <b>Mano Turinyje</b> esančio aplanko pavadinimą.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

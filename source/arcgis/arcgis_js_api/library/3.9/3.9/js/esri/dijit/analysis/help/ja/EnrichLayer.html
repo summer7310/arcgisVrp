@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>レイヤへの情報付加（Enrich Layer）</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="レイヤへの情報付加（Enrich Layer）">
+    </p>
+    <p>このツールは、データの場所の周囲にある人々、場所、およびビジネスに関する情報を取得して、その情報データをレイヤに付加します。これにより、マップだけでは答えを見つけることができないような場所に関する新しい質問に回答できるようになります。たとえば、次のような場合です。ここには、どのような人が住んでいるか。このエリアで人気のあることは何か。どのような習慣やライフスタイルを持っているか。このエリアには、どのようなビジネスがあるか。
+    </p>
+    <p>結果は、指定したデータ コレクションから取得したすべての人口統計および地理情報を含む新しいレイヤです。この新しい情報は、フィールドとしてテーブルに追加されます。
+    </p>
+    <p> <b>[現在のマップ範囲を使用]</b> がオンの場合、現在のマップ範囲に表示されている解析レイヤとエリア レイヤのフィーチャだけが解析されます。オフの場合、解析レイヤとエリア レイヤのすべてのフィーチャが、現在のマップ範囲内になくても解析されます。
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>利用可能なデータを表示</h2></div>
+        <hr/>
+        <div>
+            <p>地域を選択し、利用可能なデータ コレクションのリストおよびデータ コレクション内の属性を取得します。コレクション全体を選択するか、またはコレクションを展開して、コレクションから 1 つ以上の属性を選択することができます。選択したデータ コレクションおよび属性は、結果レイヤに追加されます。      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>情報を付加するエリアの定義</h2></div>
+        <hr/>
+        <div>
+            <p>データ コレクションの中にあった追加情報が付加されるエリアです。解析レイヤにポイントまたはラインが含まれる場合、直線距離、または運転時間を使用により、各ポイントまたはラインの周囲にエリアが作成されます。  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>結果レイヤ名</h2></div>
+        <hr/>
+        <div>
+            <p>これは、 <b>[マイ コンテンツ]</b> に作成され、マップに追加されるレイヤの名前です。デフォルト名は、解析レイヤの名前に基づきます。レイヤがすでに存在する場合、そのレイヤを上書きするかどうか確認を求められます。
+            </p>
+            <p> <b>[結果の保存先]</b> ドロップダウン ボックスを使用して、結果を保存する <b>[マイ コンテンツ]</b> 内のフォルダの名前を指定できます。
+            </p>
+        </div>
+    </div>
+</div>
+</html>

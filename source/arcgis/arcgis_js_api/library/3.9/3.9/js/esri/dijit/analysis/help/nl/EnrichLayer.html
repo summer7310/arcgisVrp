@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kaartlaag verrijken</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Kaartlaag verrijken">
+    </p>
+    <p>Met deze tool worden uw gegevens verrijkt door feiten op te halen over de mensen, plaatsen en bedrijven in de buurt van uw gegevenslocaties en kunt u nieuwe vragen beantwoorden over locaties die u niet kunt beantwoorden met alleen kaarten. Bijvoorbeeld: Wat voor mensen wonen er? Wat doen mensen in dit gebied graag? Wat zijn hun gewoonten en levensstijlen? Wat voor soorten bedrijven zijn er in dit gebied?
+    </p>
+    <p>Het resultaat wordt een nieuwe kaartlaag met alle demografische en geografische gegevens uit bepaalde gegevensverzamelingen.  Deze nieuwe gegevens worden toegevoegd als velden in de tabel.
+    </p>
+    <p>Als  <b>Huidig extent van de kaart gebruiken</b> is aangevinkt, worden alleen de objecten in de analyse- en oppervlaklaag die binnen het huidige extent van de kaart zichtbaar zijn, geanalyseerd.  Als deze optie niet wordt geselecteerd, worden alle objecten in de analyselaag en de gebiedslaag geanalyseerd, ook als ze zich buiten het huidige kaartextent bevinden.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Beschikbare gegevens weergeven voor</h2></div>
+        <hr/>
+        <div>
+            <p>Selecteer uw regio en krijg een lijst met de beschikbare gegevensverzamelingen en de attributen binnen de gegevensverzameling.  U kunt een volledige verzameling selecteren of de verzameling uitvouwen en een of meer attributen uit de verzameling selecteren.  De geselecteerde gegevensverzamelingen en attributen worden toegevoegd aan de resultaatlaag.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Te verrijken gebieden definiëren</h2></div>
+        <hr/>
+        <div>
+            <p>Dit zijn de gebieden die u kunt verrijken met extra gegevens uit de gegevensverzameling. Als uw analyselaag punten of lijnen bevat, worden er gebieden gemaakt rondom elk punt of elke lijn aan de hand van een rechte-lijnsafstand of een reistijd.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Resultaat laagnaam</h2></div>
+        <hr/>
+        <div>
+            <p>Dit is de naam van de kaartlaag die in  <b>Mijn Content</b> wordt gemaakt en aan de kaart wordt toegevoegd.  De standaardnaam is gebaseerd op de naam van de analyselaag. Als de laag al bestaat, wordt u gevraagd om te aan te geven of u deze wilt overschrijven.
+            </p>
+            <p>Als u de vervolgkeuzelijst  <b>Resultaat opslaan in</b> gebruikt, kunt u de naam opgeven van een map in <b>Mijn Content</b> waar het resultaat wordt opgeslagen.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

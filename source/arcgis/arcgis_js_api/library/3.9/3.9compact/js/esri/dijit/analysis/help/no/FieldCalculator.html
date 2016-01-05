@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Feltkalkulator</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Beregner verdier for et felt (attributt) basert p&aring; en formel du angir.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Uttrykk</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan opprette uttrykk for &aring; beregne verdiene for nye eller eksisterende felter (attributter).
+            </p>
+            <p>N&aring;r du har valgt et felt, kan du opprette et uttrykk ved &aring; klikke i uttrykksboksen for &aring; starte  <b>Expression Builder</b>.  I <b>Expression Builder</b> kan du opprette et uttrykk fra en hvilken som helst kombinasjon av felter, numeriske operatorer, Python-funksjoner, numeriske verdier og strengverdier.  Hvis du beregner verdier for et nytt felt, m&aring; du definere egenskapene for feltet, inkludert alias, felttype, tekstattributter og lengden p&aring; teksten som feltet skal inneholde.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; laget som opprettes i  <b>Mitt innhold</b> og legges til kartet.  Standardnavnet er basert p&aring; navnet p&aring; analyselaget. Hvis laget finnes allerede, blir du bedt om &aring; bekrefte at du vil overskrive det.
+            </p>
+            <p>Bruk rullegardinlisten  <b>Save result in</b> til &aring; angi navnet p&aring; en mappe i <b>Mitt innhold</b> som resultatet skal lagres i.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

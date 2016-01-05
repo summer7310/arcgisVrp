@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="SummarizeDataCategory" class="regularsize">
+        <h2>Apkopot datus</h2>
+        <hr/>
+        <p>&Scaron;ie rīki aprēķina kopējo skaitu, garumus, laukumus un pamata apraksto&scaron;o statistiku elementiem un to atribūtiem areālos vai tuvu citiem elementiem.
+            <ul>
+                <li> <b>Sakopotie punkti</b> kalkulē statistiku par punktiem, kas ietilpst norādītos areālos.
+                </li>
+                <li> <b>Apkopot tuvējo</b> kalkulē statistiku par norādītas distances elementiem un to atribūtiem.
+                </li>
+                <li> <b>Apkopot ietvaros</b> kalkulē statistiku par pārklājo&scaron;u laukumu elementiem un atribūtiem.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="AggregatePointsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sakopotie punkti</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Lietojot punktu un laukumu slāni, &scaron;is rīks nosaka, kuri punkti ietilpst kuros laukumus un kalkulē statistiku par visiem punktiem katrā laukumā. Piemēram:
+                <ul>
+                    <li>Ņemot vērā noziegumu incidentus, saskaitīt noziegumus uz administratīvo vienību.
+                    </li>
+                    <li>Atrast augstāko un zemāko ienākumu privilēģiju izvietojumus valstī.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeNearbyTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Apkopot tuvējo</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Atrod elementus, kas atrodas noteiktā distancē no analīzes slāņa elementiem.  Distanci var mērīt kā lineāru distanci vai brauk&scaron;anas laika distanci (piem., 10 minū&scaron;u laikā).   Statistika tiek aprēķināta par tuvējiem elementiem.  Piemēram:
+                <ul>
+                    <li>Kalkulē kopējo iedzīvotāju skaitu piecu minū&scaron;u brauk&scaron;anas attālumā no iecerētā jaunā veikaka izvietojuma.
+                    </li>
+                    <li>Kalkulē automaģistrāles uzbrauktuvi piecu minū&scaron;u brauk&scaron;anas attālumā no iecerētā jaunā veikala izvietojuma, lai mērītu veikala pieejamību.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeWithinTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Apkopot Ietvaros</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Atrod areālus (un areālu daļas), kas pārklājas starp diviem slāņiem un aprēķina statistiku par pārklā&scaron;anos. Piemēram:
+                <ul>
+                    <li>Ņemot vērā ūdens&scaron;ķirtnes areālu un zemes lietotāju tipu areālu, kalkulē kopējo zemes lietotāju tipu katrai ūdens&scaron;ķirtnei. 
+                    </li>
+                    <li>Ņemot vērā zemes gabalu slāni apgabalā un pilsētas robežu slāni, apkopot vidējo vērtību brīvajiem zemes gabaliem katrā pilsētā.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+    <div id="EnrichLocationsCategory" class="smallsize">
+        <h2>Datu bagātināšana</h2>
+        <hr/>
+        <p>&Scaron;ie rīki palīdzēs jums izpētīt laukumu raksturojumu. Detalizēti demogrāfiskie dati un statistika tiks paziņoti par jūsu izvēlētajiem areāliem. Salīdzino&scaron;ā informācija var tikt ziņota par izvērstām platībām kā apgabali un pavalstis.
+            <ul>
+                <li> <b>Bagātināt slāni</b> iegūst informāciju par cilvēkiem, vietām un uzņēmumiem konkrētā areālā vai noteiktā brauk&scaron;anas laikā vai distancē no izvietojuma.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="EnrichLayerTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Uzlabot slāni</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Atgūst informāciju par cilvēkiem, vietām un biznesu kādā konkrētā areālā vai brauk&scaron;anas laika distancē no izvietojuma.
+
+            </p>
+            <br/>
+        </div>
+    <div id="FindLocationsCategory" class="largesize">
+        <h2>Atrast izvietojumus</h2>
+        <hr/>
+        <p>&Scaron;ie rīki tiek lietoti, lai identificētu areālus, kas atbilst jūsu norādītajiem dažādiem kritērijiem.  &Scaron;ie kritēriji var pamatoties uz atribūtu vaicājumiem (piem., brīvi zemes gabali) un telpiskajiem vaicājumiem (piem., 1 km attālumā no upes).  Atrastie lauki var tikt izvēlēti no eksistējo&scaron;iem elementiem (piemēram, eksistējo&scaron;as zemes parceles) vai var tikt izveidoti jauni elementi, gadījumos kad visi kritēriji ir izpildīti.
+            <ul>
+                <li> <b>Atrast eksistējo&scaron;us izvietojumus</b> meklē eksistējo&scaron;us areālus analīzes slānī, kas atbilst kritēriju sērijai.
+                </li>
+                <li> <b>Iegūt jaunus izvietojumus</b> izveido jūsu studiju areālā jaunus izvietojumus, kas atbilst kritēriju sērijai.
+                </li>
+                <li> <b>Atrast līdzīgus izvietojumus</b> atrod elementus, kas ir vislīdzīgākie vai visat&scaron;ķirīgākie vienam vai vairākiem mērķa elementiem, kas atbilst jūsu norādītajiem kritērijiem.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindExistingLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Atrast eksistējous izvietojumus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Izvēlas eksistējo&scaron;us elementus jūsu areālā, kas atbilst norādīto kritēriju sērijai. &Scaron;ie kritēriji var pamatoties uz atribūtu vaicājumiem (piem., brīvi zemes gabali) un telpiskajiem vaicājumiem (piem., 1 km attālumā no  upes).
+
+            </p>
+            <br/>
+        </div>
+        <div id="DeriveNewLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Iegūt jaunu izvietojumu</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Izveido jūsu studiju areālā jaunus izvietojumus, kas atbilst jūsu norādītajai kritēriju sērijai. &Scaron;ie kritēriji var pamatoties uz atribūtu vaicājumiem (piem., brīvi zemes gabali) un telpiskajiem vaicājumiem (piem., 1 km attālumā no  upes).
+
+            </p>
+            <br/>
+        </div>
+        <div id="FindSimilarLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Atrast līdzīgus izvietojumus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Atrod elementus, kas ir vislīdzīgākie vai visat&scaron;ķirīgākie vienam vai vairākiem mērķa elementiem, kas atbilst norādītajiem kritērijiem.
+            </p>
+            <br/>
+        </div>
+    <div id="AnalyzePatternsCategory" class="smallsize">
+        <h2>Analizēt piemērus</h2>
+        <hr/>
+        <p>&Scaron;ie rīki palīdzēs jums identificēt, aprēķināt un vizualizēt jūsu datu telpiskos piemērus, identificējot statistiski nozīmīgu klasteru laukumus.  
+            <ul>
+                <li> <b>Atrast karstos punktus</b> identificē statistiski nozīmīgu klasterizāciju jūsu datu telpiskajā modelī.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindHotSpotsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Atrast karstos punktus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>&Scaron;is rīks izveidos karti, kas rāda jebkurus statistiski nozīmīgus telpiskos klasterus jūsu datos.   Lietojiet &scaron;o rīku, lai atklātu negaidītus karstos punktus (sarkanus) un aukstos punktus (zilus) no augstām un zemām vērtībām, piemēram, noziegumu blīvumu, satiksmes negadījumos bojā gāju&scaron;os, bezdarbu vai bioloģisko daudzveidību.
+            </p>
+            <br/>
+        </div>
+        <div id="ExploreCorrelationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Izpētīt kolerācijas</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>&Scaron;is rīks ir, lai pārbaudītu spēku attiecības starp skaitliskajiem atribūtiem jūsu elementos.  Jūs izvēlaties fokusa mainīgo un līdz desmit citus ciparu atribūtus, ko novērtēt.  &Scaron;is rīks tad aprēķina korelāciju starp fokusa mainīgo un citiem izvēlētajiem mainīgajiem, ziņojot par spēku, konsekvenci un attiecību veidu (pozitīvu vai negatīvu).  
+            </p>
+            <br/>
+        </div>
+    <div id="UseProximityCategory" class="regularsize">
+        <h2>Lietot tuvumu</h2>
+        <hr/>
+        <p> &Scaron;ie instrumenti palīdzēs jums atbildēt uz vienu no visbiežāk uzdotajiem jautājumiem par telpisko analīzi: &quot;Kas ir tuvu kam?&quot;
+            <ul>
+                <li> <b>Savienot sākumpunktus ar galamērķiem</b> mēra ceļojuma laiku vai attālumu starp sākumpunkta-galamērķa punkta pāriem.
+                </li>
+                <li> <b>Izveidot buferus</b> izveido laukumus vienādā attālumā no elementiem.
+                </li>
+                <li> <b>Izveidot Brauk&scaron;anas-laika teritorijas</b> atrod teritorijas ap vietām, kuras var sasniegt laika periodā.
+                </li>
+                <li> <b>Atrast tuvāko</b> identificē tās vietas, kas ir vistuvāk zināmajām vietām.
+                </li>
+                <li> <b>Mar&scaron;rutu plāno&scaron;ana</b> nosaka labākais ceļus kā mar&scaron;rutēt autotransporta līdzekļus, lai apmeklētu vairākas pieturvietas.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="ConnectOriginsToDestinationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Savienot koordinātu sākuma punktu ar galamērķi</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Aprēķina ceļojuma laiku vai attālumu starp sākumpunktu-galamērķa punktu pāriem. Piemēram, redzēt, cik tālu klienti ir gatavi braukt, lai sasniegtu jūsu veikalus, aprēķiniet paredzamo nobraukumu savai kravas automa&scaron;īnai, vai apkopojiet no mājas uz darbu braucienus.
+            </p>
+            <br/>
+        </div>
+        <div id="CreateBuffersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Izveidot buferus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Buferis ir platība, kas aptver noteiktu attālumu no kāda punkta, līnijas vai laukuma elementa. 
+            </p>
+            <p>Buferi parasti izmanto, lai radītu laukumus, kurus varēs vēlāk vairāk analizēt, izmantojot citus instrumentus, piemēram, Pārklā&scaron;anās slāņus. Piemēram, ja jautājums ir &ldquo;Kuras ēkas atrodas viena kilometra attālumā no skolas?&rdquo;, atbildi var atrast, izveidojot viena km buferi ap skolu un pārklājot ar buferi slāni, kas satur ēkas.  Gala rezultāts ir &scaron;o ēku slānis viena kilometra attālumā no skolas.  
+            </p>
+            <br/>
+        </div>
+        <div id="CreateDriveTimeAreasTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Izveidot Braukšanas laika areālus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Brauciena laika zona ir zona, kas var tikt sasniegta noteiktā brauk&scaron;anas laika vai brauk&scaron;anas attālumā. Brauk&scaron;anas laika teritorijas var palīdzēt jums atbildēt uz jautājumiem, piemēram:
+                <ul>
+                    <li>Kur es varu nokļūt no pa&scaron;reizējās atra&scaron;anās vietas 30 minū&scaron;u brauk&scaron;anas laikā?
+                    </li>
+                    <li>Kur es varu nokļūt, izbraucot pl. 6:00:00 sastrēgumu laikā, no pa&scaron;reizējās atra&scaron;anās vietas 30 minū&scaron;u brauk&scaron;anas laikā?
+                    </li>
+                    <li>Kurus pilsētas areālus ugunsdzēsēju departaments var sasniegt 5 minū&scaron;u laikā? Kā uzlabotos ugunsdzēsēju brigāžu pārklājuma zona izbūvējot jaunu ugunsdzēsēju depo &scaron;eit?
+                    </li>
+                    <li>Kādas tirdzniecības areālus nosedz mans bizness? Kādas teritorijas ir 10 jūdžu rādiusā no maniem veikaliem?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="FindNearestTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Atrast tuvāko</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Novērtē brauciena izmaksas starp incidentu un iekārtām un nosaka, kas ir tuvāk otram. Rezultāts ir slānis, kas parāda labāko mar&scaron;rutu starp negadījumu un iespējām kopā ar ceļojumu izmaksām (laika un attāluma) katrā mar&scaron;rutā.  Piemēram, jūs varat izmantot &scaron;o rīku, lai atrastu tuvāko slimnīcu negadījumam vai tuvāko bankomātu jūsuu pa&scaron;reizējai atra&scaron;anās vietai.
+            </p>
+            <br/>
+        </div>
+        <div id="PlanRoutesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Maršruta plāns</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Jūs norādāt apstā&scaron;anās vietu skautu un pieejamo ransportlīdzekļu skaitu, lai apmeklētu pieturvietas, un Mar&scaron;rutu Plāno&scaron;ana nosaka kā efektīvi apmeklēt pieturvietas transportlīdzekļiem un kā veikt mar&scaron;rutu uz pieturvietām.
+            </p>
+            <p>Izmantojiet &scaron;o rīku, lai plānotu darbu mobilai inspektoru komandai, vērtētājiem, mājas atbalsta pakalpojumu sniedzējiem, kā arī citiem; piegādājiet vai uzņemiet objektus no attālām vietām; vai piedāvājat transporta pakalpojumus cilvēkiem.
+            </p>
+            <br/>
+        </div>
+    <div id="ManageDataCategory" class="regularsize">
+        <h2>Pārvaldīt Datus</h2>
+        <hr/>
+        <p>&Scaron;ie rīki tiek izmantoti gan ikdienas ģeogrāfisko datu pārvaldī&scaron;anai, gan datu apvieno&scaron;anai pirms analīzes.  
+            <ul>
+                <li> <b>Lauka kalkulators</b> kalkulē jaunus laukus, izmantojot eksistējo&scaron;u lauku vērtības un formulas.
+                </li>
+                <li> <b>Iz&scaron;ķīdināt robežas</b> apvieno areālus, kas koplieto kopīgo robežu un kopīgas atribūtu vērtības.
+                </li>
+                <li> <b>Izvilkt datus</b> izveido jaunu datukopu, izvelkot elementus no eksistējo&scaron;iem datiem.
+                </li>
+                <li> <b>Apvienot slāņus</b> kopē visus elementus no diviem vai vairāk eksistējo&scaron;iem slāņiem viena slānī.
+                </li>
+                <li> <b>Pārklājuma slāņi</b> kombinē vienu vai vairāk slāņus viena slānī.  Jūs varat iedomāties par Pārklāt kā līdzināt kaudzi kar&scaron;u un izveidot vienotu karti, kas satur visu informāciju, kas atrodama kaudzē.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="FieldCalculatorTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Lauka kalkulators</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Atjauno eksistējo&scaron;u vai jaunu lauku vērtības, bāzējoties uz norādīto formulu.
+            </p>
+            <br/>
+        </div>
+        <div id="DissolveBoundariesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Izšķīdināt robežas</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Laukumi, kas pārklājas, vai koplieto kopīgo robežu, tiek apvienoti kopā, izveidojot vienu laukumu.    
+            </p>
+            <p>Jūs varat kontrolēt, kuras robežas tiek apvienotas, norādot lauku. Piemēram, ja jums ir apgabalu slānis, un katram slānim ir  <i>State_Name</i> atribūts, jūs varat iz&scaron;ķīdināt robežas, lietojot <i>State_Name</i> atribūtu.  Apgabali, kas pieskaras, tiks apvienoti kopā, ja tiem ir tāda pati vērtība <i>State_Name</i>.  Rezultāts ir robežu slānis.
+            </p>
+            <br/>
+        </div>
+        <div id="ExtractDataTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Iegūt datus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Izveido zip failus vai slāņu pakotnes no norādītajiem jūs interesējo&scaron;iem areāliem.
+            </p>
+            <br/>
+        </div>
+        <div id="MergeLayersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Apvienot slāņus</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Kopē elementus no diviem vai vairākiem eksistējo&scaron;iem slāņiem jaunā slānī piemēram:
+                <ul>
+                    <li>Man ir trīs slāņi priek&scaron; Anglijas, Velsas un Skotijas un es gribu vienu Lielbritānijas slāni. 
+                    </li>
+                    <li>Man ir 12 slāņi un karts satur parceļu informāciju par kaimiņu apgabalu.  Es vēlos savienot tos kopā vienā slānī, saglabājot tikai tos atribūtus, kam ir tāds pats nosaukums un veids no 12 ievades slāņiem.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="OverlayLayersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Pārklājuma slāņi</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Pārklā&scaron;ana apvieno divus vai vairāk slāņus vienā slānī.  Jūs varat iedomāties par Pārklāt kā līdzināt kaudzi kar&scaron;u un izveidot vienotu karti, kas satur visu informāciju, kas atrodama kaudzē.
+                <ul>
+                    <li>Kuri zemes gabali atrodas 100 gadu palienē? (Ietvaros ir tikai vēl viens veids, kā pateikt, kas ir virsū kam.)
+                          
+                    </li>
+                    <li>Kādi ceļi atrodas kuros apgabalos?
+                    </li>
+                    <li>Kādi zemes lietojumi ir uz kura wells  augsnes tipa?
+                         
+                    </li>
+                    <li>Kādas akas atrodas pamestajās karabāzēs?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+</div>
+</html>

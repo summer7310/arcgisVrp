@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Resumir Próximo</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Esta ferramenta permite encontrar elementos que se encontram a uma determinada dist&acirc;ncia dos elementos da camada em an&aacute;lise.  A dist&acirc;ncia pode ser medida como uma dist&acirc;ncia em linha recta, dist&acirc;ncia por unidade de tempo (por exemplo, dentro de 10 minutos), ou dist&acirc;ncia de ccondu&ccedil;&atilde;o (dentro de 5 km).  As estat&iacute;sticas s&atilde;o ent&atilde;o calculados para os elementos mais pr&oacute;ximos  Por exemplo:
+        <ul>
+            <li>Calcular o total de popula&ccedil;&atilde;o que se encontra a cinco minutos de uma proposta de localiza&ccedil;&atilde;o de uma nova loja.
+            </li>
+            <li>Calcular o n&uacute;mero de rampas de acesso ao auto-estrada num raio de dist&acirc;ncia de uma milha de uma proposta de localiza&ccedil;&atilde;o de uma nova loja de forma a medir a acessibilidade loja.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Se a op&ccedil;&atilde;o <b>Utilizar a extens&atilde;o atual do mapa</b> estiver ativa, apenas os elementos (da camada em an&aacute;lise e da camada a ser resumida) que est&atilde;o visiv&eacute;is na atual extens&atilde;o do mapa &eacute; que ser&atilde;o analizados.  Se n&atilde;o estiver ativo, todos os elementos da camada em an&aacute;lise e da camada a ser resumida ser&atilde;o utilizados, mesmo que estejam fora da atual extens&atilde;o do mapa.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Escolher a camada a ser resumida</h2></div>
+        <hr/>
+        <div>
+            <p>Os elementos nesta camada que se encontram &agrave; dist&acirc;ncia especificada da camada de entrada ser&atilde;o resumidos. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Encontrar os elementos mais próximos</h2></div>
+        <hr/>
+        <div>
+            <p>Pode definir que tipo de medi&ccedil;&atilde;o de dist&acirc;ncia pretende utilizar: dist&acirc;ncia em linha reta, dist&acirc;ncia de condu&ccedil;&atilde;o ou tempo de condu&ccedil;&atilde;o.  Tanto a dist&acirc;ncia por unidade de tempo como o tempo de condu&ccedil;&atilde;o utilizam a rede vi&aacute;ria tendo em conta as restri&ccedil;&otilde;es como as ruas de sentido &uacute;nico.  O tempo de condu&ccedil;&atilde;o respeita a sua escolha de velocidades de desloca&ccedil;&atilde;o: as baseadas em tr&aacute;fego real ou habitual. As velocidades em tempo real s&atilde;o obtidas atrav&eacute;s de leituras atuais de sensores, e as velocidades habituais s&atilde;o calculadas a partir de m&eacute;dias de hist&oacute;ricos.   
+            </p>
+            <p>Pode inserir v&aacute;rias dist&acirc;ncias.  Os elementos que se encontram dentro da dist&acirc;ncia definidade ser&atilde;o resumidos.  
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Adicionar estatísticas do</h2></div>
+        <hr/>
+        <div>
+            <p>Pode, opcionalmente, calcular estat&iacute;sticas para atributos num&eacute;ricos dos pontos mais pr&oacute;ximos. 
+            </p>
+            <p>Se a op&ccedil;&atilde;o <b>Contagem de pontos</b> estiver activa, ser&aacute; calculado o n&uacute;mero total de pontos pr&oacute;ximos.  Al&eacute;m disso, pode calcular estat&iacute;sticas para atributos num&eacute;ricos dos pontos pr&oacute;ximos.
+            </p>
+            <ul>
+                <li> <b>Soma</b>-O valor total para o campo especificado.
+                </li>
+                <li> <b>M&eacute;dia</b>-M&eacute;dia do campo especificado.
+                </li>
+                <li> <b>M&iacute;nimo</b>-O menor valor no campo especificado.
+                </li>
+                <li> <b>M&aacute;ximo</b>-O maior valor no campo especificado.
+                </li>
+                <li> <b>Desvio Padr&atilde;o</b>-O desvio padr&atilde;o dos valores no campo especificado.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Adicionar estatísticas do</h2></div>
+        <hr/>
+        <div>
+            <p>Pode, opcionalmente, calcular estat&iacute;sticas para atributos num&eacute;ricos das linhas mais pr&oacute;ximas. 
+            </p>
+            <p>Se a op&ccedil;&atilde;o <b>Comprimento total</b> estiver activa, ser&aacute; calculado o comprimento total das linhas mais pr&oacute;ximas.  Al&eacute;m disso, pode calcular estat&iacute;sticas para atributos num&eacute;ricos das linhas mais pr&oacute;ximas.
+            </p>
+            <ul>
+                <li> <b>Soma</b>-O valor total para o campo especificado.
+                </li>
+                <li> <b>M&eacute;dia</b>-M&eacute;dia do campo especificado.
+                </li>
+                <li> <b>M&iacute;nimo</b>-O menor valor no campo especificado.
+                </li>
+                <li> <b>M&aacute;ximo</b>-O maior valor no campo especificado.
+                </li>
+                <li> <b>Desvio Padr&atilde;o</b>-O desvio padr&atilde;o dos valores no campo especificado.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Adicionar estatísticas do</h2></div>
+        <hr/>
+        <div>
+            <p>Pode, opcionalmente, calcular estat&iacute;sticas para atributos num&eacute;ricos das &aacute;reas mais pr&oacute;ximas. 
+            </p>
+            <p>Se a op&ccedil;&atilde;o  <b>&Aacute;rea total</b> estiver activa, ser&aacute; calculado a &aacute;rea dos elementos mais pr&oacute;ximos.  Al&eacute;m disso, pode calcular estat&iacute;sticas para atributos num&eacute;ricos dos elementos mais pr&oacute;ximos.
+            </p>
+            <ul>
+                <li> <b>Soma</b>-O valor total para o campo especificado.
+                </li>
+                <li> <b>M&eacute;dia</b>-M&eacute;dia do campo especificado.
+                </li>
+                <li> <b>M&iacute;nimo</b>-O menor valor no campo especificado.
+                </li>
+                <li> <b>M&aacute;ximo</b>-O maior valor no campo especificado.
+                </li>
+                <li> <b>Desvio Padr&atilde;o</b>-O desvio padr&atilde;o dos valores no campo especificado.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Escolher o campo a agrupar por</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; um atributo dos elementos mais pr&oacute;ximos que pode ser utilizada para calcular estat&iacute;sticas separadamente para cada valor de atributo &uacute;nico. Por exemplo, suponha que a camada de an&aacute;lise cont&eacute;m parcelas livres para venda e os elementos mais pr&oacute;ximos s&atilde;o os limites dos edif&iacute;cios.  Um dos atributos das &aacute;reas de cobertura de edif&iacute;cios &eacute;  <i>UseType</i> que cont&eacute;m valores como COMERCIAL, RESIDENCIAL, INDUSTRIAL, P&Uacute;BLICO, etc.  Para caracterizar a mistura de utiliza&ccedil;&otilde;es de edif&iacute;cios perto de cada parcela vazia, poderia calcular a &aacute;rea total de cada tipo &uacute;nico de utiliza&ccedil;&atilde;o de edif&iacute;cio dentro de uma dist&acirc;ncia de dois quil&oacute;metros em rela&ccedil;&atilde;o &agrave;s parcelas vazias, utilizando <i>UseType</i> como atributo de agrupamento.
+            </p>    
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Nome da camada de resultados</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; o nome da camada que ser&aacute; criada em <b>O Meu Conte&uacute;do</b> e adicionada ao mapa.  O nome por defeito &eacute; baseado no nome da camada de an&aacute;lise. Se a camada j&aacute; existir, ser&aacute; questionado se pretende substituir a camada existente.
+            </p>
+            <p>Ao utilizar a op&ccedil;&atilde;o <b>Guardar resultado em</b> pode definir o nome da pasta em <b>O Meu Conte&uacute;do</b> onde o resultado ser&aacute; guardado.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

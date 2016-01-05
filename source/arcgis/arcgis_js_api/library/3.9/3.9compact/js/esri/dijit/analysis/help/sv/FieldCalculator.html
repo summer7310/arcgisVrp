@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Fältkalkylator</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Ber&auml;knar v&auml;rden f&ouml;r ett f&auml;lt (attribut) baserat p&aring; en formel du anger.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Uttryck</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan skapa uttryck f&ouml;r att ber&auml;kna v&auml;rden f&ouml;r nya eller befintliga f&auml;lt (attribut).
+            </p>
+            <p>N&auml;r du har valt f&auml;lt kan du skapa ett uttryck genom att klicka i uttrycksrutan och starta  <b>Uttrycksbyggaren</b>.  I <b>Uttrycksbyggaren</b> kan du skapa ett uttryck ur alla kombinationer av andra f&auml;lt, numeriska operat&ouml;rer, Python-funktioner samt numeriska v&auml;rden och str&auml;ngv&auml;rden.  Om du ber&auml;knar v&auml;rden f&ouml;r ett nytt f&auml;lt m&aring;ste du definiera f&auml;ltets egenskaper, inklusive alias och f&auml;lttyp. F&ouml;r textattribut definierar du ocks&aring; l&auml;ngden p&aring; texten i f&auml;ltet.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Resultatlagrets
+namn</h2></div>
+        <hr/>
+        <div>
+            <p>Det h&auml;r &auml;r namnet p&aring; lagret som skapas i  <b>Mitt inneh&aring;ll</b> och l&auml;ggs till i kartan.  Standardnamnet bygger p&aring; analyslagrets namn. Om lagret redan finns uppmanas du bekr&auml;fta att du vill skriva &ouml;ver det.
+            </p>
+            <p>Om du anv&auml;nder listrutan  <b>Spara resultat i</b> kan du ange namnet p&aring; en mapp i <b>Mitt inneh&aring;ll</b> d&auml;r resultatet ska sparas.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Calculator câmp</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Calculează valorile pentru un c&acirc;mp (atribut) pe baza unei formule specificate de dvs.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Expresii</h2></div>
+        <hr/>
+        <div>
+            <p>Puteţi crea expresii pentru a calcula valori pentru c&acirc;mpuri (atribute) noi sau existente.
+            </p>
+            <p>După selectarea c&acirc;mpului, se poate construi o expresie făc&acirc;nd clic &icirc;n caseta pentru expresie pentru a lansa  <b>Builderul de expresii</b>.  &Icirc;n <b>Builderul de expresii</b>, se poate crea o expresie din orice combinaţie de alte c&acirc;mpuri, operatori numerici, funcţii Python şi valori numerice sau şir.  &Icirc;n cazul &icirc;n care calculaţi valori pentru un c&acirc;mp nou, trebuie să definiţi proprietăţile c&acirc;mpului incluz&acirc;nd pseudonimul, tipul c&acirc;mpului şi, pentru atribute text, lungimea textului conţinut &icirc;n c&acirc;mp.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nume strat tematic rezultat</h2></div>
+        <hr/>
+        <div>
+            <p>Acesta este numele stratului tematic care va fi creat &icirc;n  <b>Resursele mele</b> şi adăugat &icirc;n hartă.  Numele implicit se bazează pe numele stratului tematic de analiză. Dacă stratul tematic există deja, vi se va solicita să confirmaţi dacă doriţi să &icirc;l suprascrieţi.
+            </p>
+            <p>Utiliz&acirc;nd caseta derulantă  <b>Salvare rezultat &icirc;n</b>, puteţi specifica numele unui director din <b>Resursele mele</b> &icirc;n care va fi salvat rezultatul.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

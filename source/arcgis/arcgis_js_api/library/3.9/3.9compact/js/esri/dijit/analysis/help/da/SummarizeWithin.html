@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Opsummér inden for</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Dette v&aelig;rkt&oslash;j finder objekter (og dele af objekter), der ligger inden for gr&aelig;nserne for omr&aring;der i analyselaget.  For eksempel:
+        <ul>
+            <li>Ved angivelse af et lag med afvandingsomr&aring;der og et lag med gr&aelig;nser for arealanvendelse efter arealanvendelsestype beregnes f.eks. det samlede areal for anvendelsestype pr. afvandingsomr&aring;de. 
+            </li>
+            <li>Ved angivelse af et lag med parceller i et amt og et lag med bygr&aelig;nser opsummeres gennemsnitsv&aelig;rdien af ledige parceller inden for hver bygr&aelig;nse.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Hvis  <b>Anvend aktuel kortudstr&aelig;kning</b> er markeret, er det kun objekterne i analyselaget og laget, som skal opsummeres, der er synlige inden for den aktuelle kortudstr&aelig;kning, der analyseres.  Hvis det ikke er markeret, analyseres alle objekter i b&aring;de analyselaget og laget, der skal opsummeres, ogs&aring; selvom de befinder sig uden for den aktuelle kortudstr&aelig;kning.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Vælg lag, der skal summeres</h2></div>
+        <hr/>
+        <div>
+            <p>Objekter i dette lag, der ligger inden for gr&aelig;nserne for objekter i analyselaget, opsummeres. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker for numeriske attributter for de punkter, der falder inden for objektgr&aelig;nserne. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Antal punkter</b> vil, hvis det er markeret, beregne det samlede antal punkter inden for hver omr&aring;degr&aelig;nse.  Du kan desuden udarbejde statistikker for numeriske attributter for de punkter, som er inden for hver omr&aring;degr&aelig;nse.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker for numeriske attributter for linjer i n&aelig;rheden. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Samlet l&aelig;ngde for linjer i</b> vil, hvis det er markeret, beregne det samlede antal punkter inden for hver omr&aring;degr&aelig;nse.  Du kan desuden udarbejde statistikker for numeriske attributter for de linjer, som er inden for hver omr&aring;degr&aelig;nse.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker for numeriske attributter for omr&aring;der i n&aelig;rheden. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Opsumm&eacute;r omr&aring;deanvendelse</b> vil, hvis det er markeret, beregne det samlede omr&aring;de af objekter, som er inden for hver af analyseslagets omr&aring;degr&aelig;nser.  Du kan desuden udarbejde statistikker for numeriske attributter for de objekter, som er inden for hver omr&aring;degr&aelig;nse.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Vælg felt at gruppere efter</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er en attribut for  <b>Opsumm&eacute;r</b>-objekter i n&aelig;rheden, som du kan bruge til at udarbejde s&aelig;rskilte statistikker for hver entydig attributv&aelig;rdi. Lad os f.eks. antage, at analyselaget indeholder bygr&aelig;nser, og at <b>Opsumm&eacute;r</b>-objekterne er parceller.  En af parcellernes attributter er <i>Status</i>, der indeholder to v&aelig;rdier: LEDIGT og OPTAGET. For at beregne det samlede omr&aring;de af ledige og optagede parceller inden for bygr&aelig;nserne skal du anvende <i>Status</i> om gruppe efter attribut.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; det lag, som oprettes i  <b>Mit indhold</b> og tilf&oslash;jes kortet.  Standardnavnet er baseret p&aring; analyselagets navn. Hvis laget findes allerede, vil du blive bedt om at bekr&aelig;fte, at du vil overskrive det.
+            </p>
+            <p>Ved hj&aelig;lp af rullelisten  <b>Gem resultat i</b> kan du angive navnet p&aring; en mappe i <b>Mit indhold</b>, hvor resultatet skal gemmes.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Agregeeri punktid</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Agregeeri punktid Antud t&ouml;&ouml;riist t&ouml;&ouml;tab punktobjektide anal&uuml;&uuml;sikihi ning v&otilde;rdleva pindobjektide kihi alusel. See tuvastab, millised punktid langevad igasse alasse. Sellele j&auml;rgnevalt arvutatakse vastavasse pindobjekti j&auml;&auml;vate punktide koguarv ning muud arvstatistikud. K&otilde;ige peamisem statistik on ala sisse j&auml;&auml;v punktide arv. 
+    </p>
+    <p>Antud metoodika on kasutatav n&auml;iteks situatsioonis, kui soovite leida teatud teeninduspunktide (apteek, kauplus vms) koguarvu kohalike omavalitsuste kaupa ning summeerida selle alusel nende m&uuml;&uuml;gitulu vastavate &uuml;ksuste kaupa.  Eeldades, et poodidel on   <i>TOTAL_SALES</i> atribuut, saate te arvutada <i>TOTAL_SALES</i> kogusumma iga riigi kohta v&otilde;i miinimum ja maksimum <i>TOTAL_SALES</i> v&auml;&auml;rtuse v&otilde;i m&uuml;&uuml;kide standardh&auml;lbe igas riigis.
+    </p>
+    <p>Tulemuseks on vastavate n&auml;itajate alusel tekkiv horopleetkaart, kus punktide koguarv on normitud vastava pindobjektide kihi sisulise jaotuse (nt haldus&uuml;ksused) alusel.  V&auml;&auml;rtuste jagamine &uuml;ksuste pindala alusel on kartograafias sageli kasutatav l&auml;henemine.  Andmete normimine muudab saadud info lihtsamini arusaadavaks ja omavahel v&otilde;rreldavaks.
+    </p>
+    <p>Kui  <b>Kasuta kaardi ulatust</b> on sisse l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil ainult neid objekte, mis antud hetkel on ekraanil n&auml;htavad.  Kui vastav tingimus on v&auml;lja l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil m&otilde;lema kihi k&otilde;iki objekte s&otilde;ltumata asjaolust, kas need on anal&uuml;&uuml;si k&auml;ivitamise hetkel ekraanil n&auml;htavad v&otilde;i mitte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="PolygonLayer">
+        <div><h2>Vali ala</h2></div>
+        <hr/>
+        <div>
+            <p> Vali veebikaardilt pindobjektide kiht, mille alusel punkte summeeritakse. Kui veebikaardil sobilik andmestik puudub, saate otsimiseks kasutada teisi ArcGIS Online kaudu k&auml;ttesaadavaid materjale. Mistahes punktid, mis j&auml;&auml;vad pindobjektide kihi geomeetria alla, summeeritakse ning soovi korral lisatakse tulemusele juurde ka muud statistilised parameetrid.
+            </p>
+        </div>
+    </div>
+    <div id="KeepBoundaryNoPoints">
+        <div><h2>Hoia alasid punktideta</h2></div>
+        <hr/>
+        <div>
+            <p>M&auml;&auml;rab, kas pinnad, kuhu punkte ei lange, ilmuvad tulemkihti.  Kui vastav tingimus on v&auml;lja l&uuml;litatud, siis punkte mittesisaldavad alad ei ilmu ka tulemkihti.  Kui tingimus on sisse l&uuml;litatud, ilmuvad alad ilma punktideta ka tulemkihis.  
+            </p>
+        </div>
+    </div>
+    <div id="SummaryFields">
+        <div><h2>Lisa statistik</h2></div>
+        <hr/>
+        <div>
+            <p>Atribuutide sisu alusel on v&otilde;imalik arvutada j&auml;rgmisi statistikuid: summa, keskmine, miinimum, maksimum ja standardh&auml;lve. Tulemkiht sisaldab t&auml;iendavaid atribuute valitud statistikute kohta, mis antud anal&uuml;&uuml;sil arvutati. Soovitud statistikuid on v&otilde;imalik selleks ette n&auml;htud rippmen&uuml;&uuml; kaudu lisada ja eemaldada.
+
+ 
+            </p>
+        </div>
+    </div>
+    <div id="GroupByField">
+        <div><h2>Vali atribuut grupeerimiseks</h2></div>
+        <hr/>
+        <div>
+            <p>Te saate koostada statistilisi gruppe, kasutades anal&uuml;&uuml;si kihis olevat atribuuti.    N&auml;iteks agregeerides kuritegevuse punkte naaberaladega, v&otilde;iksite omada  <i>Crime_type</i> atribuuti viie erineva kuritegevuse t&uuml;&uuml;biga.  Iga unikaalne kuritegevuse t&uuml;&uuml;p moodustab grupi ja valitud statistika arvutatakse igale unikaalsele <i>Crime_type</i>grupi v&auml;&auml;rtusele.  Kui valite atribuudi grupeerimise, tekitatakse kaks tulemust: tulemkiht ja tabel, mis sisaldab statistikuid iga unikaalse grupi kohta.
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on kihi nimi, mis luuakse kasutaja  <b>Minu sisu</b>  alla ning lisatakse kaardile.  Vaikimisi nimi baseerub anal&uuml;&uuml;si t&uuml;&uuml;bil ja anal&uuml;&uuml;sitava kihi nimel. Kui see kiht juba eksisteerib, saate selle soovi korral &uuml;le kirjutada.
+            </p>
+            <p>Kasutades  <b>Salvesta tulemus</b> kasutaja sisu alla, mille saate valida rippmen&uuml;&uuml;st <b>Minu sisu</b>, kuhu tulemus salvestatakse.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

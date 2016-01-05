@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>حاسبة الحقل</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>حساب قيم الحقل (جدول البيانات) بناءً على صيغة تُحددها.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>التعبيرات</h2></div>
+        <hr/>
+        <div>
+            <p>يمكنك إنشاء تعبيرات لحساب قيم حقول جديدة أو حالية (جداول بيانات).
+            </p>
+            <p>بعد تحديد حقل، يمكن إنشاء تعبير بالنقر في مربع التعبير لتشغيل  <b>مُنشئ التعبيرات</b>. في <b>مُنشئ التعبيرات</b>يمكن إنشاء تعبير من مجموعة من الحقول الأخرى والمُشغلين العدديين ووظائف بايثون وقيم عددية وقيم سلاسل. عند حساب قيم حقل جديد، يجب تعريف خصائص الحقل، بما في ذلك الاسم المستعار ونوع الحقل، ولجداول البيانات النصية، طول النص الذي سيحتويه الحقل.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>اسم طبقة النتيجة</h2></div>
+        <hr/>
+        <div>
+            <p>اسم الطبقة التي سيتم إنشاؤها في  <b>المحتويات</b> وإضافتها إلى الخريطة. يتوقف الاسم الافتراضي على اسم طبقة التحليل. إذا تواجدت الطبقة بالفعل، سيتم سؤالك عما إذا كنت ترغب في تأكيد الكتابة فوقها.
+            </p>
+            <p>باستخدام المربع المنسدل  <b>حفظ النتائج في</b> ، يمكن تحديد اسم المجلد في <b>محتوياتي</b> حيث تكون النتائج محفوظة.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

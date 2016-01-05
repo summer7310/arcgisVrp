@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kalkulátor polí</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Vypoč&iacute;t&aacute;v&aacute; pro pole (atribut) hodnoty na z&aacute;kladě formule, kterou zad&aacute;te.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Výrazy</h2></div>
+        <hr/>
+        <div>
+            <p>K v&yacute;počtu hodnot pro nov&aacute; nebo existuj&iacute;c&iacute; pole (atributy) můžete vytvořit v&yacute;razy.
+            </p>
+            <p>Po vybr&aacute;n&iacute; pole lze v&yacute;raz sestavit kliknut&iacute;m do pole pro v&yacute;raz, kter&eacute; spust&iacute;  <b>sestavovač v&yacute;razů</b>. V <b>sestavovači v&yacute;razů</b> lze vytvořit v&yacute;raz pomoc&iacute; kombinac&iacute; ostatn&iacute;ch pol&iacute;, č&iacute;seln&yacute;ch oper&aacute;torů, funkc&iacute; jazyka Python a č&iacute;seln&yacute;ch a řetězcov&yacute;ch hodnot. Pokud poč&iacute;t&aacute;te hodnoty pro nov&eacute; pole, mus&iacute;te definovat vlastnosti pole včetně alternativn&iacute;ho jm&eacute;na a typu pole, a u textov&yacute;ch atributů d&eacute;lky textu, kter&yacute; bude pole obsahovat.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Název výsledné vrstvy</h2></div>
+        <hr/>
+        <div>
+            <p>Jde o n&aacute;zev vrstvy, kter&aacute; se vytvoř&iacute; ve složce  <b>Můj obsah</b> a přid&aacute; na mapu. V&yacute;choz&iacute; n&aacute;zev se ř&iacute;d&iacute; n&aacute;zvem vrstvy anal&yacute;zy. Pokud vrstva již existuje, budete pož&aacute;d&aacute;ni o potvrzen&iacute;, že si přejete ji přepsat.
+            </p>
+            <p>V&nbsp;rozbalovac&iacute;m seznamu  <b>Uložit v&yacute;sledek do</b> můžete zadat n&aacute;zev složky ve složce <b>Můj obsah</b>, do kter&eacute; se m&aacute; v&yacute;sledek uložit.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

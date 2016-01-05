@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Opsummér i nærheden</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Dette v&aelig;rkt&oslash;j finder objekter, der er inden for en bestemt afstand fra objekter i analyselaget.  Afstand kan m&aring;les som fugleflugtslinje, som k&oslash;retid (f.eks. inden for 10 minutter), eller som k&oslash;reafstand (inden for 5 kilometer).  Statistik beregnes derefter for de n&aelig;rmeste objekter.  For eksempel:
+        <ul>
+            <li>Beregn den samlede befolkning inden for fem minutters k&oslash;retid fra en mulig ny forretnings beliggenhed.
+            </li>
+            <li>Beregn antallet af motorvejsramper inden for en k&oslash;reafstand p&aring; 2,5 km fra en mulig ny forretnings beliggenhed for at m&aring;le butikkens tilg&aelig;ngelighed.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Hvis  <b>Anvend aktuel kortudstr&aelig;kning</b> er markeret, er det kun objekterne i analyselaget og laget, som skal opsummeres, der er synlige inden for den aktuelle kortudstr&aelig;kning, der analyseres.  Hvis det ikke er markeret, analyseres alle objekter i b&aring;de analyselaget og laget, der skal opsummeres, ogs&aring; selvom de befinder sig uden for den aktuelle kortudstr&aelig;kning.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Vælg lag, der skal summeres</h2></div>
+        <hr/>
+        <div>
+            <p>Objekter i disse lag, der er inden for den angivne afstand af objekter i analyselaget, opsummeres. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Find nærmeste objekter med en</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan definere, hvilken type afstandsm&aring;ling, du vil benytte: afstanden i fugleflugtslinje, k&oslash;reafstand eller k&oslash;retid.  S&aring;vel k&oslash;reafstand som k&oslash;retid anvender vejnettet og tager h&oslash;jde for begr&aelig;nsninger som f.eks. ensrettede gader.  K&oslash;retiden tager h&oslash;jde for dine valgte rejsehastigheder: hastigheder, baseret p&aring; live- eller typisk trafik. Live-hastigheder indsamles ved hj&aelig;lp af aktuelle sensorl&aelig;sninger, og typiske hastigheder beregnes p&aring; baggrund af historiske gennemsnit.   
+            </p>
+            <p>Du kan angive flere afstande.  Objekter, der er inden for (eller lig med) de afstande, du angiver, opsummeres.  
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker over vilk&aring;rlige numeriske attributter for punkter i n&aelig;rheden. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Antal punkter</b> vil, hvis det er markeret, beregne det samlede antal punkter i n&aelig;rheden.  Desuden kan du udarbejde statistikker over numeriske felter for punkter i n&aelig;rheden.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker over vilk&aring;rlige numeriske attributter for linjer i n&aelig;rheden. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Samlet l&aelig;ngde</b> vil, hvis det er markeret, beregne den samlede l&aelig;ngde af linjer i n&aelig;rheden.  Desuden kan du udarbejde statistikker over numeriske felter for linjer i n&aelig;rheden.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Tilføj statistik fra</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan v&aelig;lge at udarbejde statistikker over vilk&aring;rlige numeriske attributter for omr&aring;der i n&aelig;rheden. 
+            </p>
+            <p>Afkrydsningsfeltet  <b>Samlet omr&aring;de</b> vil, hvis det er markeret, beregne det samlede areal af objekter i n&aelig;rheden.  Desuden kan du udarbejde statistikker over numeriske felter for objekter i n&aelig;rheden.
+            </p>
+            <ul>
+                <li> <b>Sum</b> &ndash; Den samlede v&aelig;rdi for det angivne felt
+                </li>
+                <li> <b>Gennemsnit</b> &ndash; Gennemsnittet eller middelv&aelig;rdien for det angivne felt
+                </li>
+                <li> <b>Minimum</b> &ndash; Den mindste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Maksimum</b> &ndash; Den st&oslash;rste v&aelig;rdi i det angivne felt
+                </li>
+                <li> <b>Std. afvigelse</b> &ndash; Standardafvigelsen for v&aelig;rdier i det angivne felt
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Vælg felt at gruppere efter</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er en attribut for objekter i n&aelig;rheden, som du kan bruge til at udarbejde s&aelig;rskilte statistikker for hver entydige attributv&aelig;rdi. Lad os antage, at dine analyselag eksempelvis indeholder ledige jordparceller, der er til salg, og dine objekter i n&aelig;rheden er aftryk af bygninger.  En af attributterne for aftryk af bygninger er  <i>UseType</i>, som indeholder v&aelig;rdier som f.eks. BUTIK, BEBOELSE, PRODUKTION, OFFENTLIG osv.  S&aring; kan du for at karakterisere blandingen af bygningsanvendelse n&aelig;r de enkelte ledige parceller, beregne det samlede areal for hver entydige type af bygningsanvendelse inden for to kilometer fra de ledige parceller ved at bruge <i>UseType</i> som gruppen efter attribut.
+            </p>    
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; det lag, som oprettes i  <b>Mit indhold</b> og f&oslash;jes til kortet.  Standardnavnet er baseret p&aring; analyselagets navn. Hvis laget findes allerede, vil du blive bedt om at bekr&aelig;fte, at du vil overskrive det.
+            </p>
+            <p>Ved hj&aelig;lp af rullelisten  <b>Gem resultat i</b> kan du angive navnet p&aring; en mappe i <b>Mit indhold</b>, hvor resultatet skal gemmes.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

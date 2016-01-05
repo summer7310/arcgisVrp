@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Apkopot Ietvaros</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>&Scaron;is rīks atrod elementus (un elementu daļas), kas iekļaujas analīzes slāņa areālu robežās.  Piemēram: 
+        <ul>
+            <li>Ņemot ūdens&scaron;ķirtnes robežas un zemes lieto&scaron;anas robežas, kalkulē kopējo zemes lieto&scaron;anas veidu katrai ūdens&scaron;ķirtnei. 
+            </li>
+            <li>Ņemot zemes gabalu slāni un novada un pilsētas robežu slāni, apkopot vidējo brīvo zemes gabalu vērtību katras pilsētas robežās.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Ja  <b>Lietot pa&scaron;reizējo kartes pārklājumu</b> ir atzīmēts, tad tikai tie elementi analīzes slānī un slānī, kas tiks apkopots, veidosies pa&scaron;reizējā kartes pārklājumā.  Ja nav atzīmēts, visi elementi abos analīzes slāņos un apkopo&scaron;anas slānī tiks analizēti, arī pa&scaron;reizējā kartes pārklājuma ārpusē
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Izvēlēties slāni, ko apkopot</h2></div>
+        <hr/>
+        <div>
+            <p>Elementi &scaron;ajā slānī, kas ietilpst ievades slāņa robežās, tiks apkopoti. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Pēc izvēles jūs varat kalkulēt statistiku skaitlisko atribūtiem punktiem, kas ietilpst elementu robežās. 
+            </p>
+            <p>Izvēlnes rūtiņa  <b>Punktu skaits</b>, ja ir atzīmēta, aprēķinās kopējo punktu skaitu katra areāla robežās.  Turklāt, jūs varat aprēķināt statistiku skaitlisko atribūtiem punktiem katra areāla robežās.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Kopējā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam.
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Std. Novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par visiem atribūtiem līniju ietvaros. 
+            </p>
+            <p>Izvēlnes rūtiņa  <b>Kopējais līniju garums</b>, ja rūtiņa ir atzīmēta, tiks kalkulēts kopējais līniju garums katra areālā robežas.  Turklāt, jūs varat aprēķināt statistiku skaitliskajiem atribūtiem līnijai, kas ir katra laukuma robežas.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Kopējā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam.
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Std. Novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par tuvējo laukumu skaitliskajiem atribūtiem. 
+            </p>
+            <p>Izvēlnes rūtiņa  <b>Summēt laukumu izmantojot</b>, ja rūtiņa ir atzīmēta, tiks kalkulēts elementu, kas ir analīzes slāņa robežas, kopējais laukums.  Turklāt, jūs varat kalkulēt statistiku skaitliskajiem atribūtiem katra laukuma robežās.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Kopējā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam.
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā.
+                </li>
+                <li> <b>Std. Novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Izvēlieties lauku, ko grupēt pēc</h2></div>
+        <hr/>
+        <div>
+            <p>Tas ir atribūts no  <b>Apkopot</b> elementus, ko jūs varat izmantot, lai kalkulētu dažādus statistikas datus atsevi&scaron;ķi par katru unikālo atribūta vērtību. Piem., pieņemsim, ka analīze slānis satur pilsētas robežas un <b>Apkopot</b> elementi ir parceles.  Viens no parceļu atribūtiem ir <i>Statuss</i>, kur&scaron; satur divas vērtības: BRĪVS un AIZŅEMTS. Lai aprēķinātu kopējo laukumu brīvajām un aizņemtajām parcelēm pilsētas robežās, izmantojiet <i>Statuss</i> grupu pēc atribūtiem.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir slāņa nosaukums, kas tiks izveidots iek&scaron; jūsu  <b>Mans Saturs</b> un pievienots kartei.  Noklusējuma nosaukums ir balstīts uz analīzes slāņa nosaukumu. Ja slānis jau pastāv, jums tiks lūgts apstiprināt, vai vēlaties to pārrakstīt.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātu</b> izvelkamajā lodziņā jūs varat norādīt nosaukumu mapei <b>Mans Saturs</b>, kur tiks saglabāts rezultāts.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

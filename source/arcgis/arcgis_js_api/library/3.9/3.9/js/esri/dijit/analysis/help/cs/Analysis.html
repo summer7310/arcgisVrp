@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="SummarizeDataCategory" class="regularsize">
+        <h2>Sumarizovat data</h2>
+        <hr/>
+        <p>Tyto n&aacute;stroje vypoč&iacute;t&aacute;vaj&iacute; celkov&yacute; počet, d&eacute;lku, plochu a z&aacute;kladn&iacute; popisn&eacute; statistiky prvků a jejich atributů v zadan&yacute;ch oblastech nebo pobl&iacute;ž jin&yacute;ch prvků.
+            <ul>
+                <li>N&aacute;stroj  <b>Agregovat body</b> vypoč&iacute;t&aacute;v&aacute; statistiky bodů, kter&eacute; spadaj&iacute; do určen&yacute;ch oblast&iacute;.
+                </li>
+                <li>N&aacute;stroj  <b>Sumarizovat nejbliž&scaron;&iacute;</b> vypoč&iacute;t&aacute;v&aacute; statistiky pro prvky a atributy, kter&eacute; se nach&aacute;z&iacute; v určen&eacute; vzd&aacute;lenosti.
+                </li>
+                <li>N&aacute;stroj  <b>Sumarizovat společn&eacute;</b> vypoč&iacute;t&aacute;v&aacute; statistiky pro prvky oblasti a atributy, kter&eacute; se překr&yacute;vaj&iacute;.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="AggregatePointsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Agregovat body</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>S&nbsp;využit&iacute;m vrstvy bodov&yacute;ch prvků a vrstvy prvků oblast&iacute; tento n&aacute;stroj určuje, jak&eacute; body spadaj&iacute; do kter&eacute; vrstvy a vypoč&iacute;t&aacute;v&aacute; statistiky pro popis v&scaron;ech bodů v každ&eacute; oblasti. Např&iacute;klad:
+                <ul>
+                    <li>Na z&aacute;kladě um&iacute;stěn&iacute; bodů sp&aacute;chan&yacute;ch trestn&yacute;ch činů spoč&iacute;tej počet trestn&yacute;ch činů na kraj nebo jinou administrativn&iacute; jednotku.
+                    </li>
+                    <li>Najdi fran&scaron;&iacute;zov&eacute; lokality s nejvy&scaron;&scaron;&iacute;mi a nejniž&scaron;&iacute;mi tržbami podle st&aacute;tů.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeNearbyTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sumarizovat nejbližší</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Najde prvky, kter&eacute; se nach&aacute;zej&iacute; v určen&eacute; vzd&aacute;lenosti od prvků ve vrstvě anal&yacute;zy. Vzd&aacute;lenost lze měřit vzdu&scaron;nou čarou nebo podle j&iacute;zdn&iacute; doby (např&iacute;klad do 10 minut). Pot&eacute; se vypoč&iacute;taj&iacute; statistiky pro nejbliž&scaron;&iacute; prvky. Např&iacute;klad:
+                <ul>
+                    <li>Vypoč&iacute;tej celkovou populaci, kter&aacute; se nach&aacute;z&iacute; do pěti minut od navrhovan&eacute;ho um&iacute;stěn&iacute; nov&eacute;ho obchodu.
+                    </li>
+                    <li>Změř dostupnost obchodu zji&scaron;těn&iacute;m počtu př&iacute;jezdov&yacute;ch ramp, kter&eacute; se nach&aacute;zej&iacute; do pěti minut od navrhovan&eacute;ho um&iacute;stěn&iacute; nov&eacute;ho obchodu.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeWithinTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sumarizovat společné</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Najde oblasti (a č&aacute;sti oblast&iacute;), ve kter&yacute;ch se překr&yacute;vaj&iacute; dvě vrstvy, a vypoč&iacute;t&aacute; statistiky ohledně překryvu. Např&iacute;klad:
+                <ul>
+                    <li>Pomoc&iacute; vrstvy oblast&iacute; povod&iacute; a vrstvy využit&iacute; půdy v oblastech podle typu využit&iacute; půdy spoč&iacute;tej celkovou rozlohu využ&iacute;van&eacute; půdy v každ&eacute;m povod&iacute;. 
+                    </li>
+                    <li>Pomoc&iacute; vrstvy parcel v kraji a vrstvy hranic měst spoč&iacute;tej průměrnou cenu voln&yacute;ch parcel v rozsahu každ&eacute;ho města.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+    <div id="EnrichLocationsCategory" class="regularsize">
+        <h2>Obohacování dat</h2>
+        <hr/>
+        <p>Tyto n&aacute;stroje v&aacute;m pomohou při průzkumu charakteru oblast&iacute;. Pro vybran&eacute; oblasti vracej&iacute; podrobn&aacute; demografick&aacute; data a statistiky. Srovn&aacute;vac&iacute; informace hl&aacute;s&iacute; i pro &scaron;ir&scaron;&iacute; oblasti, např&iacute;klad kraje a st&aacute;ty.
+            <ul>
+                <li>Funkce  <b>Obohatit vrstvu</b> vyhled&aacute;v&aacute; informace o lidech, m&iacute;stech a obchodech v konkr&eacute;tn&iacute; oblasti, v určit&eacute; vzd&aacute;lenosti nebo podle j&iacute;zdn&iacute; doby z určen&eacute;ho m&iacute;sta.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="EnrichLayerTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Obohatit vrstvu</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Vyhled&aacute;v&aacute; informace o lidech, m&iacute;stech a obchodech v konkr&eacute;tn&iacute; oblasti, v určit&eacute; vzd&aacute;lenosti nebo podle j&iacute;zdn&iacute; doby z určen&eacute;ho m&iacute;sta.
+
+            </p>
+            <br/>
+        </div>
+    <div id="FindLocationsCategory" class="largesize">
+        <h2>Vyhledat lokality</h2>
+        <hr/>
+        <p>Tyto n&aacute;stroje se použ&iacute;vaj&iacute; pro identifikaci oblast&iacute;,
+kter&eacute; splňuj&iacute; určit&yacute; počet stanoven&yacute;ch krit&eacute;ri&iacute;.  Tato krit&eacute;ria mohou b&yacute;t založena na požadavc&iacute;ch na atributy (např. parcely, kter&eacute; jsou voln&eacute;) a prostorov&yacute;ch požadavc&iacute;ch (např&iacute;klad do vzd&aacute;lenosti 1 km od řeky).  Nalezen&eacute;
+oblasti lze vybrat z existuj&iacute;c&iacute;ch prvků (např&iacute;klad existuj&iacute;c&iacute;ch
+parcel) nebo lze vytvořit nov&eacute; prvky v m&iacute;stech,
+kde jsou krit&eacute;ria splněna.
+            <ul>
+                <li>Funkce  <b>Naj&iacute;t existuj&iacute;c&iacute; um&iacute;stěn&iacute;</b> vyhled&aacute;v&aacute; v analyzovan&eacute; vrstvě existuj&iacute;c&iacute; oblasti, kter&eacute; splňuj&iacute; soubor krit&eacute;ri&iacute;.
+                </li>
+                <li>Funkce  <b>Odvodit nov&aacute; um&iacute;stěn&iacute;</b> vytvoř&iacute; v z&aacute;jmov&eacute; oblasti nov&eacute; prvky na z&aacute;kladě m&iacute;st,
+kter&aacute; splňuj&iacute; soubor krit&eacute;ri&iacute;.
+                </li>
+                <li>Funkce  <b>Vyhledat podobn&aacute; um&iacute;stěn&iacute;</b> vyhled&aacute; nejpodobněj&scaron;&iacute; nebo nejm&eacute;ně podobn&eacute; prvky jednomu či v&iacute;ce c&iacute;lov&yacute;m prvkům na z&aacute;kladě v&aacute;mi určen&yacute;ch krit&eacute;ri&iacute;.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindExistingLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Vyhledat stávající lokality</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Vybere st&aacute;vaj&iacute;c&iacute; prvky v z&aacute;jmov&eacute; oblasti,
+kter&eacute; splňuj&iacute; stanoven&yacute; soubor krit&eacute;ri&iacute;. Tato krit&eacute;ria mohou b&yacute;t založena na požadavc&iacute;ch na atributy (např. parcely, kter&eacute; jsou voln&eacute;) a prostorov&yacute;ch požadavc&iacute;ch (např&iacute;klad do vzd&aacute;lenosti 1 km od řeky).
+
+            </p>
+            <br/>
+        </div>
+        <div id="DeriveNewLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Odvození nových lokalit</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Vytvoř&iacute; v z&aacute;jmov&eacute; oblasti nov&eacute; prvky,
+kter&eacute; splňuj&iacute; stanoven&yacute; soubor krit&eacute;ri&iacute;. Tato krit&eacute;ria mohou b&yacute;t založena na požadavc&iacute;ch na atributy (např. parcely, kter&eacute; jsou voln&eacute;) a prostorov&yacute;ch požadavc&iacute;ch (např&iacute;klad do vzd&aacute;lenosti 1 km od řeky).
+
+            </p>
+            <br/>
+        </div>
+        <div id="FindSimilarLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Nalezení podobných umístění</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Vyhled&aacute; prvky nejpodobněj&scaron;&iacute; nebo nejm&eacute;ně podobn&eacute; jednomu či v&iacute;ce c&iacute;lov&yacute;m prvkům na z&aacute;kladě v&aacute;mi určen&yacute;ch krit&eacute;ri&iacute;.
+            </p>
+            <br/>
+        </div>
+    <div id="AnalyzePatternsCategory" class="smallsize">
+        <h2>Analýza obrazců</h2>
+        <hr/>
+        <p>Tyto n&aacute;stroje v&aacute;m pom&aacute;haj&iacute; odhalit, kvantifikovat a vizualizovat prostorov&eacute; obrazce v datech t&iacute;m, že nach&aacute;zej&iacute; statisticky v&yacute;znamn&eacute; shluky.  
+            <ul>
+                <li>Funkce  <b>Naj&iacute;t aktivn&iacute; body</b> odhaluje v prostorov&eacute;m obrazci dat statisticky v&yacute;znamn&eacute; shluky.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindHotSpotsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Analýza Hot Spot</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Tato funkce vytvoř&iacute; mapu se statisticky v&yacute;znamn&yacute;mi prostorov&yacute;mi shluky, kter&eacute; se v datech nach&aacute;zej&iacute;. Použit&iacute;m tohoto n&aacute;stroje odhal&iacute;te neoček&aacute;van&eacute; aktivn&iacute; (červen&eacute;) a pasivn&iacute; (modr&eacute;) body, kter&eacute; znač&iacute; např. vysokou a n&iacute;zkou cenu domů, &uacute;roveň kriminality, nezaměstnanost či biologickou diverzitu.
+            </p>
+            <br/>
+        </div>
+        <div id="ExploreCorrelationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Prozkoumat korelace</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Pomoc&iacute; tohoto n&aacute;stroje můžete zjistit v&yacute;znamnost vztahů mezi numerick&yacute;mi atributy prvků. Vyberete si hlavn&iacute; proměnnou a až deset dal&scaron;&iacute;ch numerick&yacute;ch atributů, kter&eacute; se maj&iacute; zhodnotit. Pot&eacute; n&aacute;stroj vypoč&iacute;t&aacute; korelaci mezi hlavn&iacute; proměnnou a ostatn&iacute;mi zvolen&yacute;mi proměnn&yacute;mi a nahl&aacute;s&iacute; v&yacute;znamnost, konzistenci a typ vztahu (pozitivn&iacute; či negativn&iacute;).  
+            </p>
+            <br/>
+        </div>
+    <div id="UseProximityCategory" class="largesize">
+        <h2>Použít blízkost</h2>
+        <hr/>
+        <p> Tyto n&aacute;stroje v&aacute;m pomohou odpovědět na jednu z nejčastěj&scaron;&iacute;ch ot&aacute;zek prostorov&eacute; anal&yacute;zy: &bdquo;Co je v bl&iacute;zkosti čeho&ldquo;?
+            <ul>
+                <li>N&aacute;stroj  <b>Spojen&iacute; poč&aacute;tků s c&iacute;li</b> měř&iacute; čas cesty nebo vzd&aacute;lenost mezi p&aacute;ry bodů poč&aacute;tek&ndash;c&iacute;l.
+                </li>
+                <li>N&aacute;stroj  <b>Vytvořen&iacute; obalov&eacute; z&oacute;ny</b> vytv&aacute;ř&iacute; oblasti o stejn&eacute; vzd&aacute;lenosti od prvků.
+                </li>
+                <li>N&aacute;stroj  <b>Vytvořen&iacute; oblast&iacute; podle doby j&iacute;zdy</b> najde v okol&iacute; um&iacute;stěn&iacute; oblasti dosažiteln&eacute; v dan&eacute;m čase.
+                </li>
+                <li>N&aacute;stroj  <b>Vyhled&aacute;n&iacute; nejbliž&scaron;&iacute;ch</b> urč&iacute; m&iacute;sta, kter&aacute; se nach&aacute;z&iacute; nejbl&iacute;že dan&yacute;m um&iacute;stěn&iacute;m.
+                </li>
+                <li>N&aacute;stroj  <b>Pl&aacute;nov&aacute;n&iacute; tras</b> urč&iacute; nejlep&scaron;&iacute; způsob, jak vozov&yacute;m parkem zvl&aacute;dnout množstv&iacute; zast&aacute;vek.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="ConnectOriginsToDestinationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Spojení počátků s cíli</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Tento n&aacute;stroj vypoč&iacute;t&aacute; čas cesty nebo vzd&aacute;lenost mezi p&aacute;ry bodů poč&aacute;tek&ndash;c&iacute;l. Můžete např&iacute;klad zjistit, jak daleko jsou z&aacute;kazn&iacute;ci ochotni jet do va&scaron;ich obchodů, vypoč&iacute;tat předpokl&aacute;dan&yacute; n&aacute;jezd sv&eacute;ho vozov&eacute;ho parku nebo shrnout cesty z domova do pr&aacute;ce sv&yacute;ch zaměstnanců.
+            </p>
+            <br/>
+        </div>
+        <div id="CreateBuffersTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Vytvořit obalové zóny</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Obalov&aacute; z&oacute;na je oblast, kter&aacute; pokr&yacute;v&aacute; určenou vzd&aacute;lenost od dan&eacute;ho bodu, linie nebo polygonu. 
+            </p>
+            <p>Obalov&eacute; z&oacute;ny se zpravidla použ&iacute;vaj&iacute; pro vytv&aacute;řen&iacute; oblast&iacute;, kter&eacute; lze n&aacute;sledně analyzovat pomoc&iacute; dal&scaron;&iacute;ch n&aacute;strojů, např&iacute;klad Překryvu vrstev. Pokud se např&iacute;klad pt&aacute;me &bdquo;Jak&eacute; budovy se nach&aacute;zej&iacute; v okruhu jednoho kilometru od &scaron;koly?&ldquo;, lze odpověď zjistit tak, že se kolem &scaron;koly vytvoř&iacute; obalov&aacute; z&oacute;na o rozloze jednoho kilometru a překryje se vrstvou obsahuj&iacute;c&iacute; obrysy budov. V&yacute;sledkem je vrstva budov, kter&eacute; se nach&aacute;zej&iacute; v okruhu jednoho kilometru od &scaron;koly.  
+            </p>
+            <br/>
+        </div>
+        <div id="CreateDriveTimeAreasTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Vytvořit oblasti podle doby jízdy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Dojezdov&aacute; oblast je oblast dosažiteln&aacute; za určenou j&iacute;zdn&iacute; dobu nebo ujet&iacute;m jist&eacute; vzd&aacute;lenosti. Oblasti j&iacute;zdn&iacute; doby v&aacute;m mohou pomoci odpovědět na ot&aacute;zky jako:
+                <ul>
+                    <li>Kam se odsud dostanu za 30 minut?
+                    </li>
+                    <li>Kam odsud dojedu během 30 minut v 6 hodin večer v dopravn&iacute; &scaron;pičce?
+                    </li>
+                    <li>Do jak&yacute;ch oblast&iacute; se hasiči dostanou během pěti minut? Jak by se zlep&scaron;ilo pokryt&iacute; pož&aacute;rn&iacute; ochrany, kdyby se zde zř&iacute;dila nov&aacute; hasičsk&aacute; stanice?
+                    </li>
+                    <li>Kter&eacute; oblasti trhu pokr&yacute;v&aacute; m&aacute; provozovna? Jak&eacute; oblasti se nach&aacute;zej&iacute; do 10 kilometrů od m&yacute;ch obchodů?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="FindNearestTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Najít nejbližší</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Měř&iacute; n&aacute;klady na cestov&aacute;n&iacute; mezi m&iacute;sty ud&aacute;lost&iacute; a zař&iacute;zen&iacute;mi a určuje, kter&eacute; jsou si bl&iacute;že. V&yacute;sledkem je vrstva zobrazuj&iacute;c&iacute; nejlep&scaron;&iacute; trasy mezi ud&aacute;lostmi a zař&iacute;zen&iacute;mi spolu s cestovn&iacute;mi n&aacute;klady (čas a vzd&aacute;lenost) na každou trasu. Tento n&aacute;stroj můžete použ&iacute;t např&iacute;klad k nalezen&iacute; nejbliž&scaron;&iacute; nemocnice v př&iacute;padě nehody nebo nejbliž&scaron;&iacute;ho bankomatu.
+            </p>
+            <br/>
+        </div>
+        <div id="PlanRoutesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Plánování tras</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Urč&iacute;te sadu zast&aacute;vek a počet dostupn&yacute;ch vozidel, kter&aacute; maj&iacute; zast&aacute;vky nav&scaron;t&iacute;vit, a n&aacute;stroj Pl&aacute;nov&aacute;n&iacute; tras vypoč&iacute;t&aacute;, jak efektivně přiřadit zast&aacute;vky vozidlům a napl&aacute;novat trasy vozidel k zast&aacute;vk&aacute;m.
+            </p>
+            <p>Pomoc&iacute; tohoto n&aacute;stroje můžete napl&aacute;novat pr&aacute;ci t&yacute;mu mobiln&iacute;ch inspektorů, znalců, poskytovatelů dom&aacute;c&iacute; podpory a dal&scaron;&iacute;, doručit nebo vyzvednout předměty ze vzd&aacute;len&yacute;ch lokalit nebo lidem nab&iacute;dnout přepravn&iacute; služby.
+            </p>
+            <br/>
+        </div>
+    <div id="ManageDataCategory" class="largesize">
+        <h2>Spravovat data</h2>
+        <hr/>
+        <p>Tyto n&aacute;stroje lze použ&iacute;t pro každodenn&iacute; spr&aacute;vu geografick&yacute;ch dat a pro kombinov&aacute;n&iacute; dat před anal&yacute;zou.  
+            <ul>
+                <li>Funkce  <b>Kalkul&aacute;tor pol&iacute;</b> vypoč&iacute;t&aacute;v&aacute; nov&eacute; hodnoty pol&iacute; s využit&iacute;m existuj&iacute;c&iacute;ch pol&iacute; a formul&iacute;.
+                </li>
+                <li>Funkce  <b>Sloučit hranice</b> slouč&iacute; oblasti, kter&eacute; sd&iacute;l&iacute; společnou hranici a společnou hodnotu atributu.
+                </li>
+                <li>Funkce  <b>Extrahovat data</b> vytv&aacute;ř&iacute; extrakc&iacute; prvků ze st&aacute;vaj&iacute;c&iacute;ch dat nov&eacute; datov&eacute; sady.
+                </li>
+                <li>N&aacute;stroj  <b>Spojit vrstvy</b> kop&iacute;ruje v&scaron;echny prvky ze dvou nebo v&iacute;ce existuj&iacute;c&iacute;ch vrstev do nov&eacute; vrstvy.
+                </li>
+                <li>N&aacute;stroj  <b>Překr&yacute;t vrstvy</b> kombinuje dvě nebo v&iacute;ce vrstev do jedn&eacute; vrstvy. Překryv si můžete představit jako situaci, kdy prohl&eacute;dnete hromadu map a z těch pak vytvoř&iacute;te jedinou, ve kter&eacute; budou obsaženy v&scaron;echny informace.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="FieldCalculatorTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Kalkulátor polí</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Aktualizuje hodnoty existuj&iacute;c&iacute;ch pol&iacute; nebo nov&yacute;ch pol&iacute; na z&aacute;kladě formule, kterou zad&aacute;te.
+            </p>
+            <br/>
+        </div>
+        <div id="DissolveBoundariesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sloučit hranice</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Oblasti, kter&eacute; se překr&yacute;vaj&iacute; nebo maj&iacute; společnou hranici, se spoj&iacute; a vytvoř&iacute; jedinou oblast.    
+            </p>
+            <p>Zvolen&iacute;m pole stanov&iacute;te, kter&eacute; hranice se maj&iacute; spojit. Pokud m&aacute;te např. vrstvu krajů a každ&yacute; kraj m&aacute; atribut  <i>State_Name</i>, můžete hranice sloučit na z&aacute;kladě atributu <i>State_Name</i>. Sousedn&iacute; kraje se spoj&iacute; tehdy, pokud maj&iacute; shodnou hodnotu atributu <i>State_Name</i>. Konečn&yacute;m v&yacute;sledkem je vrstva hranic st&aacute;tů.
+            </p>
+            <br/>
+        </div>
+        <div id="ExtractDataTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Extrahovat data</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Vytvoř&iacute; soubor zip nebo bal&iacute;ček vrstev z vrstev a oblasti z&aacute;jmu, kter&eacute; urč&iacute;te.
+
+            </p>
+            <br/>
+        </div>
+        <div id="MergeLayersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Spojit vrstvy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Kop&iacute;ruje prvky ze dvou nebo v&iacute;ce existuj&iacute;c&iacute;ch vrstev do nov&eacute; vrstvy, např&iacute;klad:
+                <ul>
+                    <li>M&aacute;te tři vrstvy pro Anglii, Wales a Skotsko a potřebujete jedinou vrstvu &ndash; Velkou Brit&aacute;nii. 
+                    </li>
+                    <li>M&aacute;te 12 vrstev a každ&aacute; obsahuje informace o parcel&aacute;ch pro souvisl&eacute; městsk&eacute; oblasti. Potřebujete je spojit do jedin&eacute; vrstvy a ponechat pouze atributy, kter&eacute; maj&iacute; na 12 vstupn&iacute;ch vrstv&aacute;ch stejn&yacute; n&aacute;zev a typ.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="OverlayLayersTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Překrýt vrstvy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>N&aacute;stroj Překr&yacute;t vrstvy kombinuje dvě nebo v&iacute;ce vrstev do jedn&eacute; vrstvy. Překryv si můžete představit jako situaci, kdy prohl&eacute;dnete hromadu map a z těch pak vytvoř&iacute;te jedinou, ve kter&eacute; budou obsaženy v&scaron;echny informace. Např&iacute;klad:
+                <ul>
+                    <li>Kter&eacute; parcely se nach&aacute;zej&iacute; v oblasti stolet&yacute;ch z&aacute;plav? (&bdquo;Nach&aacute;zet se v&ldquo; znamen&aacute; tot&eacute;ž co &bdquo;nach&aacute;zet se nad&ldquo;.)
+                          
+                    </li>
+                    <li>Jak&eacute; silnice se nach&aacute;zej&iacute; v jak&yacute;ch kraj&iacute;ch?
+                    </li>
+                    <li>Jak se zemědělsky využ&iacute;vaj&iacute; různ&eacute; typy půdy?
+                         
+                    </li>
+                    <li>Kter&eacute; studně se nach&aacute;zej&iacute; v m&iacute;stech opu&scaron;těn&yacute;ch vojensk&yacute;ch z&aacute;kladen?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+</div>
+</html>

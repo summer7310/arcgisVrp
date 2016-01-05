@@ -1,0 +1,11 @@
+﻿<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="row: 0" class="Wizard_TopPane">
+    ${nls.chooseDataCollection}
+</div>
+<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="row: 1" class="Wizard_CenterPane">
+    <div data-dojo-attach-point="itemsDiv" style="min-height: 70px;"></div>
+    <div data-dojo-attach-point="progressDiv" class="Wizard_Progress"></div>
+</div>
+<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="row: 2" class="Wizard_BottomPane">
+    <button class="Wizard_Button" data-dojo-attach-event="click: _back">${nls.back}</button>
+    <button class="Wizard_Button" data-dojo-attach-event="click: _cancel">${nls.cancel}</button>
+</div>

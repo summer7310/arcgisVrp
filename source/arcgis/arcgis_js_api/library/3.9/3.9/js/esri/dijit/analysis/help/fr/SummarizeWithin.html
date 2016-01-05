@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Synthétiser - A l'intérieur</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Cet outil recherche les entit&eacute;s (et parties d'entit&eacute;s) qui se trouvent au sein des limites des surfaces dans la couche d'analyse. Par exemple&nbsp;:
+        <ul>
+            <li>En prenant une couche de limites de bassin versant et une couche de limites d'utilisation du sol par type d'utilisation du sol, calculez la superficie totale du type d'utilisation du sol pour chaque bassin versant. 
+            </li>
+            <li>En prenant une couche de parcelles dans un comt&eacute; et une couche de limites de ville, synth&eacute;tisez la valeur moyenne des parcelles vacantes au sein de chaque limite de ville.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Si l'option  <b>Utiliser l'&eacute;tendue courante de la carte</b> est s&eacute;lectionn&eacute;e, seules les entit&eacute;s de la couche d'analyse et de la couche &agrave; synth&eacute;tiser qui sont visibles au sein de l'&eacute;tendue courante de la carte seront analys&eacute;es. Si l'option n'est pas s&eacute;lectionn&eacute;e, toutes les entit&eacute;s qui se trouvent &agrave; la fois dans la couche d'analyse et dans la couche &agrave; synth&eacute;tiser seront analys&eacute;es, m&ecirc;me si elles se trouvent en dehors de l'&eacute;tendue courante de la carte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Choisir la couche à synthétiser</h2></div>
+        <hr/>
+        <div>
+            <p>Les entit&eacute;s de cette couche qui se trouvent au sein des limites des entit&eacute;s dans la couche d'analyse seront synth&eacute;tis&eacute;es. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Ajouter des statistiques depuis</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez &eacute;galement calculer des statistiques pour les attributs num&eacute;riques des points qui se trouvent au sein des limites des entit&eacute;s. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Nombre de points</b> permet de calculer le nombre total de points au sein de la limite de chaque surface. En outre, vous pouvez calculer des statistiques pour les attributs num&eacute;riques des points qui se trouvent au sein de la limite de chaque surface.
+            </p>
+            <ul>
+                <li> <b>Somme</b> : la valeur totale du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b> : la valeur la plus faible dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Maximum</b> : la valeur la plus &eacute;lev&eacute;e dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Ecart type</b> : l'&eacute;cart type des valeurs dans le champ sp&eacute;cifi&eacute;.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Ajouter des statistiques depuis</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez &eacute;galement calculer des statistiques pour les attributs num&eacute;riques des lignes &agrave; proximit&eacute;. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Longueur totale des lignes en</b> permet de calculer la longueur totale des lignes au sein de la limite de chaque surface. En outre, vous pouvez calculer des statistiques pour les attributs num&eacute;riques des lignes qui se trouvent au sein de la limite de chaque surface.
+            </p>
+            <ul>
+                <li> <b>Somme</b> : la valeur totale du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b> : la valeur la plus faible dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Maximum</b> : la valeur la plus &eacute;lev&eacute;e dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Ecart type</b> : l'&eacute;cart type des valeurs dans le champ sp&eacute;cifi&eacute;.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Ajouter des statistiques depuis</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez &eacute;galement calculer des statistiques pour les attributs num&eacute;riques des surfaces &agrave; proximit&eacute;. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Surface totale avec</b> permet de calculer la surface totale des entit&eacute;s qui se trouvent au sein de la limite de chaque surface de la couche d'analyse. En outre, vous pouvez calculer des statistiques pour les attributs num&eacute;riques des entit&eacute;s qui se trouvent au sein de la limite de chaque surface.
+            </p>
+            <ul>
+                <li> <b>Somme</b> : la valeur totale du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b> : la valeur la plus faible dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Maximum</b> : la valeur la plus &eacute;lev&eacute;e dans le champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Ecart type</b> : l'&eacute;cart type des valeurs dans le champ sp&eacute;cifi&eacute;.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Choisir le champ de regroupement</h2></div>
+        <hr/>
+        <div>
+            <p>Il s'agit d'un attribut des entit&eacute;s &agrave;  <b>synth&eacute;tiser</b> qui permet de calculer les statistiques s&eacute;par&eacute;ment pour chaque valeur attributaire unique. Supposons par exemple que la couche d'analyse contiennent les limites d'une ville et que les entit&eacute;s &agrave; <b>synth&eacute;tiser</b> soient des parcelles. Un des attributs des parcelles est <i>Status</i>, qui contient deux valeurs : VACANT et OCCUPIED. Pour calculer la surface totale des parcelles vacantes et occup&eacute;es au sein des limites des villes, utilisez <i>Status</i> comme groupe par attribut.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Nom de la couche résultat</h2></div>
+        <hr/>
+        <div>
+            <p>Il s'agit du nom de la couche qui sera cr&eacute;&eacute;e dans votre page  <b>Mes contenus</b> et ajout&eacute;e &agrave; la carte. Le nom par d&eacute;faut repose sur le nom de la couche d'analyse. Si la couche existe d&eacute;j&agrave;, vous serez amen&eacute; &agrave; confirmer son remplacement.
+            </p>
+            <p>La zone de liste d&eacute;roulante  <b>Enregistrer le r&eacute;sultat dans</b> vous permet de sp&eacute;cifier le nom d'un dossier dans <b>Mes contenus</b> o&ugrave; le r&eacute;sultat sera enregistr&eacute;.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

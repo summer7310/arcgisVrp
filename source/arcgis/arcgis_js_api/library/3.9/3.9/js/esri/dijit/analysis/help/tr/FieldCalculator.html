@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Alan Hesap Makinesi</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Bir alanın (&ouml;znitelik) değerlerini, belirlediğiniz form&uuml;le g&ouml;re hesaplar.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>İfadeler</h2></div>
+        <hr/>
+        <div>
+            <p>Yeni ya da mevcut alanlar (&ouml;znitelikler) i&ccedil;in değerleri hesaplayacak ifadeler oluşturabilirsiniz.
+            </p>
+            <p>Alanı se&ccedil;tikten sonra,  <b>İfade Oluşturucu</b>'yu başlatmak i&ccedil;in ifade kutusuna tıklayarak bir ifade oluşturulabilir. <b>İfade Oluşturucu</b>'da, diğer alanların, sayısal işle&ccedil;lerin, Python işlevlerinin ve sayısal ve dize değerlerinin herhangi bir kombinasyonundan bir ifade oluşturulabilir. Yeni bir alan i&ccedil;in değerleri hesaplıyorsanız, alanın takma ad, alan t&uuml;r&uuml; gibi &ouml;zelliklerini tanımlamalısınız, ayrıca alan, metin &ouml;znitelikleri i&ccedil;in metin uzunluğunu da i&ccedil;erecektir.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Sonuç katmanı adı</h2></div>
+        <hr/>
+        <div>
+            <p>Bu  <b>İ&ccedil;eriğim</b> alanınızda oluşturulacak ve haritaya eklenecek katmanın adıdır. Varsayılan ad, analiz katmanı adına g&ouml;redir. Katman zaten varsa &uuml;zerine yazma isteğinizi onaylamanız istenecektir.
+            </p>
+            <p> <b>Sonu&ccedil;ları kaydet</b> a&ccedil;ılır kutusunu kullanarak <b>İ&ccedil;eriğim</b> alanında sonucun kaydedileceği bir klas&ouml;r adı belirleyebilirsiniz.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

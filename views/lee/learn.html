@@ -1,0 +1,28 @@
+<div class="tab-content" ng-controller="learn">
+	<h3 style="padding-top:0;margin-top:0;">DEMOS <span class="glyphicon glyphicon-share-alt"></span><a target="_blank" href="http://192.168.0.107/wiki/doku.php?id=arcgis:%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%A8%A1%E5%9D%97%E5%B9%B6%E6%95%B4%E5%90%88%E5%88%B0%E6%BC%94%E7%A4%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD">WIKI</a></h3>
+	<div role="tabpanel" class="tab-pane fade in active" id="home">
+		<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tree-deciduous"></span>演示一： 定义和使用自定义模块。详见 <span class="glyphicon glyphicon-share-alt"></span>		<a target="_blank" href="http://192.168.0.107/wiki/doku.php?id=arcgis:%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%A8%A1%E5%9D%97%E5%B9%B6%E6%95%B4%E5%90%88%E5%88%B0%E6%BC%94%E7%A4%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD">WIKI</a></div>
+ 
+		<p><button id="track" type="button" class="btn btn-primary" ng-click="test()"><span class="glyphicon glyphicon-ok-circle"></span> 运行helpers/lee/demo模块中的函数</button>
+		 </p>
+		 <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tree-deciduous"></span> 演示三： 演示显示一个统计图表。</div>
+		<div id="highcharts" style="height:300px;"></div>
+		<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tree-deciduous"></span> 演示二： 演示数据的双向绑定。</div>
+		<div class="table-responsive">
+			<table class="table">
+				<tr>
+					<th>区域</th>
+					<th>一月</th>
+					<th>二月</th>
+					<th>三月</th>
+				</tr>
+			  	<tr ng-repeat="item in data">						  
+					<td>{{item.place}}</td>
+					<td>{{item.a}}</td>
+					<td>{{item.b}}</td>
+					<td>{{item.c}}</td>			  
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Väljakalkulaator</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Arvutab Teie poolt m&auml;&auml;ratud v&auml;ljale valemi alusel v&auml;&auml;rtused.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Avaldised</h2></div>
+        <hr/>
+        <div>
+            <p>Teil on v&otilde;imalik koostada avaldisi, et arvutada atribuudiv&auml;&auml;rtusi uuele v&otilde;i juba olemasolevale v&auml;ljale.
+            </p>
+            <p>P&auml;rast v&auml;lja valimist koostatakse avaldis vastavas aknas nimega  <b>Avaldise koostaja</b>.  Aknas nimega <b>Avaldise koostaja</b> saab avaldis olla koostatud mistahes teiste v&auml;ljade kombinatsioonide tulemusena, kasutades seal matemaatilisi tehteid, Python funktsioone ning numbrilisi operaatoreid ja stringide v&auml;&auml;rtusi.   Juhul kui arvutate v&auml;&auml;rtusi uude v&auml;lja, peate esmalt m&auml;&auml;rama vastava v&auml;lja omadused (sh v&auml;lja alias, t&uuml;&uuml;p ja tekstiga seotud atribuutide tarbeks v&auml;lja pikkuse).  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on kihi nimi, mis luuakse kasutaja  <b>Minu sisu</b> alla ning lisatakse kaardile.  Vaikimisi nimi on tuletatud kihi anal&uuml;&uuml;si sisust. Kui see kiht juba eksisteerib, saate selle soovi korral &uuml;le kirjutada.
+            </p>
+            <p>Kasutades  <b>Salvesta tulemus</b> kasutaja sisu alla, mille saate valida rippmen&uuml;&uuml;st <b>Minu sisu</b>, kuhu tulemus salvestatakse.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

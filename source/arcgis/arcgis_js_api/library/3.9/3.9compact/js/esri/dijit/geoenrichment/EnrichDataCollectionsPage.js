@@ -1,0 +1,27 @@
+/*
+ COPYRIGHT 2009 ESRI
+
+ TRADE SECRETS: ESRI PROPRIETARY AND CONFIDENTIAL
+ Unpublished material - all rights reserved under the
+ Copyright Laws of the United States and applicable international
+ laws, treaties, and conventions.
+
+ For additional information, contact:
+ Environmental Systems Research Institute, Inc.
+ Attn: Contracts and Legal Services Department
+ 380 New York Street
+ Redlands, California, 92373
+ USA
+
+ email: contracts@esri.com
+ */
+//>>built
+require({cache:{"url:esri/dijit/geoenrichment/templates/EnrichDataCollectionsPage.html":'\ufeff\x3cdiv data-dojo-type\x3d"dijit/layout/ContentPane" data-dojo-props\x3d"row: 0"\x3e\n    \x3cdiv style\x3d"margin-bottom: 2em;"\x3e\n        ${nls.chooseCountry}\n        \x3cselect data-dojo-type\x3d"dijit/form/Select"\n            data-dojo-attach-point\x3d"countrySelect"\n            data-dojo-props\x3d"maxHeight: 151"\n            data-dojo-attach-event\x3d"onChange: _onCountryChanged"\x3e\x3c/select\x3e\n    \x3c/div\x3e\n    ${nls.chooseDataCollection}\n\x3c/div\x3e\n\x3cdiv data-dojo-type\x3d"dijit/layout/ContentPane" data-dojo-props\x3d"row: 1"\x3e\n    \x3cdiv data-dojo-attach-point\x3d"itemsDiv" style\x3d"min-height: 70px;"\x3e\x3c/div\x3e\n    \x3cdiv data-dojo-attach-point\x3d"progressDiv" class\x3d"Wizard_Progress"\x3e\x3c/div\x3e\n\x3c/div\x3e\n\x3cdiv data-dojo-type\x3d"dijit/layout/ContentPane" data-dojo-props\x3d"row: 2"\x3e\n    \x3cbutton class\x3d"Wizard_Button" data-dojo-attach-point\x3d"backButton" data-dojo-attach-event\x3d"click: _back"\x3e${nls.back}\x3c/button\x3e\n    \x3cbutton class\x3d"Wizard_Button" data-dojo-attach-point\x3d"nextButton" data-dojo-attach-event\x3d"click: _next" disabled\x3d"disabled"\x3e${nls.next}\x3c/button\x3e\n\x3c/div\x3e'}});
+define("esri/dijit/geoenrichment/EnrichDataCollectionsPage","../../declare dojo/_base/lang dojo/dom-class dojo/dom-construct ./dom dojo/on ./_WizardPage dojo/i18n!../../nls/jsapi dojo/text!./templates/EnrichDataCollectionsPage.html ../../tasks/geoenrichment/GeoenrichmentTask ./config dijit/form/CheckBox dijit/layout/ContentPane dijit/form/Select".split(" "),function(m,n,f,h,p,q,r,c,s,t,g,u){c=c.geoenrichment.dijit.DataCollectionsPage;return m("esri.dijit.geoenrichment.EnrichDataCollectionsPage",[r],
+{templateString:s,nls:c,country:null,dataCollections:null,showBackButton:!0,_request:null,_countriesLoaded:null,_loaded:!1,_task:null,_items:null,_checks:null,_eventMap:{back:!0,next:["dataCollections"]},constructor:function(){this._task=new t(g.server);this._task.token=g.token},buildRendering:function(){this.inherited(arguments);this.showBackButton||(this.backButton.style.display="none")},_setCountryAttr:function(a){this.country!=a&&(this._set("country",a),this._loaded=!1)},load:function(){this._loaded||
+(this._countriesLoaded?this._onCountryChanged():(this.countrySelect.addOption({value:"_",label:c.loading}),this.countrySelect.set("disabled",!0),this._request=this._task.getAvailableCountries(),this.showProgress(this._request,this._onCountriesResponse)));this.inherited(arguments)},_onCountriesResponse:function(a){this._countriesLoaded=!0;this.countrySelect.set("disabled",!1);for(var b=[{value:"_",label:c.global}],d=0;d<a.length;d++)b.push({value:a[d].id,label:a[d].name});this.countrySelect.set("options",
+b);this.countrySelect.set("value",this.country||"_")},_onCountryChanged:function(){var a=this.countrySelect.get("value");this.country="_"!=a?a:null;this._request=this._task.getDataCollections(this.country);this.showProgress(this._request,this._onDataCollectionsResponse)},_onDataCollectionsResponse:function(a){this.dataCollections=a;p.clear(this.itemsDiv);this._items=[];for(var b=document.createDocumentFragment(),d=0;d<a.length;d++){var c=a[d],k=h.create("table",{"class":"DataCollection"},b),g=h.create("tr",
+null,k),l=h.create("td",{"class":"DataCollection_Icon"},g),e=c.metadata.icon;e&&f.add(l,"DataCollection_"+e);e=new u({checked:!!this._checks[c.id],"class":"DataCollection_Check DataCollection_ShowOnHover"});e.placeAt(l);h.create("td",{"class":"DataCollection_Label",innerHTML:c.metadata.title},g);q(k,"click",n.hitch(this,this._onDataCollectionClick,k,e));this._items.push({table:k,check:e,data:c})}this.itemsDiv.appendChild(b);this.resize();this._loaded=!0},_setChecksAttr:function(a){this._checks=a;
+if(this._items){for(var b=0;b<this._items.length;b++)this._items[b].check.set("checked",a&&!!a[this._items[b].data.id]),this._onCheckChange(this._items[b].table,this._items[b].check);this._onAnyCheckChange()}},_getChecksAttr:function(){if(this._items){for(var a={},b=0;b<this._items.length;b++)a[this._items[b].data.id]=this._items[b].check.get("checked");return a}return this._checks},_next:function(){this.onNext()},onNext:function(a){},_onDataCollectionClick:function(a,b,c){"checkbox"!=c.target.type&&
+b.set("checked",!b.get("checked"));this._onCheckChange(a,b);this._onAnyCheckChange()},_onCheckChange:function(a,b){b.get("checked")?(f.remove(b.domNode,"DataCollection_ShowOnHover"),f.add(a,"DataCollection_Checked")):(f.add(b.domNode,"DataCollection_ShowOnHover"),f.remove(a,"DataCollection_Checked"))},_onAnyCheckChange:function(){for(var a=!1,b=0;b<this._items.length;b++)if(this._items[b].check.get("checked")){a=!0;break}this.nextButton.disabled=!a},destroy:function(){this._cancel();this.inherited(arguments)},
+_cancel:function(){this._request&&(this._request.cancel(),this._request=null)},_back:function(){this._cancel();this.onBack()},onBack:function(){}})});

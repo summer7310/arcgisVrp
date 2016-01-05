@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Calcolatore campo</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Consente di calcolare i valori di un campo (attributo) in base a una formula specificata.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Espressioni</h2></div>
+        <hr/>
+        <div>
+            <p>&Egrave; possibile creare espressioni per calcolare valori di campi (attributi) nuovi o esistenti.
+            </p>
+            <p>Una volta selezionato il campo, &egrave; possibile creare un'espressione facendo clic sulla casella dell'espressione per avviare lo strumento  <b>Generatore di espressioni</b>.  Lo strumento <b>Generatore di espressioni</b> consente di creare un'espressione da qualsiasi combinazione di altri campi, operatori numerici, funzioni Python, valori numerici e valori di stringa.  Per calcolare i valori di un nuovo campo, &egrave; necessario definire le propriet&agrave; del campo, inclusi alias e tipo di campo. Per gli attributi di testo, &egrave; necessario definire la lunghezza del testo che sar&agrave; contenuto nel campo.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nome layer risultati</h2></div>
+        <hr/>
+        <div>
+            <p>Questo &egrave; il nome del layer che verr&agrave; creato in  <b>I miei contenuti</b> e aggiunto alla mappa.  Il nome predefinito &egrave; basato sul nome del layer di analisi. Se il layer esiste gi&agrave;, verr&agrave; chiesto se si desidera sovrascriverlo.
+            </p>
+            <p>Utilizzare la casella a discesa  <b>Salva risultato in</b> per specificare il nome di una cartella di <b>I miei contenuti</b> in cui salvare il risultato.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

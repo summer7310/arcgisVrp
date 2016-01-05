@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>레이어 보강</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="레이어 보강">
+    </p>
+    <p>이 도구는 데이터 위치 주변의 사람, 장소 및 회사에 대한 사실을 확인하여 데이터를 보강하며, 맵 만으로는 확인할 수 없는 위치에 대한 새로운 질문의 답을 찾을 수 있도록 해줍니다.예를 들어 다음 질문에 대한 답을 얻을 수 있습니다.여기에 어떤 부류의 사람들이 살고 있습니까?이 영역의 사람들이 즐겨 하는 일은 무엇입니까?이들의 취미와 라이프스타일은 어떻습니까?이 영역에는 어떤 업종이 있습니까?
+    </p>
+    <p>이 도구에서는 주어진 데이터 컬렉션으로부터 모든 인구 및 지리 정보가 포함된 새 레이어가 결과로 생성됩니다.이 새 정보는 테이블의 필드로 추가됩니다.
+    </p>
+    <p> <b>현재 맵 범위 사용</b>을 선택한 경우 현재 맵 범위 내에 표시된 분석 레이어와 영역 레이어의 피처만 분석되고,이 옵션의 선택을 취소한 경우 현재 맵 범위 외부에 있는 피처를 포함하여 분석 레이어와 영역 레이어에 있는 모든 피처가 분석됩니다.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>이용 가능한 다음 데이터 표시</h2></div>
+        <hr/>
+        <div>
+            <p>지역을 선택하고 사용 가능한 데이터 컬렉션과 데이터 컬렉션 내의 속성 목록을 가져옵니다.전체 컬렉션을 선택하거나 컬렉션을 확장하고 해당 컬렉션에서 하나 이상의 속성을 선택할 수 있습니다.선택한 데이터 컬렉션과 속성이 결과 레이어에 추가됩니다.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>보강할 영역 정의</h2></div>
+        <hr/>
+        <div>
+            <p>데이터 컬렉션에서 확인된 추가 정보로 보강할 영역입니다.분석 레이어에 포인트나 라인이 포함된 경우 직선 거리 또는 운전 시간을 사용하여 각 포인트 또는 라인 주변의 영역이 생성됩니다.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>결과 레이어 이름</h2></div>
+        <hr/>
+        <div>
+            <p> <b>내 컨텐츠</b>에서 생성되어 맵에 추가되는 레이어의 이름입니다.기본 이름은 분석 레이어 이름을 기반으로 합니다.레이어가 이미 있는 경우 덮어쓸지 확인하는 메시지가 나타납니다.
+            </p>
+            <p> <b>결과 저장:</b> 드롭다운 상자를 사용하여 <b>내 컨텐츠</b>에서 결과를 저장할 폴더의 이름을 지정할 수 있습니다.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

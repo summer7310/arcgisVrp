@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Synthétiser - A proximité</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Cet outil recherche les entit&eacute;s qui se trouvent &agrave; une distance donn&eacute;e des entit&eacute;s dans la couche d'analyse.  La distance peut &ecirc;tre mesur&eacute;e par une distance en ligne droite, par une distance en dur&eacute;e de trajet (par exemple, &agrave; moins de 10&nbsp;minutes) ou par une distance &agrave; parcourir (un rayon de 5&nbsp;kilom&egrave;tres).  Les statistiques sont ensuite calcul&eacute;es pour les entit&eacute;s &agrave; proximit&eacute;.  Par exemple&nbsp;:
+        <ul>
+            <li>Calcule la population totale qui se trouve &agrave; un temps de trajet de moins de cinq minutes d'un nouvel emplacement sugg&eacute;r&eacute; de magasin.
+            </li>
+            <li>Calcule le nombre de bretelles d'acc&egrave;s d'autoroute qui se trouvent &agrave; une distance de moins d'un mile d'un nouvel emplacement sugg&eacute;r&eacute; de magasin afin de mesurer l'accessibilit&eacute; du magasin.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Si l'option  <b>Utiliser l'&eacute;tendue courante de la carte</b> est s&eacute;lectionn&eacute;e, seules les entit&eacute;s de la couche d'analyse et de la couche &agrave; synth&eacute;tiser qui sont visibles au sein de l'&eacute;tendue courante de la carte seront analys&eacute;es.  Si l'option n'est pas s&eacute;lectionn&eacute;e, toutes les entit&eacute;s qui se trouvent &agrave; la fois dans la couche d'analyse et dans la couche &agrave; synth&eacute;tiser seront analys&eacute;es, m&ecirc;me si elles se trouvent en dehors de l'&eacute;tendue courante de la carte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Choose layer to summarize</h2></div>
+        <hr/>
+        <div>
+            <p>Les entit&eacute;s de cette couche qui se trouvent &agrave; la distance sp&eacute;cifi&eacute;e par rapport aux entit&eacute;s dans la couche d'analyse seront synth&eacute;tis&eacute;es. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Find nearest features using a</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez d&eacute;finir le type de mesure de la distance que vous voulez utiliser : distance en ligne droite, distance le long de la route ou temps de trajet.  La distance &agrave; parcourir et le temps de trajet &agrave; parcourir utilisent tous les deux le r&eacute;seau routier et respectent les restrictions comme les rues &agrave; sens unique.  Le temps de trajet respecte les vitesses de d&eacute;placement que vous avez choisies&nbsp;: celles bas&eacute;es sur le trafic r&eacute;el ou typique. Les vitesses r&eacute;elles sont lues &agrave; l'aide de capteurs actifs et les vitesses typiques sont calcul&eacute;es &agrave; partir de moyennes historiques.   
+            </p>
+            <p>Vous pouvez entrer plusieurs distances.  Les entit&eacute;s qui se trouvent au sein (ou qui sont &eacute;gales &agrave;) des distances que vous entrez seront synth&eacute;tis&eacute;es.  
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Add statistics from</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez calculer les statistiques de
+n'importe quel attribut num&eacute;rique des points &agrave; proximit&eacute;. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Nombre de points</b> permet de calculer le nombre total de points &agrave; proximit&eacute;.  Vous pouvez en outre calculer des statistiques pour les champs num&eacute;riques des points &agrave; proximit&eacute;.
+            </p>
+            <ul>
+                <li> <b>Somme</b>&nbsp;: la valeur totale du champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b>&nbsp;: la valeur la plus faible dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Maximum</b>&nbsp;: la valeur la plus &eacute;lev&eacute;e dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Ecart type</b>&nbsp;: l'&eacute;cart type entre les
+valeurs du champ sp&eacute;cifi&eacute;
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Add statistics from</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez calculer les statistiques de
+n'importe quel attribut num&eacute;rique des lignes &agrave; proximit&eacute;. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Longueur totale</b> permet de calculer la longueur totale des lignes &agrave; proximit&eacute;.  Vous pouvez en outre calculer des statistiques pour les champs num&eacute;riques des lignes &agrave; proximit&eacute;.
+            </p>
+            <ul>
+                <li> <b>Somme</b>&nbsp;: la valeur totale du champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b>&nbsp;: la valeur la plus faible dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Maximum</b>&nbsp;: la valeur la plus &eacute;lev&eacute;e dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Ecart type</b>&nbsp;: l'&eacute;cart type entre les
+valeurs du champ sp&eacute;cifi&eacute;
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Add statistics
+from</h2></div>
+        <hr/>
+        <div>
+            <p>Vous pouvez calculer les statistiques de
+n'importe quel attribut num&eacute;rique des surfaces &agrave; proximit&eacute;. 
+            </p>
+            <p>Si elle est coch&eacute;e, la case  <b>Surface totale</b> permet de calculer la surface totale des entit&eacute;s &agrave; proximit&eacute;.  Vous pouvez en outre calculer des statistiques pour les champs num&eacute;riques des entit&eacute;s &agrave; proximit&eacute;.
+            </p>
+            <ul>
+                <li> <b>Somme</b>&nbsp;: la valeur totale du champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Moyenne</b> : la moyenne du champ sp&eacute;cifi&eacute;.
+                </li>
+                <li> <b>Minimum</b>&nbsp;: la valeur la plus faible dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Maximum</b>&nbsp;: la valeur la plus &eacute;lev&eacute;e dans le champ
+sp&eacute;cifi&eacute;
+                </li>
+                <li> <b>Ecart type</b>&nbsp;: l'&eacute;cart type entre les
+valeurs du champ sp&eacute;cifi&eacute;
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Choose field to group by</h2></div>
+        <hr/>
+        <div>
+            <p>Il s'agit d'un attribut des entit&eacute;s &agrave; proximit&eacute; qui permet de calculer les statistiques s&eacute;par&eacute;ment pour chaque valeur attributaire unique. Supposons par exemple que votre couche d'analyse contienne des parcelles de terrain vacantes et que vos entit&eacute;s &agrave; proximit&eacute; soient des emprises de b&acirc;timents.  Un des attributs des emprises de b&acirc;timents est  <i>UseType</i>, qui contient des valeurs comme RETAIL, RESIDENTIAL, MANUFACTURING, PUBLIC, et ainsi de suite.  Pour caract&eacute;riser les diff&eacute;rentes utilisations des b&acirc;timents &agrave; proximit&eacute; de chaque parcelle vacante, vous pouvez calculer la surface totale de chaque type unique d'utilisation de b&acirc;timent dans un rayon de deux kilom&egrave;tres des parcelles vacantes en utilisant <i>UseType</i> comme groupe par attribut.
+            </p>    
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Result layer
+name</h2></div>
+        <hr/>
+        <div>
+            <p>Il s'agit du nom de la couche qui sera cr&eacute;&eacute;e dans la page  <b>Mes contenus</b> et ajout&eacute;e &agrave; la carte.  Le nom par d&eacute;faut repose sur le nom de la couche d'analyse. Si la couche existe d&eacute;j&agrave;, vous serez amen&eacute; &agrave; confirmer son remplacement.
+            </p>
+            <p>La zone de liste d&eacute;roulante  <b>Enregistrer le r&eacute;sultat dans</b> vous permet de sp&eacute;cifier le nom d'un dossier dans <b>Mes contenus</b> o&ugrave; le r&eacute;sultat sera enregistr&eacute;.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

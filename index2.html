@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>城市物流配送系统 </title>
+	<link href="js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/dojo/dijit/themes/claro/claro.css">
+	<link href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/esri/css/esri.css" rel="stylesheet" type="text/css" />
+	
+</head>
+<style>
+	 html, body, #map {
+        height: 100%; width: 100%; margin: 0; padding: 0; 
+      }
+      #controls {
+        background: #fff;
+        box-shadow: 0 6px 6px -6px #999;
+        color: #444;
+        font-family: sans-serif;
+        height: auto;
+        left: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 1em;
+        width: auto;
+        z-index: 40;
+      }
+      #controls div {
+        padding: 0 0 1em 0;
+      }
+</style>
+<body>
+<div id="map"></div>
+    <div id="controls">
+      <div>Click the map.</div>
+      <input type="checkbox" id="geodesic">
+      <label for="geodesic">Geodesic?</label>
+    </div>
+
+<script type="text/javascript" src="source/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="source/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="source/angular.min.js"></script>
+<script type="text/javascript" src="source/angular-route.js"></script>
+<script type="text/javascript" src="source/arcgis/arcgis_js_api/library/3.9/3.9compact/init.js"></script>
+<script>
+	var map;
+    
+      require([
+        "esri/map", "esri/geometry/Polyline", "esri/symbols/SimpleFillSymbol", 
+        "esri/symbols/SimpleLineSymbol","esri/Color",
+        "esri/graphic", "esri/layers/GraphicsLayer",
+        "dojo/dom", "dojo/dom-attr", "dojo/domReady!"
+      ], function(
+        Map, Polyline, SimpleFillSymbol, SimpleLineSymbol,
+        Color,
+        Graphic, GraphicsLayer, 
+        dom, domAttr
+      ) {
+        map = new Map("map", {
+          basemap: "streets",
+          center: [-122.68,45.53],
+          slider: false,
+          zoom: 6
+        });
+        var symbol = new SimpleLineSymbol().setColor(new Color([100,149,237,1])).setWidth(5);
+        var symbol1 = new SimpleFillSymbol().setColor(null).outline.setColor("blue");
+        var gl = new GraphicsLayer({ id: "circles" });
+        var geodesic = dom.byId("geodesic");
+        map.addLayer(gl);
+
+        console.log(map)
+
+        map.on("click", function(e) {
+
+
+        	var polylineJson = {
+			    "paths":[[[-122.68,45.53], [-122.58,45.55],
+			    [-122.57,45.58],[-122.53,45.6]]],
+			    "spatialReference":{"wkid":4326}
+			  };
+
+			var polyline = new Polyline(polylineJson);
+
+
+          	var graphic = new Graphic(polyline, symbol);
+          	
+
+
+          	var polylineJson1 = {
+			    "paths":[[[-122.28,45.63], [-122.78,45.15],
+			    [-122.37,45.88],[-122.93,45.36]]],
+			    "spatialReference":{"wkid":4326}
+			  };
+
+			var polyline1 = new Polyline(polylineJson1);
+
+
+          	var graphic1 = new Graphic(polyline1, symbol1);
+          	gl.add(graphic);
+          	gl.add(graphic1);
+        });
+      });
+</script>
+</body>
+
+</html>

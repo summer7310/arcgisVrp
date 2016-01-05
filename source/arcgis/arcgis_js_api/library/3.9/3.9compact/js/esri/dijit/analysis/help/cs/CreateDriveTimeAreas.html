@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Vytvořit oblasti podle doby jízdy</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Možnost Vytvořit oblasti podle doby j&iacute;zdy umožňuje vytv&aacute;řet oblasti dosažiteln&eacute; za určen&yacute; čas j&iacute;zdy nebo ujet&iacute;m dan&eacute; vzd&aacute;lenosti. Měř&iacute; vzd&aacute;lenosti po cest&aacute;ch z jednoho či v&iacute;ce bodů (až 1000) a vytvoř&iacute; vrstvu, kter&aacute; pom&aacute;h&aacute; odpovědět na ot&aacute;zky jako:
+        <ul>
+            <li>Kam se odsud dostanu za 30 minut?
+            </li>
+            <li>Kam až dojedu za 30 minut v 17:30 v dopravn&iacute; &scaron;pičce?
+            </li>
+            <li>Do jak&yacute;ch oblast&iacute; se dostanou hasiči během pěti minut? 
+            </li>
+            <li>Jak by se zlep&scaron;ilo pokryt&iacute; pož&aacute;rn&iacute; ochrany, kdyby se zde zř&iacute;dila nov&aacute; hasičsk&aacute; stanice?
+            </li>
+            <li>Kter&eacute; oblasti trhu pokr&yacute;v&aacute; m&aacute; provozovna?
+            </li>
+        </ul>
+        
+    </p>
+    <p>Tyto ot&aacute;zky můžete b&yacute;t schopni zodpovědět čistě pomoc&iacute; vizualizace v&yacute;stupn&iacute;ch oblast&iacute;. Př&iacute;padně můžete v&yacute;stupn&iacute; oblasti využ&iacute;t k proveden&iacute; dal&scaron;&iacute; prostorov&eacute; anal&yacute;zy. Můžete např&iacute;klad spustit anal&yacute;zu Agregovat body s použit&iacute;m oblast&iacute; doby j&iacute;zdy s demografick&yacute;mi daty a určit tak, kter&eacute; potenci&aacute;ln&iacute; um&iacute;stěn&iacute; prodejny by pravděpodobně bylo nejvhodněj&scaron;&iacute; pro v&aacute;&scaron; typ podnik&aacute;n&iacute;. 
+    </p>
+    <p>
+        <table>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        <tr><td valign="baseline"><img src="../images/tip.png"></td><td valign="baseline"><h2>Tip:&ensp;</h2></td>
+        <td valign="baseline">
+            <p>Chcete-li vytv&aacute;řet oblasti na z&aacute;kladě měřen&iacute; vzd&aacute;lenosti vzdu&scaron;nou čarou a ne podle cest, použijte n&aacute;stroj Vytvořit obalov&eacute; z&oacute;ny.
+            </p>
+        </td></tr>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        </table>
+    </p>
+    <p>Pokud je za&scaron;krtnuto  <b>Použ&iacute;vat rozsah aktu&aacute;ln&iacute; mapy</b>, budou k vytv&aacute;řen&iacute; oblast&iacute; doby j&iacute;zdy nebo j&iacute;zdn&iacute; vzd&aacute;lenosti použ&iacute;v&aacute;ny pouze prvky viditeln&eacute; v rozsahu aktu&aacute;ln&iacute; mapy. Pokud pole za&scaron;krtnuto nen&iacute;, budou použ&iacute;v&aacute;ny v&scaron;echny prvky ve vstupn&iacute; vrstvě včetně těch, kter&eacute; se nach&aacute;z&iacute; mimo oblast rozsahu aktu&aacute;ln&iacute; mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="MeasurementMethodTypicalTraffic">
+        <div><h2>Měření</h2></div>
+        <hr/>
+        <div>
+            <p>Umožňuje vybrat, zda se oblasti maj&iacute; poč&iacute;tat podle doby j&iacute;zdy nebo j&iacute;zdn&iacute; vzd&aacute;lenosti, a zadat dobu, resp. vzd&aacute;lenost až 300 minut nebo 300 mil (482,8 kilometrů).  
+            </p>
+            <p>Pokud zvol&iacute;te  <b>J&iacute;zdn&iacute; čas</b>, m&aacute;te n&aacute;sleduj&iacute;c&iacute; možnosti:
+                <ul>
+                    <li>
+                        <p>Za&scaron;krtněte  <b>Použ&iacute;t obvykl&eacute; dopravn&iacute; podm&iacute;nky pro</b> a nastavte den a čas. N&aacute;stroj vytvoř&iacute; oblast podle doby j&iacute;zdy na z&aacute;kladě hustoty dopravy. Pro v&yacute;počet doby j&iacute;zdy jsou použity historick&eacute; rychlostn&iacute; průměry pětiminutov&yacute;ch intervalů v průběhu běžn&eacute;ho t&yacute;dne. Velikost a tvar v&yacute;stupn&iacute;ch oblast&iacute; doby j&iacute;zdy se bude li&scaron;it v z&aacute;vislosti na kol&iacute;s&aacute;n&iacute; dopravn&iacute;ch podm&iacute;nek (a t&iacute;m tak&eacute; doby cesty) v průběhu t&yacute;dne.
+                        </p>
+                        <p> Pomoc&iacute; těchto dopravn&iacute;ch nastaven&iacute; se např&iacute;klad můžete zeptat na ot&aacute;zku, &bdquo;Do jak&yacute;ch oblast&iacute; se mohu obyčejně dostat, pokud vyjedu v&nbsp;11:30 ve středu?&ldquo;
+                        </p>
+                        <p>Nastaven&yacute; čas ř&iacute;d&iacute; časov&yacute;m p&aacute;smem, ve kter&eacute;m se nach&aacute;z&iacute; vstupn&iacute; body. Pokud tedy nastav&iacute;te čas na 8:00 a m&aacute;te dva body, jeden v New York City a druh&yacute; v Los Angeles, budou oblasti doby j&iacute;zdy vygenerov&aacute;ny pro 8:00 v&yacute;chodn&iacute;ho času a 8:00 tichomořsk&eacute;ho času.
+                        </p>
+                        <p>  Mějte na paměti, že jak se vozidlo vzdaluje z v&yacute;choz&iacute;ho bodu, plyne i čas a měn&iacute; se dopravn&iacute; podm&iacute;nky. N&aacute;stroj oblast&iacute; podle doby j&iacute;zdy k tomu přihl&iacute;ž&iacute;, pokud za&scaron;krtnete <b>Použ&iacute;t obvykl&eacute; dopravn&iacute; podm&iacute;nky pro</b>. Ne v&scaron;echny regiony v&scaron;ak podporuj&iacute; dopravn&iacute; data. Chcete-li zjistit, zda jsou tato data dostupn&aacute; ve va&scaron;&iacute; oblasti studie, klikněte v tomto n&aacute;stroji na odkaz <b>Zobrazit dostupnost</b>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Pokud tuto možnost neza&scaron;krtnete, vytvoř&iacute; n&aacute;stroj oblasti doby j&iacute;zdy na z&aacute;kladě pevn&yacute;ch rychlost&iacute;, jako jsou např&iacute;klad rychlostn&iacute; omezen&iacute;. Neza&scaron;krtnut&iacute; t&eacute;to možnosti je vhodn&eacute; v př&iacute;padě, že chcete zjistit obecnou oblast doby j&iacute;zdy, nikoliv oblast s měn&iacute;c&iacute;mi se dopravn&iacute;mi podm&iacute;nkami podle určit&eacute;ho času odjezdu.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MeasurementMethod">
+        <div><h2>Měření</h2></div>
+        <hr/>
+        <div>
+            <p>Umožňuje vybrat, zda se oblasti maj&iacute; poč&iacute;tat podle doby j&iacute;zdy nebo j&iacute;zdn&iacute; vzd&aacute;lenosti, a zadat dobu, resp. vzd&aacute;lenost až 300 minut nebo 300 mil (482,8 kilometrů).  
+            </p>
+            <p>Pokud zvol&iacute;te  <b>J&iacute;zdn&iacute; čas</b>, m&aacute;te k dispozici několik možnost&iacute;, jak měřit dobu j&iacute;zdy.
+                <ul>
+                    <li>
+                        <p>Chcete-li vytv&aacute;řet oblasti doby j&iacute;zdy na z&aacute;kladě pevn&yacute;ch rychlost&iacute;, zru&scaron;te za&scaron;krtnut&iacute; pole  <b>Použ&iacute;t dopravu</b>. Neza&scaron;krtnut&iacute; t&eacute;to možnosti je vhodn&eacute; v př&iacute;padě, že chcete zjistit obecnou oblast doby j&iacute;zdy, nikoliv oblast s měn&iacute;c&iacute;mi se dopravn&iacute;mi podm&iacute;nkami podle určit&eacute;ho času odjezdu.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Chcete-li vytv&aacute;řet oblasti doby j&iacute;zdy na z&aacute;kladě dan&eacute;ho poč&aacute;tečn&iacute;ho času a měn&iacute;c&iacute;ch se dopravn&iacute;ch podm&iacute;nek, za&scaron;krtněte možnost  <b>Použ&iacute;t dopravu</b>. Pokud tak&eacute; zvol&iacute;te možnost <b>Aktu&aacute;ln&iacute; dopravn&iacute; podm&iacute;nky</b>, bude čas odjezdu ze vstupn&iacute;ch bodů nastaven na aktu&aacute;ln&iacute; čas a při vytv&aacute;řen&iacute; oblast&iacute; doby j&iacute;zdy budou použ&iacute;v&aacute;ny aktu&aacute;ln&iacute; a předpov&iacute;dan&eacute; rychlosti dopravy z&iacute;skan&eacute; ze zdrojů a čidel. Předpov&iacute;dan&eacute; rychlosti dopravy jsou vypoč&iacute;t&aacute;ny na z&aacute;kladě aktu&aacute;ln&iacute;ch rychlost&iacute; provozu, historick&yacute;ch rychlost&iacute; a aktu&aacute;ln&iacute;ch ud&aacute;lost&iacute;, např&iacute;klad počas&iacute;. Rychlosti dopravy jsou předpov&iacute;d&aacute;ny na 12 hodin dopředu, takže můžete přesunut&iacute;m posuvn&iacute;ku nastavit čas odjezdu až o 12 hodin dopředu.
+                        </p>
+                        <p>Tato nastaven&iacute; aktu&aacute;ln&iacute; dopravy jsou vhodn&aacute;, chcete-li zjistit, do jak&yacute;ch oblast&iacute; se můžete dostat, vyjedete-li okamžitě, za jednu hodinu atd.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Pokud za&scaron;krtnete pole  <b>Použ&iacute;t dopravu</b> a vyberete možnost <b>Obvykl&eacute; dopravn&iacute; podm&iacute;nky pro</b> den a čas, bude n&aacute;stroj vytv&aacute;řet oblasti doby j&iacute;zdy na z&aacute;kladě historick&yacute;ch rychlostn&iacute;ch průměrů pětiminutov&yacute;ch intervalů v průběhu běžn&eacute;ho t&yacute;dne. V&yacute;sledky přihl&iacute;žej&iacute; k hustotě dopravy, neberou v&scaron;ak v potaz vliv aktu&aacute;ln&iacute;ch dopravn&iacute;ch podm&iacute;nek a ud&aacute;lost&iacute;, kter&eacute; se mohou v&yacute;razně li&scaron;it od normy.
+                        </p>
+                        <p> Pomoc&iacute; těchto historick&yacute;ch dopravn&iacute;ch nastaven&iacute; se např&iacute;klad můžete zeptat na ot&aacute;zku, &bdquo;Do jak&yacute;ch oblast&iacute; se mohu obyčejně dostat, pokud vyjedu v 11:30 ve středu?&ldquo;
+                        </p>
+                        <p>Nastaven&yacute; čas ř&iacute;d&iacute; časov&yacute;m p&aacute;smem, ve kter&eacute;m se nach&aacute;z&iacute; vstupn&iacute; body. Pokud tedy nastav&iacute;te čas na 8:00 a m&aacute;te dva body, jeden v New York City a druh&yacute; v Los Angeles, budou oblasti doby j&iacute;zdy vygenerov&aacute;ny pro 8:00 v&yacute;chodn&iacute;ho času a 8:00 tichomořsk&eacute;ho času.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+            <p> Mějte na paměti, že jak se vozidlo vzdaluje z v&yacute;choz&iacute;ho bodu, plyne i čas a měn&iacute; se dopravn&iacute; podm&iacute;nky. N&aacute;stroj oblast&iacute; doby j&iacute;zdy k tomu přihl&iacute;ž&iacute;, za&scaron;krtnete-li <b>Použ&iacute;t dopravu</b>. Ne v&scaron;echny regiony v&scaron;ak podporuj&iacute; dopravn&iacute; data. Chcete-li zjistit, zda jsou tato data dostupn&aacute; ve va&scaron;&iacute; oblasti studie, klikněte v tomto n&aacute;stroji na odkaz <b>Zobrazit dostupnost</b>.
+            </p>  
+        </div>
+    </div>
+    <div id="DissolveType">
+        <div><h2>Oblasti z různých bodů</h2></div>
+        <hr/>
+        <div>
+            <p>Umožňuje vybrat, jak&yacute;m způsobem maj&iacute; b&yacute;t zpracov&aacute;ny sd&iacute;len&eacute; oblasti z různ&yacute;ch vstupn&iacute;ch bodů, kter&eacute; se dot&yacute;kaj&iacute;. Dostupn&eacute; možnosti:
+                <ul>
+                    <li> <b>Přesah</b> &ndash; Oblasti z různ&yacute;ch vstupn&iacute;ch bodů mohou pokr&yacute;vat stejnou silnici. Tato možnost je užitečn&aacute;, potřebujete-li zjistit v&scaron;echny vstupn&iacute; body, ze kter&yacute;ch je možn&eacute; se dostat do určit&eacute;ho um&iacute;stěn&iacute; s danou dobou j&iacute;zdy nebo vzd&aacute;lenost&iacute;.
+                    </li>
+                    <li> <b>Sloučit</b> &ndash; V&scaron;echny oblasti jsou sloučeny do jedn&eacute;, konkr&eacute;tn&iacute; um&iacute;stěn&iacute; nemůže pokr&yacute;vat v&iacute;ce než jedna oblast. Tato možnost je užitečn&aacute;, potřebujete-li pouze zjistit, zda je možn&eacute; se do oblasti dostat v určit&eacute; době nebo vzd&aacute;lenosti a pokud nepotřebujete vědět, ze kter&yacute;ch vstupn&iacute;ch bodů je možn&eacute; se k n&iacute; dostat.
+                    </li>
+                    <li> <b>Rozdělit</b> &ndash; Oblasti z různ&yacute;ch vstupn&iacute;ch um&iacute;stěn&iacute;, kter&eacute; by se překr&yacute;valy, jsou uprostřed rozděleny, takže na sebe přil&eacute;haj&iacute;. Tato možnost je užitečn&aacute;, chcete-li zjistit, kter&eacute; oblasti se nach&aacute;zej&iacute; v určit&eacute; době nebo vzd&aacute;lenosti od vstupn&iacute;ch bodů a z&aacute;roveň určit, kter&yacute; vstupn&iacute; bod je t&eacute;to oblasti nejbl&iacute;že.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Název výsledné vrstvy</h2></div>
+        <hr/>
+        <div>
+            <p> Jde o n&aacute;zev vrstvy, kter&aacute; se vytvoř&iacute; ve složce <b>Můj obsah</b> a přid&aacute; na mapu. V&yacute;choz&iacute; n&aacute;zev se ř&iacute;d&iacute; n&aacute;zvem vrstvy anal&yacute;zy. Pokud vrstva již existuje, budete pož&aacute;d&aacute;ni o potvrzen&iacute;, že si přejete ji přepsat.
+            </p>
+            <p>V&nbsp;rozbalovac&iacute;m seznamu  <b>Uložit v&yacute;sledek do</b> můžete zadat n&aacute;zev složky ve složce <b>Můj obsah</b>, do kter&eacute; se m&aacute; v&yacute;sledek uložit.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

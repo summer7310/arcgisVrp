@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Obohatit vrstvu</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Obohatit vrstvu">
+    </p>
+    <p>Tento n&aacute;stroj obohacuje data z&iacute;sk&aacute;n&iacute;m faktů t&yacute;kaj&iacute;c&iacute;ch se lid&iacute;, m&iacute;st a firem, kter&eacute; obklopuj&iacute; um&iacute;stěn&iacute; va&scaron;ich dat, a umožňuje v&aacute;m zodpovědět nov&eacute; ot&aacute;zky o um&iacute;stěn&iacute;ch, na kter&eacute; nestač&iacute; samotn&eacute; mapy. Např&iacute;klad: Jak&yacute; druh lid&iacute; zde žije? Co lid&eacute; v t&eacute;to oblasti r&aacute;di dělaj&iacute;? Jak&eacute; jsou jejich zvyky a životn&iacute; styly? Jak&eacute; druhy firem se v t&eacute;to oblasti nach&aacute;z&iacute;?
+    </p>
+    <p>V&yacute;sledkem bude nov&aacute; vrstva obsahuj&iacute;c&iacute; v&scaron;echny demografick&eacute; a geografick&eacute; informace z dan&yacute;ch sb&iacute;rek dat. Tyto nov&eacute; informace jsou přid&aacute;ny jako pole tabulky.
+    </p>
+    <p>Pokud je za&scaron;krtnuto  <b>Použ&iacute;vat rozsah aktu&aacute;ln&iacute; mapy</b>, budou analyzov&aacute;ny pouze prvky ve vrstvě anal&yacute;zy a ve vrstvě oblasti viditeln&eacute; v rozsahu aktu&aacute;ln&iacute; mapy. Pokud toto pole za&scaron;krtnuto nen&iacute;, budou analyzov&aacute;ny v&scaron;echny prvky ve vrstvě anal&yacute;zy a ve vrstvě oblasti, včetně těch, kter&eacute; se nach&aacute;z&iacute; mimo rozsah aktu&aacute;ln&iacute; mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Zobrazit dostupná data pro</h2></div>
+        <hr/>
+        <div>
+            <p>Umožňuje vybrat region a z&iacute;skat seznam dostupn&yacute;ch sb&iacute;rek dat a atributů obsažen&yacute;ch ve sb&iacute;rce dat. Můžete vybrat celou sb&iacute;rku nebo ji rozbalit a vybrat z n&iacute; jeden či v&iacute;ce atributů. Vybran&eacute; sb&iacute;rky dat a atributy se přidaj&iacute; do v&yacute;sledn&eacute; vrstvy.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Definovat oblasti k obohacení dat</h2></div>
+        <hr/>
+        <div>
+            <p>Jedn&aacute; se o oblasti, kter&eacute; maj&iacute; b&yacute;t obohaceny doplňkov&yacute;mi informacemi obsažen&yacute;mi ve sb&iacute;rce dat. Obsahuje-li vrstva anal&yacute;zy body nebo linie, jsou kolem každ&eacute;ho bodu nebo linie vytvořeny oblasti s použit&iacute;m vzd&aacute;lenosti vzdu&scaron;nou čarou, j&iacute;zdn&iacute; vzd&aacute;lenosti nebo j&iacute;zdn&iacute;ho času.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Název výsledné vrstvy</h2></div>
+        <hr/>
+        <div>
+            <p>Jde o n&aacute;zev vrstvy, kter&aacute; se vytvoř&iacute; ve složce  <b>Můj obsah</b> a přid&aacute; na mapu. V&yacute;choz&iacute; n&aacute;zev se ř&iacute;d&iacute; n&aacute;zvem vrstvy anal&yacute;zy. Pokud vrstva již existuje, budete pož&aacute;d&aacute;ni o potvrzen&iacute;, že si přejete ji přepsat.
+            </p>
+            <p>V rozbalovac&iacute;m seznamu  <b>Uložit v&yacute;sledek do</b> můžete zadat n&aacute;zev složky ve složce <b>Můj obsah</b>, do kter&eacute; se m&aacute; v&yacute;sledek uložit.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

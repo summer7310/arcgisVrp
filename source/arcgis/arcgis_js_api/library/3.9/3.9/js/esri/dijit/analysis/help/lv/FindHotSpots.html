@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Atrast karstos punktus</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> Atrast karstos punktus rīks nosaka, vai jūsu telpiskajos datos ir kādi statistiski nozīmīgi klasteri.
+        <ul>
+            <li>Vai jūsu punkti (noziedzība, koki, satiksmes negadījumi) tie&scaron;ām veido klasterus?  Kā jūs varat būt dro&scaron;s?
+            </li>
+            <li>Vai jūs esat atklāju&scaron;i patie&scaron;ām nozīmīgu karsto punktu (tērē&scaron;anas paradumu, zīdaiņu mirstības, nemainīgi augsti pārbaužu rezultāti) vai jūsu karte stāstītu citu stāstu, ja jūs mainītu veidu kā tā ir simbolizēta?
+            </li>
+        </ul>
+        Atrast karstos punktus rīks palīdzēs jums atbildēt uz &scaron;iem jautājumiem ar pārliecību.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="AnalysisFieldPoly">
+        <div><h2>Izvēlēties analīzes lauku</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;ī analīze atbildēs uz jautājumu: Kur ir augstas un zemas vērtības (norādītajam analīzes laukam) telpiskie klasteri?  
+            </p>
+            <p>Rezultāta slānis būs analīzes slāņa kopija.  Tabulā tiks iekļauti jūsu izvēlētie analīzes lauki plus papildu lauki, kas atspoguļo klasteru tendences, nozīmību un ticamības līmeni.
+            </p> 
+        </div>
+    </div>
+    <div id="AnalysisFieldPoint">
+        <div><h2>Izvēlēties analīzes lauku</h2></div>
+        <hr/>
+        <div>
+            <p>Ja jūs sniedzat analīzes lauku, &scaron;is rīks atbildēs uz jautājumu: Kur ir augstu un zemu vērtību klasteri starp punktiem? 
+            </p>
+            <p>Rezultāta slānis būs punktu analīzes slāņa kopija.  Tabulā tiks iekļauti jūsu izvēlētie analīzes lauki plus papildu lauki, kas atspoguļo klasteru tendences, nozīmību un ticamības līmeni.
+            </p>
+            <p>Ja jūs nesagādājat analīzes lauku, &scaron;is rīks novērtēs punktu elementu telpisko kārtību un atbildēs uz jautājumu: Kur ir punkti, kas negaidīti veido klasterus vai izkliedējas?   
+            </p>
+            <p>Kad nav sagādāts neviens analīzes lauks, rīks izveidos režģi un saskaitīs punktu skaitu, kas ietilpst katrā režģa &scaron;ūnā. Analizēti tiek tikai tie lauki, kuru punktu skaits ir lielāks par nulli.  Rezultātu slānis ir režģa sūnas; rezultātu slāņa tabula satur saskaitītās vērtības papildus arī laukus, kas atspoguļo klāsteru izturību, statistisko nozīmību un ticamības līmeni.
+            </p> 
+        </div>
+    </div>
+    <div id="BoundingPolygonLayer">
+        <div><h2>Definējiet kur iespējami incidenti</h2></div>
+        <hr/>
+        <div>
+            <p>Vai nu zīmēt, vai sniegt slāni robežojo&scaron;ajā ietvarā, lai atbildētu uz jautājumu: Robežojo&scaron;ajā ietvarā, vai ir izvietojumi ar negaidīti augstu vai zemu punktu koncentrāciju?   
+            </p>
+            <p>Uzzīmētais laukums vai jūsu norādītie laukuma elementi, kur punkti iespējami varēs gadīties.  Lai zīmētu &scaron;os laukumus, klik&scaron;ķiniet uz kartes, lai izveidotu laukuma formu.  Lai zīmētu papildu laukumus, Klik&scaron;ķiniet uz kartes vēl un turpiniet.
+            </p>
+            <p>Piezīme: Ja jūs vēlaties daļēji pārklāt jūsu punktus ar citiem areāliem kā režģa sūnas,  <b>Sagādāt sakopo&scaron;anas areālus, lai summētu incidentus</b>.
+            </p>
+            <p>&Scaron;īs analīzes rezultātu slānis būs režģa &scaron;ūnas, kas pārklās jūsu sagādātos ierobežotos areālus.  Tabulā tiks iekļauts zivju tīkla kvadrātu punktu skaits plus papildu lauki, kas atspoguļo klasteru spēku, statistisku nozīmi un ticamības līmeni.   
+            </p> 
+        </div>
+    </div>
+    <div id="AggregationPolygonLayer">
+        <div><h2>Sagādājiet sakopošanas areālus</h2></div>
+        <hr/>
+        <div>
+            <p>Nodro&scaron;iniet laukumu slāni (parasti tie atspoguļotu administratīvās ziņo&scaron;anas rajonus, piem., tautas skaitī&scaron;anu, pa&scaron;valdību robežas), lai atbildētu uz jautājumu: Ņemot vērā punktu skaitu katrā laukuma elementā, vai ir tur vietas ar statistiski nozīmīgiem telpisko klasteru augstu vai zemu punktu skaitu?   
+            </p>
+            <p>&Scaron;īs analīzes rezultāta slānis būs sakopoto laukumu kopija.  Tabulā tiks iekļauts katra laukuma punktu skaits, plus papildu lauki, kas atspoguļo klasteru tendencies, statistisku nozīmību un ticamības līmeni. 
+            </p> 
+        </div>
+    </div>
+    <div id="OutputLayerName">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>Dodiet nosaukumu slānim, kas tiks izveidots iek&scaron; jūsu  <b>Mans Saturs</b> un pievienojiet kartei. Rezultāta slānis rādīs statistiski nozīmīgus augstu un zemu vērtību klasterus vai punktu skaitu. Ja rezultāta slāņa nosaukums jau pastāv, jums jautās, vai to pārsaukt.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātu</b> izvelkamajā lodziņā jūs varat norādīt nosaukumu mapē iek&scaron; <b>Mans Saturs</b> kur rezultāts tiks saglabāts.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

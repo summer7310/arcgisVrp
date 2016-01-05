@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Sumuj w pobliżu</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Narzędzie wyszukuje obiekty, kt&oacute;re znajdują się w określonej odległości w warstwie analizy.  Odległość można zmierzyć w linii prostej, odległość czasu dojazdu (np. w ciągu 10 minut) lub odległość dojazdu (w zasięgu 5 kilometr&oacute;w).  W&oacute;wczas można obliczyć dane statystyczne dla pobliskich obiekt&oacute;w.  Na przykład:
+        <ul>
+            <li>Oblicz całkowitą populację ludności w zasięgu pięciu minut drogi od zaproponowanej nowej lokalizacji sklepu.
+            </li>
+            <li>Oblicz liczbę zjazd&oacute;w z autostrady w promieniu p&oacute;łtora kilometra odległości od zaproponowanej nowej lokalizacji sklepu, aby dokonać oceny dostępności sklepu.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jeśli jest zaznaczona opcja  <b>Użyj bieżącego zasięgu mapy</b>, przeanalizowane zostaną tylko obiekty w warstwie analizy i warstwie sumowania widoczne w bieżącym zasięgu mapy.  Jeśli powyższa opcja nie jest zaznaczona, analizowane będą wszystkie obiekty w warstwie analizy i warstwie sumowania, nawet jeśli będą poza bieżącym zasięgiem mapy.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Wybierz warstwę do sumowania</h2></div>
+        <hr/>
+        <div>
+            <p>Zsumowane zostaną obiekty w tej warstwie, kt&oacute;re znajdują się w zasięgu określonej odległości do obiekt&oacute;w w warstwie analizy. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Znajdź najbliższe obiekty, używając</h2></div>
+        <hr/>
+        <div>
+            <p>Można zdefiniować, jakiego rodzaju pomiary odległości mają być użyte: odległość w linii prostej, długość trasy lub czas przejazdu.  W przypadku zar&oacute;wno długości trasy, jak i czasu dojazdu użyj sieci dr&oacute;g i uwzględnij takie ograniczenia, jak drogi jednokierunkowe.  Czas przejazdu uwzględnia wybraną prędkość podr&oacute;ży: opartą na aktualnych lub typowych prędkościach ruchu drogowego. Aktualna prędkość ruchu drogowego jest określana na podstawie bieżących odczyt&oacute;w z czujnik&oacute;w, natomiast wartość typowa jest obliczana z użyciem historycznych średnich wartości.   
+            </p>
+            <p>Można wprowadzić wiele odległości.  Zsumowane zostaną obiekty, kt&oacute;re znajdują się w zasięgu wprowadzonych odległości (lub są im r&oacute;wne).  
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można także obliczyć dane statystyczne dla atrybut&oacute;w numerycznych pobliskich punkt&oacute;w. 
+            </p>
+            <p>Jeśli zaznaczona jest opcja  <b>Liczba punkt&oacute;w</b>, obliczona zostaje całkowita liczba pobliskich punkt&oacute;w.  Ponadto można obliczyć dane statystyczne dla p&oacute;l numerycznych pobliskich punkt&oacute;w.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości dla określonego pola.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można także obliczyć dane statystyczne dla atrybut&oacute;w numerycznych pobliskich linii. 
+            </p>
+            <p>Jeśli jest zaznaczona opcja  <b>Długość całkowita</b>, obliczona zostanie całkowita długość pobliskich linii.  Ponadto można obliczyć dane statystyczne dla p&oacute;l numerycznych pobliskich linii.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości dla określonego polu.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Dodaj statystyki z</h2></div>
+        <hr/>
+        <div>
+            <p>Można także obliczyć dane statystyczne dla atrybut&oacute;w numerycznych pobliskich obszar&oacute;w. 
+            </p>
+            <p>Jeśli jest zaznaczona opcja  <b>Powierzchnia całkowita</b>, system obliczy całkowitą powierzchnię pobliskich obiekt&oacute;w.  Ponadto można obliczyć dane statystyczne dla p&oacute;l numerycznych pobliskich obiekt&oacute;w.
+            </p>
+            <ul>
+                <li> <b>Suma</b> &mdash; całkowita wartość określonego pola.
+                </li>
+                <li> <b>Średnia</b> &mdash; wartość średnia określonego pola.
+                </li>
+                <li> <b>Minimum</b> &mdash; najniższa wartość określonego pola.
+                </li>
+                <li> <b>Maksimum</b> &mdash; najwyższa wartość określonego pola.
+                </li>
+                <li> <b>Odch. standardowe</b> &mdash; odchylenie standardowe wartości dla określonyego pola.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Wybierz pole, według którego wykonane będzie grupowanie</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to atrybut pobliskich obiekt&oacute;w, kt&oacute;rego można użyć, aby obliczyć dane statystyczne dla każdej unikalnej wartości atrybutu. Na przykład, zał&oacute;żmy że warstwa analizy zawiera wolne działki na sprzedaż, a pobliskie obiekty to budynki.  Jednym z atrybut&oacute;w budynk&oacute;w jest  <i>UseType</i>, kt&oacute;ry zawiera wartości takie jak HANDLOWY, MIESZKALNY, PRODUKCYJNY, PUBLICZNY itd.  Aby scharakteryzować r&oacute;żnorodność zastosowań budynk&oacute;w w pobliżu każdej wolnej działki, można obliczyć całkowitą powierzchnię każdego unikalnego typu użytkowania budynku w promieniu dw&oacute;ch kilometr&oacute;w od wolnych działek, z zastosowaniem <i>UseType</i> jako grupy według atrybut&oacute;w.
+            </p>    
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Nazwa warstwy wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w zakładce  <b>Moje zasoby</b> i dodana do mapy.  Domyślna nazwa jest tworzona na podstawie nazwy warstwy analizy. Jeśli ta warstwa już istnieje, wyświetli się komunikat z pytaniem, czy ma zostać nadpisana.
+            </p>
+            <p>Używając menu rozwijalnego  <b>Zapisz wynik w</b>, można wybrać folder w zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

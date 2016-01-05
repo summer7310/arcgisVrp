@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Enrich Layer</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="./images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Enrich Layer">
+    </p>
+    <p>This tool  enriches your data by getting facts about the people, places, and businesses that surround your data locations and enables you to answer new questions about locations that you cannot answer with maps alone. For example: What kind of people live here? What do people like to do in this area? What are their habits and lifestyles? What kind of businesses are there in this area?
+    </p>
+    <p>The result will be a new layer containing  all demographic and geographic information from  given data collections.  This new information is added as fields in the table.
+    </p>
+    <p>If  <b>Use current map extent</b> is checked, only the features in the analysis and area layer visible within the current map extent will be analyzed.  If unchecked, all features in both the analysis layer and the area layer will be analyzed, even if they are outside the current map extent.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Show available data for</h2></div>
+        <hr/>
+        <div>
+            <p>Select your region and get a list  of the available data collections  and attributes within the data collection.  You can select an entire collection or expand the collection and select one or more attributes from the collection.  The selected data collections and attributes are added to the result layer.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Define areas to enrich</h2></div>
+        <hr/>
+        <div>
+            <p>These are the areas  to enrich with additional information found in the data collection. If your analysis layer contains points or lines, areas are created around each point or line using a straight-line distance  or a driving time.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Result layer
+name</h2></div>
+        <hr/>
+        <div>
+            <p>This is the name of the layer that will be created in  your  <b>My Contents</b>  and added to the map.  The default  name is based on the analysis layer name. If the layer already exists, you will be asked to confirm if you want to overwrite it.
+            </p>
+            <p>Using the  <b>Save result in</b> drop-down box, you can  specify the name of a folder in <b>My Contents</b> where the result will be saved.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

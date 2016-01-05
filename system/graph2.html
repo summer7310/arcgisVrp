@@ -1,0 +1,77 @@
+<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-asterisk"></span> 
+货物配送费用统计分析
+</div>
+<div id="container1" style=" height: 400px; margin: 0 auto"></div>
+
+<script language="JavaScript">
+$(document).ready(function() {  
+   var chart = {
+      type: 'column'
+   };
+   var title = {
+      text: '货物配送费用统计分析'   
+   };    
+   var xAxis = {
+      type: 'category',
+      labels: {
+         rotation: -45,
+         style: {
+            fontSize: '13px',
+            fontFamily: 'Verdana, sans-serif'
+         }
+      }
+   };
+   var yAxis ={
+      min: 0,
+      title: {
+        text: '货物配送费用 (千)'
+      }
+   };  
+   var tooltip = {
+      pointFormat: '货物总配送费用: <b>{point.y:.1f} 千</b>'
+   };   
+   var credits = {
+      enabled: true
+   };
+   var series= [{
+            name: '货物配送月份',
+            data: [
+                ['2015年1月', 15],
+                ['2015年2月', 12],
+                ['2015年3月', 5],
+                ['2015年4月', 18],
+                ['2015年5月', 23],
+                ['2015年6月', 9],
+                ['2015年7月', 26],
+                ['2015年8月', 30],
+                ['2015年9月', 19],
+                ['2015年10月', 10],
+                ['2015年11月', 27],
+                ['2015年12月', 24],
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#000',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 5, // 10 pixels down from the top
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title;   
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;   
+   json.tooltip = tooltip;   
+   json.credits = credits;
+   json.series = series;
+   $('#container1').highcharts(json);
+  
+});
+</script>

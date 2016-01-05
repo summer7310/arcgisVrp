@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Suppleringsdata</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Suppleringsdata">
+    </p>
+    <p>Med dette verkt&oslash;yet supplerer du dataene dine ved &aring; innhente fakta om personer, steder og virksomheter som befinner seg rundt datalokasjonene, og du kan i tillegg f&aring; svar p&aring; sp&oslash;rsm&aring;l om lokasjonene som du ikke kan f&aring; svar p&aring; med kart alene. For eksempel: Hva slags mennesker bor her? Hva liker menneskene som bor i dette omr&aring;det, &aring; gj&oslash;re? Hvilke vaner og hvilken livsstil har de? Hvilken type virksomheter finnes i dette omr&aring;det?
+    </p>
+    <p>Resultatet blir et nytt lag som inneholder all demografisk og geografisk informasjon fra gitte datasamlinger.  Den nye informasjonen legges til som felter i tabellen.
+    </p>
+    <p>Hvis det er merket av for  <b>Use current map extent</b>, analyseres kun geoobjektene i analyselaget og omr&aring;delaget som vises i gjeldende kartutstrekning.  Hvis det ikke er merket av for dette alternativet, analyseres alle geoobjekter i b&aring;de analyselaget og omr&aring;delaget, selv om de befinner seg utenfor gjeldende kartutstrekning.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Vis tilgjengelige data for</h2></div>
+        <hr/>
+        <div>
+            <p>Velg omr&aring;det ditt, og f&aring; en liste over tilgjengelige datasamlinger og attributter innenfor datasamlingen.  Du kan velge en hel samling eller utvide samlingen og velge ett eller flere attributter fra samlingen.  De valgte datasamlingene og attributtene legges til i resultatlaget.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Definer områdene du vil supplere</h2></div>
+        <hr/>
+        <div>
+            <p>Du kan forbedre disse omr&aring;dene ved hjelp av tilleggsinformasjon som finnes i datasamlingen. Hvis analyselaget inneholder punkter eller linjer, opprettes det omr&aring;der rundt hvert punkt eller hver linje ved hjelp av luftlinjeavstand eller kj&oslash;retid.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; laget som opprettes i  <b>Mitt innhold</b> og legges til kartet.  Standardnavnet er basert p&aring; navnet p&aring; analyselaget. Hvis laget finnes allerede, blir du bedt om &aring; bekrefte at du vil overskrive det.
+            </p>
+            <p>Bruk rullegardinlisten  <b>Save result in</b> til &aring; angi navnet p&aring; en mappe i <b>Mitt innhold</b> som resultatet skal lagres i.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

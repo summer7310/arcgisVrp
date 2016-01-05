@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Feldberechnung</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Berechnet Werte f&uuml;r ein Feld (Attribut) auf Grundlage einer angegebenen Formel.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Ausdrücke</h2></div>
+        <hr/>
+        <div>
+            <p>Sie k&ouml;nnen Ausdr&uuml;cke erstellen, um Werte f&uuml;r neue oder vorhandene Felder (Attribute) zu berechnen.
+            </p>
+            <p>Nachdem Sie ein Feld ausgew&auml;hlt haben, kann ein Ausdruck erstellt werden, indem Sie auf das Ausdrucksfeld klicken, um den  <b>Ausdruck-Generator</b> zu starten. Im <b>Ausdruck-Generator</b> k&ouml;nnen Ausdr&uuml;cke aus einer beliebigen Kombination von anderen Feldern, numerischen Operatoren, Python-Funktionen sowie numerischen und Zeichenfolgenwerten erstellt werden. Wenn Sie Werte f&uuml;r ein neues Feld berechnen, m&uuml;ssen Sie die Eigenschaften des Feldes, darunter Aliasname und Feldtyp, und f&uuml;r Textattribute die L&auml;nge des Textes f&uuml;r das Feld definieren.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Name des Ergebnis-Layers</h2></div>
+        <hr/>
+        <div>
+            <p>Dies ist der Name des Layers, der in  <b>Eigene Inhalte</b> erstellt und der Karte hinzugef&uuml;gt wird. Der Standardname basiert auf dem Namen des Eingabe-Layers. Wenn der Layer bereits vorhanden ist, m&uuml;ssen Sie angeben, ob er &uuml;berschrieben werden soll.
+            </p>
+            <p>&Uuml;ber das Dropdown-Feld  <b>Ergebnis speichern in</b> k&ouml;nnen Sie den Namen eines Ordners in <b>Eigene Inhalte</b> angeben, in dem das Ergebnis gespeichert werden soll.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

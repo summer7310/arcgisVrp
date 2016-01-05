@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kenttälaskin</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Kentt&auml;laskin laskee kent&auml;n (ominaisuuden) arvot k&auml;ytt&auml;j&auml;n m&auml;&auml;ritt&auml;m&auml;ll&auml; kaavalla.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Ehtolauseke</h2></div>
+        <hr/>
+        <div>
+            <p>Voit luoda ehtolausekkeita, joiden perusteella lasketaan uusien tai nykyisten kenttien (ominaisuuksien) arvot.
+            </p>
+            <p>Kun olet valinnut kent&auml;n, voit aloittaa ehtolausekkeen luonnin k&auml;ynnist&auml;m&auml;ll&auml;  <b>lausekkeen muodostustoiminnon</b> napsauttamalla ehtolausekeruutua. <b>Lausekkeen muodostustoiminnossa</b> voi luoda ehtolausekkeen mist&auml; tahansa muiden kenttien, numeeristen operaattorien, Python-funktioiden sek&auml; numero- ja merkkijonoarvojen yhdistelm&auml;st&auml;.  Jos lasket uuden kent&auml;n arvoja, m&auml;&auml;rit&auml; kent&auml;n ominaisuudet: alias, kent&auml;n tyyppi sek&auml; tekstiominaisuuksia varten kent&auml;n sis&auml;lt&auml;m&auml;n tekstin pituus.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Tulostason nimi</h2></div>
+        <hr/>
+        <div>
+            <p>Sen tason nimi, joka luodaan kohtaan  <b>Oma sis&auml;lt&ouml;</b> ja joka lis&auml;t&auml;&auml;n karttaan.  Oletusnimi perustuu analyysitason nimeen. Jos taso on jo olemassa, n&auml;ytt&ouml;&ouml;n tulee kehotus vahvistaa tason korvaus.
+            </p>
+            <p>Avattavan  <b>Tallenna tulos kohteeseen</b> -valikon avulla voit m&auml;&auml;ritt&auml;&auml; sen <b>Oma sis&auml;lt&ouml;</b> -kansion nimen, johon tulos tallennetaan.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

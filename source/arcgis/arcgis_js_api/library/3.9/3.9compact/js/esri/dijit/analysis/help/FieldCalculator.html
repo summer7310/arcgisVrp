@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Field Calculator</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Calculates values for a field (attribute) based on a formula you specify.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Expressions</h2></div>
+        <hr/>
+        <div>
+            <p>You can create expressions to calculate values for new or existing fields (attributes).
+            </p>
+            <p>After selecting field, an expression can be built by clicking in the expression box to launch the  <b>Expression Builder</b>.  In the <b>Expression Builder</b>, an expression can be created from any combination of other fields, numerical operators, Python functions, and numeric and string values.  If you are calculating values for a new  field, you must define the field's properties including alias, field type, and for text attributes, the length of text the field will contain.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Result layer
+name</h2></div>
+        <hr/>
+        <div>
+            <p>This is the name of the layer that will be created in   <b>My Contents</b>  and added to the map.  The default  name is based on the analysis layer name. If the layer already exists, you will be asked to confirm if you want to overwrite it.
+            </p>
+            <p>Using the  <b>Save result in</b> drop-down box, you can  specify the name of a folder in <b>My Contents</b> where the result will be saved.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

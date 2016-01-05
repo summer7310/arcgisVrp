@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Izveidot Braukšanas laika areālus</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Izveidot Bauk&scaron;anas laika areālus izveido areālus, kurus var sasniegt noteiktā brauk&scaron;anas laikā vai distancē. Gar ceļiem tiek mērīts no viena vai vairākiem punktiem (līdz 1000), lai izveidotu slāni, kas var palīdzēt atbildēt uz sekojo&scaron;iem jautājumiem:
+        <ul>
+            <li>Kur es varu nokļūt no pa&scaron;reizējās atra&scaron;anās vietas 30 minū&scaron;u brauk&scaron;anas laikā?
+            </li>
+            <li>Kur es varu nokļūt, izbraucot pl. 5:30 sastrēgumu laikā, no pa&scaron;reizējās atra&scaron;anās vietas 30 minū&scaron;u brauk&scaron;anas laikā?
+            </li>
+            <li>Kurus pilsētas areālus ugunsdzēsēju departaments var sasniegt 5 minū&scaron;u laikā? 
+            </li>
+            <li>Kā uzlabotos ugunsdzēsēju brigāžu pārklājuma zona izbūvējot jaunu ugunsdzēsēju depo &scaron;eit?
+            </li>
+            <li>Kādas tirdzniecības areālus nosedz mans bizness?
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jūs iespējams spējat atbildēt uz Jūsu jautājumiem tikai vizualizējot izvades areālus. Alternatīvi, jūs varat veikt tālāku telpisko analīzi, izmantojot izejas areālus. Piemēram, darbinot Apkopot punktus, lietojot brauk&scaron;anas laika areālus ar demogrāfiskajiem datiem, var palīdzēt noteikt, kur ir potenciāla veikala atra&scaron;anās vieta, ar vislabāko klientu bāzi jūsu biznesam. 
+    </p>
+    <p>
+        <table>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        <tr><td valign="baseline"><img src="../images/tip.png"></td><td valign="baseline"><h2>Tip:&ensp;</h2></td>
+        <td valign="baseline">
+            <p>Lai izveidotu teritorijas, mērot lineāro distanci, nevis mērot gar ceļiem, izmantojiet Izveidot buferus.
+            </p>
+        </td></tr>
+        <tr><td colspan="3"><hr size="1" noshade="noshade"></td></tr>
+        </table>
+    </p>
+    <p> <b>Lietot pa&scaron;reizējo kartes pārklājumu</b> ir atzīmēts, tiks lietoti tikai tie elementi, kas ir pa&scaron;reizējā kartes pārklājumā, lai izveidotu uz brauk&scaron;anas laiku vai distanci bāzētus areālus. Ja atiezīmēts, tiks izmantoti visi ievades slāņa elementi, pat ja tie atrodas ārpus pa&scaron;reizējā kartes pārklājuma.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="MeasurementMethodTypicalTraffic">
+        <div><h2>Izmērīt</h2></div>
+        <hr/>
+        <div>
+            <p>Izvēlieties vai rēķināt brauk&scaron;anas laika vai brauk&scaron;anas distances areālus, un ievadiet laiku vai distanci līdz 300 minūtēm vai 300 jūdzēm (482,8 kilometriem).  
+            </p>
+            <p>Kad jūs izvēlaties  <b>Brauk&scaron;anas laiku</b>, jums ir sekojo&scaron;as opcijas:
+                <ul>
+                    <li>
+                        <p>Atzīmēt  <b>Lietot tipiskus satiksmes nosacījumus priek&scaron;</b> un iestatot dienu un laiku, rīks izveido uz satiksmi bāzētus brauk&scaron;anas laika areālus.  Lai kalkulētu brauk&scaron;anas laiku, tiek lietots vēsturiskais ātruma vidējais katru piecu minū&scaron;u intervāls mar&scaron;rutē&scaron;anas nedēļā. Izvades brauk&scaron;anas laika areālu izmērs un forma variēs tādēļ, ka satiksmes intensitāte nedēļas laikā svārstās.
+                        </p>
+                        <p> Jūs varat izmantot satiksmes uzstādījumus, lai pajautātu, piemēram, &quot;kādus areālus es varu sasniegt izbraucot tre&scaron;dien pl. 11:30?&quot;
+                        </p>
+                        <p>Laiks jo jūs iestatat attiecas uz laika zonu, kurā atrodas jūsu ievades punkti. Ja jūs iestatat laiku uz pl. 8:00 un divus punktus, kas atrodas Ņujorkā un Losandželosā, brauk&scaron;anas laika areāls tiks attiecīgi ģenerēts no pl. 8:00 Austrumu laika un pl. 8:00 Klusā okeāna laika.
+                        </p>
+                        <p>  Ņemiet vērā, ka transportlīdzeklis brauc uz āru no punkta, laiks ir pagājis un satiksmes apstākļi mainās. Brauk&scaron;anas laika areālu rīks rēķina &scaron;īs variācijas, kad jūs izvēlaties <b>Lietot tipiskos satiksmes nosacījumus priek&scaron;</b>; tomēr, ne visi reģioni atbalsta satiksmi. Klik&scaron;ķiniet <b>Skatīt pieejamību</b> saiti uz rīku, lai noskaidrotu, vai tas tiek piedāvāts jūsu studiju areālā.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Atiezīmējot &scaron;o izvēlni, rīks izveidos brauk&scaron;anas laika areālus bazētus uz fiksētu ātrumu, kā piemēram, ātruma ierobežojumi. &Scaron;ī izvēlne jāizvēlas, ja jūs vēlaties vispārēju brauk&scaron;anas laika arēālu, kas nav aprēķināts izmantojot mainīgus satiksmes apstākļus noteiktam izbrauk&scaron;anas laikam.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="MeasurementMethod">
+        <div><h2>Izmērīt</h2></div>
+        <hr/>
+        <div>
+            <p>Izvēlieties vai rēķināt brauk&scaron;anas laika vai brauk&scaron;anas distances areālus, un ievadiet laiku vai distanci līdz 300 minūtēm vai 300 jūdzēm (482,8 kilometriem).  
+            </p>
+            <p>Kad jūs izvēlaties  <b>Brauk&scaron;anas laiku</b>, jums ir opcijas, kā mērīt brauk&scaron;anas laiku.
+                <ul>
+                    <li>
+                        <p>Neatzīmēt  <b>Lietot Satiksmi</b> lai izveidotu brauk&scaron;anas laika areālus, balstoties uz fiksētu ātrumu. &Scaron;ī izvēlne jāizvēlas, ja jūs vēlaties vispārēju brauk&scaron;anas laika arēālu, kas nav aprēķināts izmantojot mainīgus satiksmes apstākļus noteiktam izbrauk&scaron;anas laikam.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Iezīmējiet  <b>Lietot satiksmi</b>, lai izveidotu brauk&scaron;anas laika areālus balstoties uz noteiktu izbrauk&scaron;anas laiku un mainīgiem satiksmes apstākļiem. Arī, izvēloties <b>Dzīva satiksme</b> opciju, izbrauk&scaron;anas laiks no ievades punktiem ir iestatīts uz pa&scaron;reizējo laiku, un pa&scaron;reizējās un prognozētās satiksmes ātrums ir atsauce uz sensoriem un ir pamats, lai izveidotu brauk&scaron;anas laika areālus. Prognozētais satiksmes ātrums tiek aprēķināts, atsaucoties uz dzīvās satiksmes ātrumu, vēsturisko ātrumu un aktualitātēm, piem., laika apstākļiem. Satiksmes ātrums tiek prognozēts 12 stundām, lai jūs varētu pārvietot slīdni, lai iestatītu izbrauk&scaron;anas laiku līdz pat 12 stundām.
+                        </p>
+                        <p>Izmantojiet &scaron;os dzīvās satiksmes iestatījumus, lai atrastu, kuri areāli var tikt sasniegti izbraucot tagad, izbraucot pēc stundas utt. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>Iezīmējot  <b>Lietot satiksmi</b> un izvēloties <b>Satiksmi ar tipiskiem nosacījumiem priek&scaron;</b> dienas un laika, rīks izveido brauk&scaron;anas laika areālus uz vēsturiskiem vidējiem ātrumiem, katram piecminū&scaron;u intervālam rutīnas nedēļā. &Scaron;ie rezultāti ietver satiksmi, bet izņem pa&scaron;reizējās satiksmes nosacījumus un notikumus, kas var ievērojami at&scaron;ķirties no normas.
+                        </p>
+                        <p> Jūs varat izmantot &scaron;os vēsturiskos satiksmes uzstādījumus, lai pajautātu, piemēram, &quot;kādus areālus es varu sasniegt izbraucot tre&scaron;dien pl. 11:30?&quot;
+                        </p>
+                        <p>Laiks jo jūs iestatat attiecas uz laika zonu, kurā atrodas jūsu ievades punkti. Ja jūs iestatat laiku uz pl. 8:00 un divus punktus, kas atrodas Ņujorkā un Losandželosā, brauk&scaron;anas laika areāls tiks attiecīgi ģenerēts no pl. 8:00 Austrumu laika un pl. 8:00 Klusā okeāna laika.
+                        </p>
+                    </li>
+                </ul>
+                
+            </p>
+            <p> Ņemiet vērā, ka transportlīdzeklis brauc uz āru no punkta, laiks ir pagājis un satiksmes apstākļi mainās. Brauk&scaron;anas laika areālu rīks rēķina &scaron;īs variācijas, kad jūs atzīmējat <b>Lietot satiksmi</b>; tomēr, ne visi reģioni atbalsta satiksmi. Klik&scaron;ķiniet <b>Skatīt pieejamību</b> saiti uz rīku, lai noskaidrotu, vai tas tiek piedāvāts jūsu studiju areālā.
+            </p>  
+        </div>
+    </div>
+    <div id="DissolveType">
+        <div><h2>Areāli no dažādiem ievades punktiem</h2></div>
+        <hr/>
+        <div>
+            <p>Izvēlieties kā koplietotie arēāli no dažādiem ievades punktiem tiek apstrādāti, kad tie sasniedz viens otru. Tie var:
+                <ul>
+                    <li> <b>Pārklāties</b>&mdash;Areāli no dažādiem ievades punktiem var pārklāt to pa&scaron;u ceļu. Tas ir noderīgi, kad jums jāzin visi ievades punkti, kas var sasniegt noteiktu izvietojumu, dotajā brauk&scaron;anas laikā un distancē.
+                    </li>
+                    <li> <b>Iz&scaron;ķīdināt</b>&mdash;Visi areāli tiek apvienoti vienā un nevairāk kā viens areāls var pārklāt noteiktu izvietojumu. Tas ir noderīgi, kad viss kas jums jāzin, ka areāls var tikt sasniegts dotajā laikā vai distancē, bet jums nav jāzin, tie&scaron;i kuri ievades punkti var sasniegt izvietojumu.
+                    </li>
+                    <li> <b>Sa&scaron;ķelt</b>&mdash;Areāli no dažādiem ievades izvietojumiem, kas daļēji apklātos ir sa&scaron;ķelti vidū, tādejādi tā vietā tie robežojas viens ar otru. &Scaron;is ir noderīgi, kad jūs vēlaties redzēt kuri areāli atrodas dotā laika vai distances robežās no ievades punkta, un ,tajā pat laikā nosaka, kuri ievades punkti atrodas tuvāk &scaron;im areālam.
+                    </li>
+                </ul>
+                
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p> &Scaron;is ir slāņa nosaukums, kas tiks izveidots iek&scaron; <b>Mans Saturs</b> un pievienots kartei.  Noklusējuma nosaukums ir balstīts uz analīzes slāņa nosaukumu. Ja slānis jau pastāv, jums tiks lūgts apstiprināt, vai vēlaties to pārrakstīt.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātu</b> izvelkamajā lodziņā jūs varat norādīt nosaukumu mapē iek&scaron; <b>Mans Saturs</b> kur rezultāts tiks saglabāts.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

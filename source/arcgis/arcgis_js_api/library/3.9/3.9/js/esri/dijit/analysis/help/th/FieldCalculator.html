@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>การคำนวณค่าในฟิลด์</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>การคำนวณค่าในฟิลด์ (ข้อมูลคุณลักษณะ) อ้างอิงจากสูตรที่คุณกำหนด 
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>ข้อความสูตร</h2></div>
+        <hr/>
+        <div>
+            <p>คุณสามารถสร้างข้อความสูตรเพื่อคำนวณค่าจากค่าในฟิลด์ใหม่ หรือฟิลด์มีอยู่แล้ว (ข้อมูลคุณลักษณะ)
+            </p>
+            <p>หลังจากเลือกฟิลด์ ข้อความสูตรจะสร้างขึ้นโดยการคลิกเลือกที่กล่องสร้างข้อความเพื่อทำการเปิด  <b>สร้างข้อความสูตร</b>  ใน <b>สร้างข้อความสูตร</b> ข้อความสูตรสามารถสร้างขึ้นจากการรวมฟิลด์ต่างๆ ที่ประกอบด้วยตัวเลข ฟังก์ชั่นของไพธอน และตัวเลข หรือค่าตัวอักษร  ถ้าคุณกำลังคำนวณค่าฟิลด์ใหม่ คุณต้องกำหนดคุณสมบัติของคอลัมน์ รวมถึง ชื่อรอง ชนิดของฟิลด์ และตารางคุณลักษณะ ความยาวของตัวอักษรที่จะเก็บได้  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>ชื่อชั้นข้อมูลผลลัพธ์</h2></div>
+        <hr/>
+        <div>
+            <p>ชื่อนี้เป็นของชั้นข้อมูลที่จะถูกสร้างขึ้นใน  <b>รายการของฉัน</b> เนื้อหา และเพิ่มลงในแผนที่  ชื่อตั้งต้นจะอ้างอิงจากชื่อชั้นข้อมูลที่จะวิเคราะห์ ถ้ามีชั้นข้อมูลนี้อยู่แล้ว ระบบจะถามคุณเพื่อให้ยืนยัน ถ้าคุณต้องการเขียนทับ
+            </p>
+            <p>การใช้  <b>บันทึกผลลัพธ์ลงใน</b> เลือกกล่องเลื่อนลงมา คุณสามารถระบุชื่อของโฟเดอร์ใน <b>รายการของฉัน</b> ที่ผลลัพธ์จะถูกบันทึกไว้
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

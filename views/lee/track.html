@@ -1,0 +1,38 @@
+<div class="tab-content" ng-controller="tracker">
+	<div role="tabpanel" class="tab-pane fade in active" id="home">
+		<button id="track" type="button" class="btn btn-primary" ng-click="startTrack()"><span class="glyphicon glyphicon-ok-circle"></span> 开启</button>
+		<button id="trackoff" type="button" class="btn btn-danger" ng-click="stopTrack()"><span class="glyphicon glyphicon-remove-circle"></span> 关闭</button>
+		<!-- Single button -->
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		    统计 <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a href="#"><span class="glyphicon glyphicon-ok"></span> 数据表单</a></li>
+		    <li><a href="#"><span class="glyphicon glyphicon-ok"></span> 速度曲线</a></li>	   
+		  </ul>
+		</div>
+		<div class="table-responsive pt15">
+			<table class="table">
+				<tr>
+					<th>时间</th>
+					<th>速度</th>
+					<th>经纬</th>
+					<th>维度</th>
+				</tr>
+			  	<tr ng-repeat="item in trackData">						  
+					<td>{{item.time}}</td>
+					<td>{{item.speed}}</td>
+					<td>{{item.latitude}}</td>
+					<td>{{item.lontitude}}</td>			  
+				</tr>
+			</table>
+		</div>
+	</div>
+	 
+</div>
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>

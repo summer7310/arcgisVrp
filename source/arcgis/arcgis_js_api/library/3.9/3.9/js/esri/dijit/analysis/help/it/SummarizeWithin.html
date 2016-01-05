@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Riepiloga entro</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Questo strumento consente di trovare feature (e porzioni di feature) che si trovano entro i confini di aree nel layer di analisi.  Ad esempio:
+        <ul>
+            <li>Dati un layer di confini spartiacque e un layer di confini di utilizzo del suolo per tipo di utilizzo, &egrave; possibile calcolare la superficie totale in acri del tipo di utilizzo del suolo per ogni spartiacque. 
+            </li>
+            <li>Dati un layer di lotti di una regione e un layer di confini di citt&agrave;, &egrave; possibile riepilogare il valore medio di lotti non occupati entro ciascun confine di citt&agrave;.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Se si seleziona  <b>Usa estensione mappa corrente</b>, vengono analizzate solo le feature nel layer di analisi e nel layer da riepilogare visibili all'interno dell'estensione mappa corrente.  Se questa opzione &egrave; deselezionata, vengono analizzate tutte le feature presenti nel layer di analisi e nel layer da riepilogare, anche se esterne all'estensione mappa corrente.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Scegli layer per il riepilogo</h2></div>
+        <hr/>
+        <div>
+            <p>Vengono riepilogate le feature in questo layer che si trovano entro i confini di feature presenti nel layer di analisi. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Aggiungi statistiche da</h2></div>
+        <hr/>
+        <div>
+            <p>Facoltativamente, &egrave; possibile calcolare statistiche per attributi numerici dei punti che si trovano entro i confini di feature. 
+            </p>
+            <p>Se si seleziona la casella di controllo  <b>Conteggio di punti</b>, viene calcolato il numero totale di punti che si trovano entro ciascun confine di area.  Inoltre, &egrave; possibile calcolare statistiche per attributi numerici dei punti che si trovano entro ciascun confine di area.
+            </p>
+            <ul>
+                <li> <b>Somma</b>: il valore totale del campo specificato.
+                </li>
+                <li> <b>Media</b>: il valore medio del campo specificato.
+                </li>
+                <li> <b>Minimo</b>: il valore minimo nel campo specificato.
+                </li>
+                <li> <b>Massimo</b>: il valore massimo nel campo specificato.
+                </li>
+                <li> <b>Deviazione standard</b>: la deviazione standard dei valori nel campo specificato.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Aggiungi statistiche da</h2></div>
+        <hr/>
+        <div>
+            <p>Facoltativamente, &egrave; possibile calcolare statistiche per attributi numerici delle linee nelle vicinanze. 
+            </p>
+            <p>Se si seleziona la casella di controllo  <b>Lunghezza totale di linee in</b>, viene calcolata la lunghezza totale di linee all'interno di ciascun confine di area.  Inoltre, &egrave; possibile calcolare statistiche per attributi numerici delle linee che si trovano entro ciascun confine di area.
+            </p>
+            <ul>
+                <li> <b>Somma</b>: il valore totale del campo specificato.
+                </li>
+                <li> <b>Media</b>: il valore medio del campo specificato.
+                </li>
+                <li> <b>Minimo</b>: il valore minimo nel campo specificato.
+                </li>
+                <li> <b>Massimo</b>: il valore massimo nel campo specificato.
+                </li>
+                <li> <b>Deviazione standard</b>: la deviazione standard dei valori nel campo specificato.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Aggiungi statistiche da</h2></div>
+        <hr/>
+        <div>
+            <p>Facoltativamente, &egrave; possibile calcolare statistiche per attributi numerici delle aree nelle vicinanze. 
+            </p>
+            <p>Se si seleziona la casella di controllo  <b>Area totale usando</b>, viene calcolata l'area totale di feature che si trovano entro ciascun confine di area del layer di analisi.  Inoltre, &egrave; possibile calcolare statistiche per attributi numerici delle feature che si trovano entro ciascun confine di area.
+            </p>
+            <ul>
+                <li> <b>Somma</b>: il valore totale del campo specificato.
+                </li>
+                <li> <b>Media</b>: il valore medio del campo specificato.
+                </li>
+                <li> <b>Minimo</b>: il valore minimo nel campo specificato.
+                </li>
+                <li> <b>Massimo</b>: il valore massimo nel campo specificato.
+                </li>
+                <li> <b>Deviazione standard</b>: la deviazione standard dei valori nel campo specificato.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Scegli campo in base a cui raggruppare</h2></div>
+        <hr/>
+        <div>
+            <p>Questo &egrave; un attributo delle feature  <b>Riepiloga</b> utilizzabile per calcolare statistiche di ciascun valore di attributo univoco separatamente. Ad esempio, si supponga che il layer di analisi contenga confini di citt&agrave; e che le feature <b>Riepiloga</b> corrispondano a lotti.  Uno degli attributi dei lotti &egrave; <i>Stato</i> e contiene due valori: NON OCCUPATO e OCCUPATO. Per calcolare l'area totale dei lotti occupati e non occupati entro i confini delle citt&agrave;, utilizzare <i>Stato</i> come gruppo per attributo.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Nome layer risultati</h2></div>
+        <hr/>
+        <div>
+            <p>Questo &egrave; il nome del layer che verr&agrave; creato in  <b>I miei contenuti</b> e aggiunto alla mappa.  Il nome predefinito &egrave; basato sul nome del layer di analisi. Se il layer esiste gi&agrave;, verr&agrave; chiesto se si desidera sovrascriverlo.
+            </p>
+            <p>Utilizzare la casella a discesa  <b>Salva risultato in</b> per specificare il nome di una cartella di <b>I miei contenuti</b> in cui salvare il risultato.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

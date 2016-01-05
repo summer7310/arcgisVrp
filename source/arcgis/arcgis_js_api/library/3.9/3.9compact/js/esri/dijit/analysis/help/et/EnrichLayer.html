@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kihi geotöötlus</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Kihi geot&ouml;&ouml;tlus">
+    </p>
+    <p>See t&ouml;&ouml;riist rikastab teie andmeid, hankides fakte inimeste, kohtade ja &auml;ride kohta, mis &uuml;mbritsevad teie andmeid ruumiliselt ja v&otilde;imaldab teil vastata uutele k&uuml;simustele paikade kohta, millele muidu ei oskaks kaardilt vastata. N&auml;iteks: Millised inimesed siin piirkonnas elavad? Millega inimesed siin piirkonnas vabal ajal tegelevad? Millised on nende harjumused ja elustiil? Millist t&uuml;&uuml;pi ettev&otilde;tted siin piirkonnas tegutsevad?
+    </p>
+    <p>Tulemus on kiht, mis sisaldab lisaks geograafilisele teabele informatsiooni ka demograafilistest n&auml;itajatest jne.  Vastav uus info lisatakse v&auml;ljadena tabelisse.
+    </p>
+    <p>Kui  <b>Kasuta kaardi ulatust</b> on sisse l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil ainult neid objekte, mis antud hetkel on ekraanil n&auml;htavad.  Kui vastav tingimus on v&auml;lja l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil m&otilde;lema kihi k&otilde;iki objekte s&otilde;ltumata asjaolust, kas need on anal&uuml;&uuml;si k&auml;ivitamise hetkel ekraanil n&auml;htavad v&otilde;i mitte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Kuva kasutatavaid andmeid</h2></div>
+        <hr/>
+        <div>
+            <p>Valige oma regioon ja hankige nimekiri k&auml;ttesaadavatest andmete kollektsioonidest ja atribuutidest teie andmete raamistikus.  V&otilde;ite valida terve kollektsiooni v&otilde;i laiendada kollektsiooni ja selekteerida &uuml;he v&otilde;i rohkem n&auml;itaja(id).  Valitud andmete kollektsioon ja atribuudid lisatakse tulemkihile.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Määrake ala, mida soovite rikastada</h2></div>
+        <hr/>
+        <div>
+            <p>Need on piirkonnad, mida on vastavate andmekogude kaudu v&otilde;imalik t&auml;iendavalt rikastada. Juhul kui anal&uuml;&uuml;sikiht sisaldab punkte, luuakse pinnad iga punkti &uuml;mber kas sirgjoonelise kauguse, s&otilde;idu vahemaa v&otilde;i s&otilde;iduks kuluva aja alusel.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on kihi nimi, mis luuakse kasutaja  <b>Minu sisu</b>  alla ning lisatakse kaardile.  Vaikimisi nimi on tuletatud kihi anal&uuml;&uuml;si sisust. Kui see kiht juba eksisteerib, saate selle soovi korral &uuml;le kirjutada.
+            </p>
+            <p>Kasutades  <b>Salvesta tulemus</b> kasutaja sisu alla, mille saate valida rippmen&uuml;&uuml;st <b>Minu sisu</b>, kuhu tulemus salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

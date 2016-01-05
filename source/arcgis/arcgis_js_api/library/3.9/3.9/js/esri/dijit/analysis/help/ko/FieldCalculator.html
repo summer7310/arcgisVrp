@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="regularsize">
+        <h2>필드 계산기</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>지정한 수식을 기반으로 필드(속성)의 값을 계산합니다.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>식</h2></div>
+        <hr/>
+        <div>
+            <p>새 필드(속성) 또는 기존 필드(속성)의 값을 계산할 식을 생성할 수 있습니다.
+            </p>
+            <p>필드를 선택한 후 식 상자를 클릭하면 실행되는  <b>식 작성기</b>를 사용하여 식을 작성할 수 있습니다. <b>식 작성기</b>에서 다른 필드, 숫자 연산자, Python 함수 및 숫자/문자열 값의 조합을 통해 식을 생성할 수 있습니다.새 필드의 값을 계산하는 경우 별칭, 필드 유형 및 필드에 포함할 텍스트의 길이(텍스트 속성의 경우)가 포함된 필드의 등록정보를 정의해야 합니다.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>결과 레이어 이름</h2></div>
+        <hr/>
+        <div>
+            <p> <b>내 컨텐츠</b>에서 생성되어 맵에 추가되는 레이어의 이름입니다.기본 이름은 분석 레이어 이름을 기반으로 합니다.레이어가 이미 있는 경우 덮어쓸지 확인하는 메시지가 나타납니다.
+            </p>
+            <p> <b>결과 저장:</b> 드롭다운 상자를 사용하여 <b>내 컨텐츠</b>에서 결과를 저장할 폴더의 이름을 지정할 수 있습니다.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

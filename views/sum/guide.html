@@ -1,0 +1,33 @@
+<div class="tab-content" ng-controller="guideCtrl">
+	
+	<button id="addStopsBtn" type="button" class="btn btn-primary" ng-click="draw()"><span class="glyphicon glyphicon-plus-sign"></span>添加停靠点</button>
+
+	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tree-deciduous"></span>演示一： 路径诱导 <span class="glyphicon glyphicon-share-alt"></span>
+	</div>
+	<h3 style="padding-top:0;margin-top:0;">选择道路：
+		<label>
+			<select id="routeName" class="form-control" ng-model="vm.model" ng-option="">
+				<option value="">---选择线路---</option>
+				<option value="Route 1">线路 1</option>
+			    <option value="Route 2">线路 2</option>
+			    <option value="Route 3">线路 3</option>
+			</select>
+		</label>
+	</h3>
+	
+	<button id="addStopsBtn" type="button" class="btn btn-primary" ng-click="addStops()"><span class="glyphicon glyphicon-plus-sign"></span>添加停靠点</button>
+	<button id="clearStopsBtn" type="button" class="btn btn-danger" ng-click="clearStops()"><span class="glyphicon glyphicon-remove-circle">清除停靠点</button>
+	<br><br>
+	<button id="addBarriersBtn" type="button" class="btn btn-primary" ng-click="addBarriers()"><span class="glyphicon glyphicon-remove-sign"></span>添加障碍点</button>
+	<button id="clearBarriersBtn" type="button" class="btn btn-danger" ng-click="clearBarriers()"><span class="glyphicon glyphicon-remove-circle">清除障碍点</button>
+	<br><br>
+	<button id="solveRoutesBtn" type="button" class="btn btn-primary" ng-click="solveRoute()"><span class="glyphicon glyphicon-random"></span> 产生路径&nbsp&nbsp&nbsp</button>
+	<button id="clearRoutesBtn" type="button" class="btn btn-danger" ng-click="clearRoutes()"><span class="glyphicon glyphicon-remove-circle"></span>清除路线&nbsp&nbsp&nbsp </button>
+	<br><br>
+	<div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-tree-deciduous"></span>演示二： 路径查询 <span class="glyphicon glyphicon-share-alt"></span>
+	</div>
+
+	<!-- 添加路径查询模块 -->
+	<div id="dir1"></div>
+	
+</div>

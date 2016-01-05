@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Kalkulatorpól</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Oblicza wartości dla pola (atrybutu) w oparciu o formułę zdefiniowaną przez użytkownika.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Wyrażenia</h2></div>
+        <hr/>
+        <div>
+            <p>Można utworzyć wyrażenia w celu obliczenia wartości dla nowych lub istniejących p&oacute;l (atrybut&oacute;w).
+            </p>
+            <p>Po wybraniu pola można zbudować wyrażenie, klikając w polu wyrażeń, co spowoduje uruchomienie  <b>Kreatora wyrażeń</b>.  Wyrażenia w <b>Kreatorze wyrażeń</b> są tworzone z połączenia innych p&oacute;l, operator&oacute;w numerycznych, funkcji Python i wartości numerycznych oraz ciąg&oacute;w tekstowych.  Jeśli obliczane są wartości dla nowego pola, należy zdefiniować właściwości pola, w tym alias, typ pola, adla atrybut&oacute;w tekstowych długość tekstu, kt&oacute;ry pole będzie zawierać.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nazwa warstwy wynikowej</h2></div>
+        <hr/>
+        <div>
+            <p>Jest to nazwa warstwy, kt&oacute;ra zostanie utworzona w zakładce  <b>Moje zasoby</b> i dodana do mapy.  Domyślna nazwa jest oparta na nazwie warstwy analizy. Jeśli ta warstwa już istnieje, wyświeltony zostanie komunikat z pytaniem, czyma być nadpisana.
+            </p>
+            <p>Używając menu rozwijanego,  <b>Zapisz wynik w</b>, można wskazać nazwę folderu w zakładce <b>Moje zasoby</b>, gdzie zostanie zapisany wynik.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

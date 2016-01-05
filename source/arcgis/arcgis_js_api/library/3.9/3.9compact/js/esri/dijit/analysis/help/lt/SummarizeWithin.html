@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Sumuoti viduje</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Įrankis randa elementus (ar jų dalis), esančius analizuojamo sluoksnio ribose.  Pavyzdžiui:
+        <ul>
+            <li>Suskaičiuoti kiekvienos žemėnaudos dalį procentais upės baseine. 
+            </li>
+            <li>Turint sklypų ir savivaldybių sluoksnius apskaičiuoti neužstatytų sklypų kiekvienos savivaldybės ribose skaičių.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Jei  <b>Naudoti esamą žemėlapio aprėptį</b> pažymėtas, bus analizuojami tik aprėptyje matomi elementai.  Jei nepažymėtas, analizuojami bus visi sluoksnių elementai.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Pasirinkite sluoksnį sumavimui</h2></div>
+        <hr/>
+        <div>
+            <p>Elementai &scaron;iame sluoksnyje, patenkantys į analizės sluoksnio elementų ribas bus susumuoti. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti ta&scaron;kų, patenkančių į nurodytas ribas, skaitinių atributų reik&scaron;mių statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Ta&scaron;kų kiekis</b> apskaičiuos bendrą kiekviename plote esančių ta&scaron;kų skaičių.  Galite apskaičiuoti ta&scaron;kų, patenkančių į nurodytas ribas, skaitinių atributų reik&scaron;mių statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash;lauko reik&scaron;mių suma.
+                </li>
+                <li> <b>Vidurkis</b>&mdash;apskaičiuoja lauko reik&scaron;mių vidurkį.
+                </li>
+                <li> <b>Minimumas</b>&mdash;mažiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Maksimumas</b>&mdash;didžiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Standartinis nuokrypis</b>&mdash;standartinis arba vidutinis kvadratinis nuokrypis.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti &scaron;alia esančių linijų skaitinių atributų statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Bendras ilgis</b> apskaičiuos bendrą kiekviename plote esančių linijų ilgį.  Galite apskaičiuoti linijų, patenkančių į nurodytas ribas, skaitinių atributų reik&scaron;mių statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash;lauko reik&scaron;mių suma.
+                </li>
+                <li> <b>Vidurkis</b>&mdash;apskaičiuoja lauko reik&scaron;mių vidurkį.
+                </li>
+                <li> <b>Minimumas</b>&mdash;mažiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Maksimumas</b>&mdash;didžiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Standartinis nuokrypis</b>&mdash;standartinis arba vidutinis kvadratinis nuokrypis.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Pridėti statistinį rodiklį iš</h2></div>
+        <hr/>
+        <div>
+            <p>Taip pat galite apskaičiuoti &scaron;alia esančių plotų skaitinių atributų statistinius rodiklius. 
+            </p>
+            <p>Pažymėjus  <b>Sumuoti plotą, naudojant</b> apskaičiuos bendrą &scaron;alia esančių plotinių elementų plotą.  Galite apskaičiuoti plotų, patenkančių į nurodytas ribas, skaitinių atributų reik&scaron;mių statistinius rodiklius.
+            </p>
+            <ul>
+                <li> <b>Suma</b>&mdash;lauko reik&scaron;mių suma.
+                </li>
+                <li> <b>Vidurkis</b>&mdash;apskaičiuoja lauko reik&scaron;mių vidurkį.
+                </li>
+                <li> <b>Minimumas</b>&mdash;mažiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Maksimumas</b>&mdash;didžiausia lauko reik&scaron;mė.
+                </li>
+                <li> <b>Standartinis nuokrypis</b>&mdash;standartinis arba vidutinis kvadratinis nuokrypis.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Pasirinkite grupavimo lauką</h2></div>
+        <hr/>
+        <div>
+            <p>Tai  <b>Sumuojamų</b> elementų atributas, leidžiantis suskirstyti elementus pagal skirtingas atributo reik&scaron;mes. Pavyzdžiui, jei analizei naudojamas miesto ribų sluoksnis, o <b>Sumuojami</b> elementai yra sklypai.  Vienas i&scaron; sklypo atributų yra <i>Būsena</i>, kur saugomos dvi reik&scaron;mės: TU&Scaron;ČIAS ir UŽIMTAS. Bendro laisvų ir užimtų sklypų ploto miestų ribose apskaičiavimui naudokite <i>Būsena</i> kaip grupavimo atributą.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Rezultatų sluoksnio vardas</h2></div>
+        <hr/>
+        <div>
+            <p>Tai sluoksnio, kuris bus sukurtas ir patalpintas  <b>Mano Turinyje</b> bei pridėtas į žemėlapį, pavadinimas.  Pavadinimas pagal nutylėjimą formuojamas i&scaron; analizuojamo sluoksnio pavadinimo. Jei sluoksnis jau egzistuoja, galėsite pasirinkti jį perra&scaron;yti.
+            </p>
+            <p>Naudodami  <b>Rezultatą įra&scaron;yti į</b> sąra&scaron;ą, galite nurodyti <b>Mano Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

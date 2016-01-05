@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="SummarizeDataCategory" class="regularsize">
+        <h2>Sumowanie danych</h2>
+        <hr/>
+        <p>Narzędzia te umożliwiają obliczenie wszystkich wartości liczbowych, długości, powierzchni oraz statystyk opisowych obiekt&oacute;w i&nbsp;ich atrybut&oacute;w w&nbsp;obrębie danego obszaru lub w&nbsp;pobliżu innych obiekt&oacute;w.
+            <ul>
+                <li> <b>Agreguj punkty</b> pozwala na obliczanie statystyk dotyczących punkt&oacute;w znajdujących się w&nbsp;obrębie określonego obszaru.
+                </li>
+                <li> <b>Sumuj pobliskie dane</b> służy do obliczania statystyk obiekt&oacute;w i&nbsp;ich atrybut&oacute;w znajdujących się w&nbsp;określonej odległości.
+                </li>
+                <li> <b>Sumuj w obrębie</b> służy do obliczania statystyk obiekt&oacute;w poligonowych i&nbsp;atrybut&oacute;w, kt&oacute;re się pokrywają.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="AggregatePointsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Agreguj punkty</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Narzędzie to służy do pracy z&nbsp;warstwą obiekt&oacute;w punktowych oraz warstwą obiekt&oacute;w poligonowych i&nbsp;pozwala ustalić, kt&oacute;re punkty znajdują się w&nbsp;obrębie poszczeg&oacute;lnych obszar&oacute;w, a&nbsp;także obliczyć statystyki wszystkich punkt&oacute;w w&nbsp;każdym obszarze. Na przykład:
+                <ul>
+                    <li>Na podstawie lokalizacji punktowych przestępstw oblicz liczbę przestępstw w&nbsp;danym powiecie lub innej jednostce podziału administracyjnego.
+                    </li>
+                    <li>Wyszukaj najwyższe i&nbsp;najniższe dochody plac&oacute;wek franczyzowych według stanu.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeNearbyTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sumuj w pobliżu</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Umożliwia odnajdowanie obiekt&oacute;w znajdujących się w&nbsp;określonej odległości od obiekt&oacute;w w&nbsp;warstwie analizy.  Odległość można mierzyć jako odległość w&nbsp;linii prostej lub czas dojazdu do danego miejsca (na przykład: w&nbsp;odległości 10 minut drogi).  Następnie obliczane są statystyki pobliskich obiekt&oacute;w.  Na przykład:
+                <ul>
+                    <li>Oblicz całkowitą liczbę mieszkańc&oacute;w w&nbsp;odległości pięciu minut drogi od proponowanej lokalizacji nowego sklepu.
+                    </li>
+                    <li>Oblicz liczbę ramp wjazdu na autostradę i&nbsp;zjazdu z&nbsp;autostrady w&nbsp;odległości pięciu minut drogi od proponowanej lokalizacji nowego sklepu w&nbsp;celu oceny jego dostępności.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="SummarizeWithinTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Sumuj w obrębie</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Umożliwia wyszukiwanie obszar&oacute;w (i&nbsp;części obszar&oacute;w) nakładających się na siebie dw&oacute;ch warstw i&nbsp;obliczenie statystyk dotyczących ich pokrycia. Na przykład:
+                <ul>
+                    <li>Oblicz całkowitą, wyrażoną w&nbsp;akrach powierzchnię grunt&oacute;w użytkowych według typu dla każdego działu wodnego na podstawie warstwy obszar&oacute;w dział&oacute;w wodnych oraz warstwy obszar&oacute;w grunt&oacute;w użytkowych według typu. 
+                    </li>
+                    <li>Podsumuj średnią wartość działek na sprzedaż w&nbsp;obrębie każdego miasta na podstawie warstwy z&nbsp;działkami w&nbsp;danym powiecie oraz warstwy z&nbsp;granicami miejskimi.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+    <div id="EnrichLocationsCategory" class="regularsize">
+        <h2>Wzbogacanie danych</h2>
+        <hr/>
+        <p>Narzędzia te pomagają w&nbsp;badaniu charakteru poszczeg&oacute;lnych obszar&oacute;w. Dla wybranych obszar&oacute;w zwracane są szczeg&oacute;łowe dane demograficzne i&nbsp;statystyki. Dla bardziej rozległych obszar&oacute;w, takich jak powiaty i&nbsp;wojew&oacute;dztwa można uzyskać r&oacute;wnież informacje por&oacute;wnawcze.
+            <ul>
+                <li>Narzędzie  <b>Wzbogać warstwę</b> służy do pobierania informacji na temat ludności, miejsc oraz działalności na określonym obszarze lub w&nbsp;podanej odległości (także w&nbsp;formie czasu przejazdu) od danej lokalizacji.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="EnrichLayerTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Wzbogać warstwę</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Służy do pobierania informacji na temat ludności, miejsc oraz działalności na określonym obszarze lub w&nbsp;podanej odległości (także w&nbsp;formie czasu przejazdu) od danej lokalizacji.
+
+            </p>
+            <br/>
+        </div>
+    <div id="FindLocationsCategory" class="largesize">
+        <h2>Wyszukiwanie lokalizacji</h2>
+        <hr/>
+        <p>Te narzędzia służą do identyfikacji obszar&oacute;w spełniających podane przez Ciebie kryteria.  Kryteria te mogą być utworzone na podstawie zapytań o&nbsp;atrybut (na przykład: działki na sprzedaż) oraz zapytań przestrzennych (na przykład: w&nbsp;obrębie 1 kilometra od rzeki).  Wyszukane obszary można wybrać spośr&oacute;d istniejących obiekt&oacute;w (np. istniejących działek), można r&oacute;wnież utworzyć nowe obiekty, jeżeli wszystkie wymagania są spełnione.
+            <ul>
+                <li>Narzędzie  <b>Znajdź istniejące lokalizacje</b> szuka istniejących obszar&oacute;w w warstwie analizy, kt&oacute;re spełniają szereg kryteri&oacute;w.
+                </li>
+                <li> <b>Wprowadź nowe lokalizacje</b> jest narzędziem do tworzenia nowych lokalizacji na podstawie lokalizacji w&nbsp;badanym obszarze spełniających określone kryteria.
+                </li>
+                <li> <b>Znajdź podobne lokalizacje</b> wyszukuje obiekty, kt&oacute;re są najbardziej podobne do jednego lub większej liczby obiekt&oacute;w docelowych lub kt&oacute;re najbardziej się od nich r&oacute;żnią, na podstawie określonych przez Ciebie kryteri&oacute;w.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindExistingLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Znajdź istniejące lokalizacje</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Umożliwia wyb&oacute;r istniejących obiekt&oacute;w w&nbsp;badanym obszarze, kt&oacute;re spełniają określone kryteria. Kryteria można tworzyć na podstawie zapytań o&nbsp;atrybut (na przykład działki, kt&oacute;re są wolne) oraz zapytań przestrzennych (na przykład w&nbsp;odległości do 1 kilometra od rzeki).
+
+            </p>
+            <br/>
+        </div>
+        <div id="DeriveNewLocationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Wprowadź nowe lokalizacje</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Umożliwia tworzenie nowych obiekt&oacute;w w&nbsp;badanym obszarze, kt&oacute;re spełniają określone kryteria. Kryteria można tworzyć na podstawie zapytań o&nbsp;atrybut (na przykład działki, kt&oacute;re są wolne) oraz zapytań przestrzennych (na przykład w&nbsp;odległości do 1 kilometra od rzeki).
+
+            </p>
+            <br/>
+        </div>
+        <div id="FindSimilarLocationsTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Znajdź podobne lokalizacje</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Wyszukuje obiekty, kt&oacute;re są najbardziej podobne do jednego lub większej liczby obiekt&oacute;w docelowych lub kt&oacute;re najbardziej się od nich r&oacute;żnią,na podstawie określonych przez Ciebie kryteri&oacute;w.
+            </p>
+            <br/>
+        </div>
+    <div id="AnalyzePatternsCategory" class="smallsize">
+        <h2>Analiza zależności przestrzennych</h2>
+        <hr/>
+        <p>Narzędzia te pomagają w&nbsp;rozpoznawaniu, określaniu ilościowym oraz wizualizowaniu zależności przestrzennych w&nbsp;Twoich danych poprzez identyfikację obszar&oacute;w, na kt&oacute;rych znajdują się statystycznie istotne zgrupowania.  
+            <ul>
+                <li> <b>Narzędzie znajdź lokalizacje hot spot</b> identyfikuje statystycznie istotne zgrupowania w zależnościach przestrzennych Twoich danych.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="FindHotSpotsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Znajdź lokalizacje hot spot</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Narzędzie to tworzy mapę prezentującą statystycznie istotne przestrzenne klastry istniejące w&nbsp;danych użytkownika.   Skorzystaj z&nbsp;tego narzędzia, aby odkryć lokalizacje hot spot (czerwone) i&nbsp;cold spot (niebieskie) reprezentujące na przykład wysoką lub niską wartość domu, nasilenie przestępczości, liczbę ofiar śmiertelnych w&nbsp;wypadkach drogowych, stopę bezrobocia czy r&oacute;żnorodność biologiczną.
+            </p>
+            <br/>
+        </div>
+        <div id="ExploreCorrelationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Badaj korelacje</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Narzędzie służące do oceny siły zależności między numerycznymi wartościami atrybut&oacute;w Twoich obiekt&oacute;w.  Użytkownik wybiera do oceny gł&oacute;wną zmienną i&nbsp;maksymalnie dziesięć innych atrybut&oacute;w numerycznychy.  Narzędzie to oblicza korelację między gł&oacute;wną zmienną i&nbsp;pozostałymi wybranymi zmiennymi, zapewniając informacje na temat siły, sp&oacute;jności oraz typu zależności (pozytywna negatywna).  
+            </p>
+            <br/>
+        </div>
+    <div id="UseProximityCategory" class="largesize">
+        <h2>Narzędzia Bliskość</h2>
+        <hr/>
+        <p> Narzędzia te pomagają w&nbsp;udzieleniu odpowiedzi na jedno z&nbsp;najczęstszych pytań zadawanych podczas wykonywania analizy przestrzennej: &rdquo;Co znajduje się w&nbsp;pobliżu czego?&rdquo;
+            <ul>
+                <li> <b>Narzędzie Połącz punkty początkowe i docelowe</b> służy do pomiaru czasu podr&oacute;ży lub odległości między parami punkt początkowy-punkt docelowy.
+                </li>
+                <li> <b>Utw&oacute;rz bufory</b> umożliwia tworzenie obszar&oacute;w w&nbsp;r&oacute;wnej odległości od obiekt&oacute;w.
+                </li>
+                <li> <b>Narzędzie Utw&oacute;rz obszary czasu dojazdu</b> służy do wyszukiwania obszar&oacute;w wok&oacute;ł lokalizacji, do kt&oacute;rych można dotrzeć w danym czasie.
+                </li>
+                <li> <b>Narzędzie Znajdź najbliższe</b> służy do identyfikacji tych miejsc, kt&oacute;re są najbliżej znanych lokalizacji.
+                </li>
+                <li> <b>Narzędzie Zaplanuj trasy</b> służy do wyznaczania najlepszych tras dla floty pojazd&oacute;w, kt&oacute;re mają dotrzeć do wielu przystank&oacute;w.
+                </li>
+            </ul>
+            
+        </p>
+        <p> 
+        </p>
+    </div>
+        <div id="ConnectOriginsToDestinationsTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Połącz punkty początkowe i docelowe</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Oblicza czas podr&oacute;ży lub odległość między parami punkt początkowy-punkt docelowy. Na przykład można zobaczyć, jak daleko klienci są skłonni jechać do sklep&oacute;w, obliczyć spodziewany przebieg floty samochod&oacute;w ciężarowych lub podsumować przejazdy członk&oacute;w kohorty z domu do pracy.
+            </p>
+            <br/>
+        </div>
+        <div id="CreateBuffersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Utwórz bufory</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Bufor jest obszarem obejmującym swym zasięgiem obszar w&nbsp;określonej odległości od punktu, linii lub obiektu poligonowego. 
+            </p>
+            <p>Bufory są zwykle używane do tworzenia obszar&oacute;w, kt&oacute;re można poddać dalszej analizie za pomocą innych narzędzi, takich jak Nał&oacute;ż warstwy. Na przykład, na zadane pytanie &rdquo;Jakie budynki znajdują się w&nbsp;odległości jednego kilometra od szkoły?&rdquo;, można znaleźć odpowiedź, tworząc bufor o&nbsp;promieniu jednego kilometra wok&oacute;ł szkoły i&nbsp;nakładając na niego warstwę zawierającą obrys zabudowy.  Wynik tej operacji stanowi warstwa z&nbsp;budynkami znajdującymi się w&nbsp;odległości jednego kilometra od szkoły.  
+            </p>
+            <br/>
+        </div>
+        <div id="CreateDriveTimeAreasTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Utwórz obszary czasu przejazdu</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Obszar czasu dojazdu jest obszarem, do kt&oacute;rego można dostać się w&nbsp;określonym czasie dojazdu lub kt&oacute;ry znajduje się w&nbsp;danej odległości. Obszary czasu dojazdu mogą pom&oacute;c w znalezieniu odpowiedzi na takie pytania, jak:
+                <ul>
+                    <li>Gdzie mogę dostać się z&nbsp;tego miejsca w&nbsp;ciągu 30 minut jazdy?
+                    </li>
+                    <li>Dokąd mogę dostać się z&nbsp;tego miejsca w&nbsp;ciągu 30 minut jazdy o&nbsp;18:00 w&nbsp;godzinach szczytu?
+                    </li>
+                    <li>Do jakich części miasta może dotrzeć straż pożarna w&nbsp;ciągu pięciu minut? W jaki spos&oacute;b wybudowanie tutaj nowej jednostki straży pożarnej poprawiłoby szybkość reagowania na zgłoszenia pożar&oacute;w?
+                    </li>
+                    <li>Jakie obszary rynkowe są w zasięgu mojej działalności? Jakie obszary znajdują się w&nbsp;odległości 10 kilometr&oacute;w od moich sklep&oacute;w?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="FindNearestTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Znajdź najbliższe</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Umożliwia obliczenie kosztu przejazdu między miejscami zdarzeń lub obiektami oraz ustalić, kt&oacute;re z&nbsp;nich znajdują się bliżej siebie. Wynikiem zastosowania tego narzędzia jest warstwa przedstawiająca najlepsze trasy między miejscami zdarzeń lub obiektami łącznie z&nbsp;kosztem podr&oacute;ży (czas i&nbsp;odległość) dla każdej z&nbsp;tras.  Z&nbsp;tego narzędzia możesz skorzystać na przykład do wyszukania szpitala położonego najbliżej miejsca wypadku lub najbliższego bankomatu.
+            </p>
+            <br/>
+        </div>
+        <div id="PlanRoutesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Zaplanuj trasy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>W narzędziu podaje się zestaw przystank&oacute;w oraz liczbę pojazd&oacute;w, kt&oacute;re mogą dojechać do przystank&oacute;w. Następnie narzędzie Zaplanuj trasy określa, jak efektywnie przypisać przystanki do pojazd&oacute;w i wyznaczyć trasy pojazd&oacute;w do przystank&oacute;w.
+            </p>
+            <p>Za pomocą tego narzędzia można zaplanować pracę zespołu mobilnych inspektor&oacute;w, rzeczoznawc&oacute;w czy pracownik&oacute;w opieki społecznej, dostarczanie towar&oacute;w do odległych miejsc lub ich odbi&oacute;r czy usługi transportu os&oacute;b.
+            </p>
+            <br/>
+        </div>
+    <div id="ManageDataCategory" class="largesize">
+        <h2>Zarządzanie danymi</h2>
+        <hr/>
+        <p>Narzędzia te są używane zar&oacute;wno do codziennego zarządzania danymi geograficznymi, jak i&nbsp;łączenia danych przed analizą.  
+            <ul>
+                <li> <b>Kalkulator pola</b> to narzędzie do obliczania nowych wartości p&oacute;l za pomocą istniejących wartości p&oacute;l i&nbsp;formuł.
+                </li>
+                <li> <b>Agreguj obszary</b> jest narzędziem do łączenia ze sobą obszar&oacute;w wsp&oacute;łdzielących granicę lub mających wsp&oacute;lną wartość atrybutu.
+                </li>
+                <li> <b>Wydziel dane</b> to narzędzie służące do tworzenia nowych zestaw&oacute;w danych poprzez wydzielanie obiekt&oacute;w z&nbsp;istniejących danych.
+                </li>
+                <li> <b>Połącz warstwy</b> umożliwia skopiowanie wszystkich obiekt&oacute;w z&nbsp;co najmniej dw&oacute;ch istniejących warstw w&nbsp;celu utworzenia nowej warstwy.
+                </li>
+                <li> <b>Nał&oacute;ż warstwy</b> służy do łączenia co najmniej dw&oacute;ch warstw w&nbsp;jedną.  Nakładanie można postrzegać jako spojrzenie stos map i&nbsp;utworzenie pojedynczej mapy zawierającej wszystkie informacje z&nbsp;zestawu.
+                </li>
+            </ul>
+            
+        </p>
+    </div>
+        <div id="FieldCalculatorTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Kalkulatorpól</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Aktualizacja wartości istniejących lub nowych p&oacute;l na podstawie określonej formuły.
+            </p>
+            <br/>
+        </div>
+        <div id="DissolveBoundariesTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Agreguj obszary</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Obszary, kt&oacute;re się nakładają lub mają wsp&oacute;lną granicę zostają połączone w celu utworzenia jednego obszaru.    
+            </p>
+            <p>Możliwość wyboru zestawu granic do połączenia pojawia się po wskazaniu określonego pola. Na przykład, jeśli istnieje warstwa hrabstw i każde hrabstwo ma  <i>State_Name</i>atrybut, można agregować obszary, korzystając z tego <i>State_Name</i>atrybutu.  Hrabstwa do siebie przylegające zostaną połączone, jeśli mają tę samą wartość dla <i>State_Name</i>.  Wynikiem końcowym jest warstwa granic stan&oacute;w.
+            </p>
+            <br/>
+        </div>
+        <div id="ExtractDataTool" class="smallsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Wydziel dane</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Utworzenie pliku .zip lub pakietu warstw na podstawie podanych danych z&nbsp;warstw i zdefiniowanego obszaru zainteresowania.
+            </p>
+            <br/>
+        </div>
+        <div id="MergeLayersTool" class="regularsize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Połącz warstwy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Skopiowanie obiekt&oacute;w z&nbsp;co najmniej dw&oacute;ch istniejących warstw do nowej warstwy, na przykład:
+                <ul>
+                    <li>Mam trzy warstwy przedstawiające Anglię, Walię i&nbsp;Szkocję, z&nbsp;kt&oacute;rych chcę utworzyć jedną warstwę reprezentującą Wielką Brytanię. 
+                    </li>
+                    <li>Mam 12 warstw i każda z nich zawiera informacje o działkach w przylegających do siebie obszarach miejskich.  Chcę połączyć je w&nbsp;jedną warstwę, zachowując tylko te atrybuty z&nbsp;12 warstw wejściowych o tej samej nazwie i&nbsp;typie.
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+        <div id="OverlayLayersTool" class="largesize">
+            <table class="toolSummaryTable">
+                <thead></thead>
+                <tbody><tr>
+                    <td><h2>Nałóż warstwy</h2></td>
+                    <td>
+                    </td>
+                </tr></tbody>
+            </table>
+<hr/>
+            <p>Narzędzie Nał&oacute;ż warstwy łączy co najmniej dwie warstwy w&nbsp;jedną.  Nakładanie można postrzegać jako stos map i&nbsp;utworzenie z niego pojedynczej mapy zawierającej wszystkie informacje z&nbsp;zestawu, na przykład:
+                <ul>
+                    <li>Kt&oacute;re działki znajdują się w&nbsp;obrębie 100-letniej r&oacute;wniny zalewowej? (&bdquo;w&nbsp;obrębie&rdquo; to r&oacute;wnież pytanie o&nbsp;kolejność warstw.)
+                          
+                    </li>
+                    <li>Kt&oacute;re drogi znajdują się w&nbsp;granicach poszczeg&oacute;lnych państw?
+                    </li>
+                    <li>Na jakiego rodzaju glebach prowadzi się określone rodzaje upraw?
+                         
+                    </li>
+                    <li>Kt&oacute;re studnie znajdują się w&nbsp;obrębie opuszczonych jednostek wojskowych?
+                    </li>
+                </ul>
+                
+            </p>
+            <br/>
+        </div>
+</div>
+</html>

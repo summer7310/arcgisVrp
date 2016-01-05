@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Lauka kalkulators</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Kalkulē lauka (atribūta) vērtības, pamatojoties uz jūsu norādīto formulu.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Izteiksmes</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat izveidot izteiksmes, lai kalkulētu vērtības jauniem vai eksistējo&scaron;iem laukiem (atribūtiem).
+            </p>
+            <p>Kad izvēlas lauku, izteiksmi var veidot, noklik&scaron;ķinot izteiksmes lodziņā, lai uzsāktu  <b>Izteiksmju veidotāju</b>.  Iek&scaron; <b>Izteiksmju veidotāja</b>, izteiksmi var veidot no citu lauku, skaitlisko operatoru, Python funkciju, skaitļu un virkņu vērtību kombinācijas.  Ja jūs kalkulējat vērtības jaunam laukam, jums jādefinē lauka īpa&scaron;ības, iekļaujot aizstājvārdu, lauka tipu un teksta lauka garumu priek&scaron; teksta atribūta.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir slāņa nosaukums, kas tiks izveidots iek&scaron; jūsu  <b>Mans Saturs</b> un pievienots kartei.  Noklusējuma nosaukums ir balstīts uz analīzes slāņa nosaukumu. Ja slānis jau pastāv, jums tiks lūgts apstiprināt, vai vēlaties to pārrakstīt.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātu</b> izvelkamajā lodziņā jūs varat norādīt nosaukumu mapē iek&scaron; <b>Mans Saturs</b> kur rezultāts tiks saglabāts.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

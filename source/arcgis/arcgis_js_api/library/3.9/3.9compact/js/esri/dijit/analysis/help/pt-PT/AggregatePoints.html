@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Agregar Pontos</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Esta ferramenta funciona com uma camada de elementos de pontos (a camada de an&aacute;lise) e uma camada de elementos de &aacute;rea. Primeiro identifica quais os pontos que est&atilde;o dentro de cada &aacute;rea. Depois de determinar esta rela&ccedil;&atilde;o espacial de ponto-&aacute;rea, elabora  estat&iacute;sticas sobre todos os pontos da &aacute;rea e atribu&iacute;dos &agrave; &aacute;rea.  A estat&iacute;stica mais b&aacute;sica &eacute; a contagem do n&uacute;mero de pontos dentro da &aacute;rea, mas tamb&eacute;m pode obter outras estat&iacute;sticas.  
+    </p>
+    <p>Por exemplo, suponha que tem elementos de pontos com a localiza&ccedil;&atilde;o de caf&eacute; e elementos de &aacute;rea com os Munic&iacute;pios, e pretende resumir as vendas dos caf&eacute; por munic&iacute;pio.  Assumindo que os caf&eacute;s t&ecirc;m um atributo  <i>TOTAL_SALES</i>, pode obter a soma de todos os atributos <i>TOTAL_SALES</i> dentro de cada munic&iacute;pio, ou o m&iacute;nimo e m&aacute;ximo de <i>TOTAL_SALES</i> dentro de cada munic&iacute;pio, ou o desvio padr&atilde;o de todas as vendas dentro de cada munic&iacute;pio.
+    </p>
+    <p>O resultado &eacute; um mapa em que a cor de cada &aacute;rea &eacute; baseada no n&uacute;mero total de pontos dividido pelo tamanho da &aacute;rea.  A divis&atilde;o de contagens por &aacute;rea &eacute; conhecida como normaliza&ccedil;&atilde;o e &eacute; uma t&eacute;cnica que os cart&oacute;grafos utilizam sempre para exibir dados por &aacute;reas.  A normaliza&ccedil;&atilde;o ajuda a perceber melhor os padr&otilde;es espaciais, uma vez que o tamanho da &aacute;rea &eacute; tido em conta quando &eacute; feita a compara&ccedil;&atilde;o visual de cada &aacute;rea.
+    </p>
+    <p>Se a op&ccedil;&atilde;o <b>Utilizar a extens&atilde;o atual do mapa</b> estiver marcada, apenas os elementos da camada de an&aacute;lise e da camada &aacute;rea contidos na extens&atilde;o atual do mapa ser&atilde;o analisados.  Se estiver desmarcada, todos os elementos da camada de an&aacute;lise e da camada &aacute;rea ser&atilde;o analisados, mesmo se estiverem fora da extens&atilde;o atual do mapa.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="PolygonLayer">
+        <div><h2>Selecionar área</h2></div>
+        <hr/>
+        <div>
+            <p> Selecione uma camada de &aacute;rea do mapa web, &agrave; qual pretende agregar os pontos. Se n&atilde;o existirem camadas de limites no mapa web, pode selecionar a partir de uma lista de camadas de limites dispon&iacute;vel no ArcGIS Online. Todos os pontos que se encontrarem dentro dos limites das &aacute;reas inclu&iacute;das nessa camada ser&atilde;o contados e, opcionalmente, resumidos utilizando as op&ccedil;&otilde;es de estat&iacute;sticas escolhidas por si.
+            </p>
+        </div>
+    </div>
+    <div id="KeepBoundaryNoPoints">
+        <div><h2>Manter as áreas sem pontos</h2></div>
+        <hr/>
+        <div>
+            <p>Determina se &aacute;reas que n&atilde;o t&ecirc;m pontos inclu&iacute;dos aparecem na camada de resultado.  Se n&atilde;o marcar esta op&ccedil;&atilde;o, as &aacute;reas sem pontos n&atilde;o aparecem no resultado.  Se marcar esta op&ccedil;&atilde;o, as &aacute;reas sem pontos aparecem no resultado.  
+            </p>
+        </div>
+    </div>
+    <div id="SummaryFields">
+        <div><h2>Adicionar estatística</h2></div>
+        <hr/>
+        <div>
+            <p>Pode calcular estat&iacute;sticas relativas aos atributos da camada de pontos de entrada, como, por exemplo, a soma, a m&eacute;dia, o m&iacute;nimo, o m&aacute;ximo e o desvio padr&atilde;o. A camada de resultado ir&aacute; conter um novo atributo por cada estat&iacute;stica calculada. &Eacute; poss&iacute;vel adicionar um n&uacute;mero de estat&iacute;sticas &agrave; escolha selecionando um atributo e uma estat&iacute;stica (aparece uma nova caixa pendente).
+
+ 
+            </p>
+        </div>
+    </div>
+    <div id="GroupByField">
+        <div><h2>Escolher o campo a agrupar por</h2></div>
+        <hr/>
+        <div>
+            <p>Pode criar grupos estat&iacute;sticos utilizando um atributo na camada de an&aacute;lise.    Pode exemplo, se pretender agregar os crimes nos limites de uma vizinhan&ccedil;a, poder&aacute; ter um atributo  <i>Crime_type</i> com cinco tipos de crime diferentes.   Cada tipo de crime &uacute;nico forma um grupo e as estat&iacute;sticas selecionadas ser&atilde;o calculadas para cada valor &uacute;nico de <i>Crime_type</i>.  Quando seleciona um atributo de agrupamento, s&atilde;o criados dois resultados: a camada de resultado e uma tabela que inclui as estat&iacute;sticas de cada grupo &uacute;nico.
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nome da camada de resultados</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; o nome da camada que ser&aacute; criada no seu <b>O Meu Conte&uacute;do</b> e adicionado ao mapa.  O nome padr&atilde;o &eacute; baseado no tipo de an&aacute;lise e no nome da camada de an&aacute;lise.  Se a camada j&aacute; existir, ser&aacute; questionado se pretende substituir a camada existente.
+            </p>
+            <p>Ao utilizar a op&ccedil;&atilde;o <b>Guardar resultado em</b> pode definir o nome da pasta em <b>O Meu Conte&uacute;do</b> onde o resultado ser&aacute; guardado.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

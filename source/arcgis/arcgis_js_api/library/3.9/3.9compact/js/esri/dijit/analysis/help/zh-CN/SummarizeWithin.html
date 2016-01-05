@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>范围内汇总</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>此工具用于查找分析图层中处于区域边界内的要素（和部分要素）。例如：
+        <ul>
+            <li>按土地使用类型给定流域边界图层和土地使用边界图层，计算每个流域的土地使用类型的总面积。
+            </li>
+            <li>给定县内宗地的图层和城市边界图层，汇总各城市边界内闲置宗地的平均值。
+            </li>
+        </ul>
+        
+    </p>
+    <p>如果选中 <b>使用当前地图范围</b>，则仅分析当前地图范围内可见的分析图层和待汇总图层中的要素。如果未选中，则会对分析图层和待汇总图层内的所有要素进行分析，包括超出当前地图范围的要素。
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>选择汇总图层</h2></div>
+        <hr/>
+        <div>
+            <p>汇总此图层中位于分析图层的要素边界内的要素。 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>添加统计数据</h2></div>
+        <hr/>
+        <div>
+            <p>对于要素边界内的点，您可以计算其数值属性的统计数据。
+            </p>
+            <p>如果选中 <b>点计数</b>复选框，则会计算每个区域边界内点的总数。另外，您还可以计算每个区域边界内点的数值属性的统计数据。
+            </p>
+            <ul>
+                <li> <b>总和</b> - 指定字段的合计值。
+                </li>
+                <li> <b>平均值</b> - 指定字段的平均值。
+                </li>
+                <li> <b>最小值</b> - 指定字段的最小值。
+                </li>
+                <li> <b>最大值</b> - 指定字段的最大值。
+                </li>
+                <li> <b>标准差</b> - 指定字段中值的标准差。
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>添加统计数据</h2></div>
+        <hr/>
+        <div>
+            <p>您还可以计算邻近线的数值属性的统计数据。 
+            </p>
+            <p>如果选中 <b>线的总长度</b>复选框，则会计算每个区域边界内线的总长度。另外，您还可以计算每个区域边界内线的数值属性的统计数据。
+            </p>
+            <ul>
+                <li> <b>总和</b> - 指定字段的合计值。
+                </li>
+                <li> <b>平均值</b> - 指定字段的平均值。
+                </li>
+                <li> <b>最小值</b> - 指定字段的最小值。
+                </li>
+                <li> <b>最大值</b> - 指定字段的最大值。
+                </li>
+                <li> <b>标准差</b> - 指定字段中值的标准差。
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>添加统计数据</h2></div>
+        <hr/>
+        <div>
+            <p>您还可以计算邻近区域的数值属性的统计数据。
+            </p>
+            <p>如果选中 <b>计算总面积</b>复选框，则会计算分析图层中每个区域边界内要素的总面积。另外，您还可以计算每个区域边界内要素的数值属性的统计数据。
+            </p>
+            <ul>
+                <li> <b>总和</b> - 指定字段的合计值。
+                </li>
+                <li> <b>平均值</b> - 指定字段的平均值。
+                </li>
+                <li> <b>最小值</b> - 指定字段的最小值。
+                </li>
+                <li> <b>最大值</b> - 指定字段的最大值。
+                </li>
+                <li> <b>标准差</b> - 指定字段中值的标准差。
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>选择作为分组依据的字段</h2></div>
+        <hr/>
+        <div>
+            <p>这是 <b>汇总</b>要素的一个属性，可用于分别计算每个唯一属性值的统计数据。例如，假设分析图层包含城市边界， <b>汇总</b>要素为宗地。 <i>Status</i> 是宗地的一个属性，它包含两个值：VACANT 和 OCCUPIED。要计算城市边界内空闲和占用宗地的总面积，请使用 <i>Status</i> 作为按属性分组的条件。
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>结果图层名称</h2></div>
+        <hr/>
+        <div>
+            <p>在 <b>我的内容</b>中创建并添加到地图中的图层名称。默认名称参照分析图层的名称。如果图层已经存在，则系统会要求您确认是否要覆盖它。
+            </p>
+            <p>通过使用 <b>将结果保存到</b>下拉框，可以在 <b>我的内容</b>中指定文件夹的名称，结果将保存到该文件夹中。
+            </p>
+        </div>
+    </div>
+</div>
+</html>

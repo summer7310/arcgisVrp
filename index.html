@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>城市物流配送系统 </title>
+	<link href="js/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/dojo/dijit/themes/claro/claro.css">
+	<link href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/esri/css/esri.css" rel="stylesheet" type="text/css" />
+	<link href="style/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!-- 导航栏 -->	
+<div class="container-fluid p0">
+	<nav class="navbar navbar-default header" role="navigation"> 
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">toggle</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-map-marker"></span> 城市物流配送路径规划系统 <span class="badge">Beta</span></a>
+	    </div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href=""><span class="glyphicon glyphicon-user"></span> 管理员，你好！</a></li>
+				<li class="dropdown">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> 操作 <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="" data-toggle="modal" data-target="#sign">用户注册</a></li>
+						<li><a href="" data-toggle="modal" data-target="#myModal">用户登录</a></li>
+						<li><a href="" data-toggle="modal" data-target="#">注销登录</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav">
+				<li><a href="#/track"> <span class="glyphicon glyphicon-eye-open"></span> 路径追踪</a></li>
+				<!-- <li><a href="#/"><span class="glyphicon glyphicon-plane"></span> 交通流量</a></li> -->
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="clearVrp()"><span class="glyphicon glyphicon-random"></span> 车辆调度
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#/dataform">参数设置</a></li>
+						<li class="divider"></li>
+						<li><a href="#/guide">最短路径</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#/search"><span class="glyphicon glyphicon-search"></span> 条件查询</a></li> 
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> 信息管理
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#/goods">货物信息</a></li>
+						<li class="divider"></li>
+						<li><a href="#/car">车辆信息</a></li>
+						<li class="divider"></li>
+						<li><a href="#/driver">驾驶员信息</a></li>	
+						<li class="divider"></li>
+						<li><a href="">配送点信息</a></li>
+						<li class="divider"></li>
+						<li><a href="">配送中心信息</a></li>
+					</ul>
+				</li> 
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-asterisk"></span> 统计分析
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#/graph">货物配送数量统计分析</a></li>
+						<li class="divider"></li>
+						<li><a href="#/graph2">货物配送费用统计分析</a></li>
+					</ul>
+				</li> 
+			</ul>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+			</form>     
+	    </div><!-- /.navbar-collapse -->  
+	</nav>
+</div>
+
+<!-- 用户注册模态框 -->
+<div class="modal fade" id="sign" tabindex="1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               用户注册
+            </h4>
+         </div>
+         <div class="modal-body">
+            <form class="form-horizontal">
+            	<div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">注册类型</label>
+			    <div class="col-sm-6">
+			      <select class="form-control">
+					  <option>物流企业</option>
+					  <option>货物企业</option>
+					  <option>管理员</option>
+					  <option>普通用户</option>
+					</select>
+			    </div>
+			  </div>  
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">注册名称</label>
+			    <div class="col-sm-6">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="注册名称">
+			    </div>
+			  </div>       	
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">注册密码</label>
+			    <div class="col-sm-6">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="注册密码">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">确认密码</label>
+			    <div class="col-sm-6">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="确认密码">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">注册邮箱</label>
+			    <div class="col-sm-6">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="注册邮箱">
+			    </div>
+			  </div>
+			</form>
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">确定
+            </button>
+            <button type="button" class="btn btn-primary">
+               取消
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<!-- 用户登录模态框 -->
+<div class="modal fade" id="myModal" tabindex="1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               用户登录
+            </h4>
+         </div>
+         <div class="modal-body">
+            <form class="form-horizontal">
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">用户类型</label>
+			    <div class="col-sm-6">
+			      <select class="form-control">
+					  <option>物流企业</option>
+					  <option>货物企业</option>
+					  <option>管理员</option>
+					  <option>普通用户</option>
+					</select>
+			    </div>
+			  </div>         	
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-4 control-label">用户名</label>
+			    <div class="col-sm-6">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="用户名">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-4 control-label">密&nbsp&nbsp&nbsp&nbsp码</label>
+			    <div class="col-sm-6">
+			      <input type="password" class="form-control" id="inputPassword3" placeholder="密码">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox"> 十天内自动登录
+			        </label>
+			      </div>
+			    </div>
+			  </div>
+
+			</form>
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">确定
+            </button>
+            <button type="button" class="btn btn-primary">
+               取消
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+<!-- 主题部分信息 -->
+<div class="container-fluid">
+	<!-- 底图+侧边栏 -->
+	<div class="row" id="map">
+		<div class="col-md-8 p0" ng-controller="baseMap">
+			<div id="mapDiv" style="width:100%;height:900px;"></div>
+		</div>
+		<div class="col-md-4 pt15 sidebar">
+ 			<div ng-view></div>		
+		</div>
+	</div>
+	<!-- 信息管理部分 -->
+	<div class="height-full" id="system" style="display:none;">
+		<iframe src="system/goods.html" frameborder="0" style="width:100%;height:100%;border:0;"></iframe>
+	</div>
+</div>
+<script type="text/javascript" src="source/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="source/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="source/angular.min.js"></script>
+<script type="text/javascript" src="source/angular-route.js"></script>
+<script type="text/javascript" src="source/arcgis/arcgis_js_api/library/3.9/3.9compact/init.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

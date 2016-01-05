@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Apkopot tuvējo</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>&Scaron;is rīks atrod elementus, kas atrodas noteiktā distancē no analīzes slāņa elementiem.  Distanci var izmērīt kā lineāro attālumu, kā brauk&scaron;anas laika attālumu (piem., 10 minū&scaron;u laikā), vai brauk&scaron;anas attālumu (pēc  5 kilometriem).  Statistika tiek aprēķināta par tuvējiem elementiem.  Piemēram: 
+        <ul>
+            <li>Aprēķināt kopējo iedzīvotāju skaitu piecu minū&scaron;u brauk&scaron;anas laikā no piedāvātā jaunā veikala izvietojuma.
+            </li>
+            <li>Aoprēķināt automaģistrāļu pieejas rampu, skaitu vienas jūdzes brauk&scaron;anas distancē, no piedāvātā jaunā veikala izvietojuma, lai to izmantotu kā veikala pieejamības mēru.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Ja  <b>Lietot pa&scaron;reizējo kartes pārklājumu</b> ir atzīmēts, tad tikai tie elementi analīzes slānī un slānī, kas tiks apkopots, veidosies pa&scaron;reizējā kartes pārklājumā.  Ja nav atzīmēts, visi elementi abos analīzes slāņos un apkopo&scaron;anas slānī tiks analizēti, arī pa&scaron;reizējā kartes pārklājuma ārpusē
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Izvēlēties slāni, ko apkopot</h2></div>
+        <hr/>
+        <div>
+            <p>Elementi &scaron;ajā slānī, kas atrodas norādītajā distancē no analīzes slāņa elementiem, tiks apkopoti. 
+            </p> 
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Atrast tuvāko elementu, lietojot</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat noteikt, kāda veida distances mērījumi, ko vēlaties lietot: vai nu lineāro distanci, brauk&scaron;anas distanci, vai brauk&scaron;anas laiku.  Gan brauk&scaron;anas distance un brauk&scaron;anas laiks izmanto ceļu tīklu un ievēro tādus ierobežojumus kā vienvirziena ielas.  Brauk&scaron;anas laiks ņem vērā jūsu izvēlēto cēlojuma ātrumu: tie bāzēti uz dzīvo vai tipisko satiksmi. Dzīvie ātruma dati tiek apkopoti no pa&scaron;reizējiem sensoru lasījumiem un tipiskie ātrumi tiek aprēķināti no vēsturisjajiem vidējiem datiem.   
+            </p>
+            <p>Jūs varat ievadīt daudz distances.  Elementi, kas atrodas iek&scaron; (vai vienādi) ar ievadītajām distancēm, tiks apkopoti.  
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Pēc izvēles jūs varat aprēķināt statistiku par visiem skaitliskajiem atribūtiem tuvējiem punktiem. 
+            </p>
+            <p> <b>Skaitīt punktus</b> rūtiņa ja ir atzīmēta, tiks kalkulēts kopējais tuvējo punktu skaits.  Turklāt, jūs varat kalkulēt statistiku par tuvējo punktu skaitliskiem atribūtiem.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Norādītā lauka kopējā vērtība
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Std. novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par visiem tuvējo līniju skaitliskajiem atribūtiem. 
+            </p>
+            <p> <b>Kopējaisgarums</b> ja rūtiņa ir atzīmēta, tiks kalkulēts tuvējo līniju kopējais garums.  Papildus jūs varat aprēķināt, tuvumā eso&scaron;u līniju skaitlisko lauku statistiku.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Norādītā lauka kopējā vērtība
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Std. novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Pievienot statistiku no</h2></div>
+        <hr/>
+        <div>
+            <p>Jūs varat pēc izvēles kalkulēt statistiku par visiem tuvējo līniju skaitliskajiem atribūtiem. 
+            </p>
+            <p> <b>Kopējais garums</b> ja rūtiņa ir atzīmēta, tiks kalkulēts tuvējo līniju kopējais garums.  Papildus jūs varat aprēķināt, tuvumā eso&scaron;u elementu skaitlisko lauku statistiku.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;Norādītā lauka kopējā vērtība
+                </li>
+                <li> <b>Vidējais</b>&mdash;Vidējais vai vidus norādītajam laukam
+                </li>
+                <li> <b>Minimums</b>&mdash;Mazākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Maksimums</b>&mdash;Lielākā vērtība norādītajā laukā
+                </li>
+                <li> <b>Std. novirze</b>&mdash;Standarta novirze no vērtībām norādītajā laukā
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Izvēlieties lauku, ko grupēt pēc</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir tuvējo elementu atribūts, ko varat lietot, lai kalkulētu statistiku atsevi&scaron;ķi katrai unikālai atribūtu vērtībai. Piemēram, pieņemsim, ka jūsu analīzes slānis satur neapbūvētus zemes gabalus pārdo&scaron;anai un jūsu tuvējie elementi ir ēkas.  Viens no ēkas atribūtiem ir   <i>UseType</i>, kas ietver tādas vērtības kā MAZUMTIRDZNIECĪBA, DZĪVOJAMAIS, RAŽO&Scaron;ANA, PUBLISKAIS un tā tālāk.  Lai raksturotu dažādu ēku veidu pie katras vakantās zemes parceles, jūs varat aprēķināt kopējo platību katram unikālajam ēku veidam divu km attālumā no brīvajām zemes parcelēm, izmantojot <i>UseType</i> kā grupu pēc atribūtiem.
+            </p>    
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Rezultāta slāņa nosaukums</h2></div>
+        <hr/>
+        <div>
+            <p>&Scaron;is ir slāņa nosaukums, kas tiks izveidots iek&scaron;  <b>Mans Saturs</b> un pievienots kartei.  Noklusējuma nosaukums ir balstīts uz analīzes slāņa nosaukumu. Ja slānis jau pastāv, jums tiks lūgts apstiprināt, vai vēlaties to pārrakstīt.
+            </p>
+            <p>Lietojot  <b>Saglabāt rezultātu</b> izvelkamajā lodziņā jūs varat norādīt nosaukumu mapei <b>Mans Saturs</b>, kur tiks saglabāts rezultāts.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Rasti esamas vietas</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-C5409FC7-EC93-45C5-8B00-3D6EA80A0A77-web.png" alt="Rasti esamas vietas">
+    </p>
+    <p>is įrankis pa˛ymi esamus elementus tiriamame plote, atitinkančius eilę jūsų nurodytų kriterijų. ie kriterijai gali būti paremti atributinėmis u˛klausomis (pavyzd˛iui, sklypai kurie yra laisvi) ir erdvinėmis u˛klausomis (pavyzd˛iui, mylios atstumu nuo upės).
+
+    </p>
+    <p>Jei <b>Naudoti esamą ˛emėlapio aprėptį</b> pa˛ymėtas, analizuojami bus tik apie aprėptyje matomi elementai.  Jei nu˛ymėtas, bus analizuojami visi elementai, net jei jie yra u˛ esamos ˛emėlapio aprėpties ribų.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expression">
+        <div><h2>Rasti elementus, atitinkančius ia(-as) u˛klausą(-as)</h2></div>
+        <hr/>
+        <div>
+            <p>Paspauskite <b>Pridėti i&scaron;rai&scaron;ką</b> mygtuką, kad apibrėžtumėt i&scaron;rai&scaron;ką.  Galite pridėti kelias iraikas.  Kai įvesite i&scaron;rai&scaron;kas ir paspausite <b>Vykdyti analizę</b> mygtuką, elementai jūsų analizės sluoksnyje bus i&scaron;filtruoti pagal kiekvieną i&scaron;rai&scaron;ką.  Elementai, tenkinantys visas iraikas yra įraomi į rezultatų sluoksnį.
+            </p>
+            <p>Yra du pagrindiniai iraikų, kurias galite sukurti, tipai; atributinės ir erdvinės.  Atributinės i&scaron;rai&scaron;kos yra laukų reik&scaron;mių užklausos, tokios kaip  <code>kur yra pavadinimas 'San Franciskas'</code>.  Yra keturi erdvinių iraikų tipai:
+                <ul>
+                    <li> <b>atstumu nuo</b>: elementai, esantys tam tikru atstumu nuo kito sluoksnio elemento.  Pavyzd˛iui, raskite sklypus, esančius 500 metrų nuo Los And˛elo upės.
+                    </li>
+                    <li> <b>pilnai talpina</b>: elementas turi pilnai talpinti kito sluoksnio elementą.  Pavyzd˛iui, rasti baseinus, į kuriuos pilnai patenka industrinės paskirties sklypai.  Jokia sklypo dalis negali būti u˛ baseino ribų.
+                    </li>
+                    <li> <b>pilnai viduje</b>: elementas turi būti pilnai supamas kito sluoksnio elemento.  Pavyzd˛iui, rasti mokyklų apylinkes, kurios pilnai patenka į miesto ribas.  Jokia mokyklos apylinkės dalis negali būti u˛ miesto ribų.
+                    </li>
+                    <li> <b>kerta</b>: elementas talpina kito sluoksnio elemento dalį.  Pavyzd˛iui, rasti sklypus, kurie kerta upes.  Bet kuri upės dalis, kertanti sklypą arba liečianti sklypą, laikoma kertančia sklypą.
+                    </li>
+                </ul>
+                
+            </p>
+            <p>Kiekviena erdvinė i&scaron;rai&scaron;ka turi atitinkamą neiginį;  <b>nėra atstumu nuo</b>, <b>netalpina pilnai</b>, <b>nėra pilnai viduje</b> ir <b>nekerta</b>.
+            </p> 
+        </div>
+    </div>
+    <div id="OuputName">
+        <div><h2>Rezultatų sluoksnio vardas</h2></div>
+        <hr/>
+        <div>
+            <p>Tai sluoksnio, kuris bus sukurtas ir patalpintas  <b>Mano Turinyje</b> bei pridėtas į ˛emėlapį, pavadinimas.  Pagal nutylėjimą pavadinimas atspindi analizės tipą ir analizės sluoksnio pavadinimą. Jei sluoksnis jau egzistuoja, galėsite pasirinkti jį perrayti.
+            </p>
+            <p>Naudodami  <b>Rezultatą įrayti į</b> sąraą, galite nurodyti <b>Mano Turinyje</b> esančio aplanko pavadinimą.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

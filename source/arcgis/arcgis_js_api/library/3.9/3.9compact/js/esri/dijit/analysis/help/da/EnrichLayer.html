@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Berig lag</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p> <img src="../images/GUID-2B1E8F2B-B474-4AC2-AF32-FFFAA1C43B2E-web.png" alt="Berig lag">
+    </p>
+    <p>Dette v&aelig;rkt&oslash;j beriger dine data ved at hente fakta om de mennesker, steder og virksomheder, der omgiver dine datasteder, og g&oslash;r det muligt for dig at besvare sp&oslash;rgsm&aring;l om steder, som du ikke kan besvare med kort alene. For eksempel: Hvilken type mennesker bor her? Hvad &oslash;nsker mennesker, der bor i dette omr&aring;de, at foretage sig? Hvilke vaner, og hvilken livsstil har de? Hvilke typer virksomheder er der i dette omr&aring;de?
+    </p>
+    <p>Resultatet bliver et nyt lag, der indeholder alle demografiske og geografiske oplysninger fra givne datasamlinger.  De nye oplysninger tilf&oslash;jes som et felt i tabellen.
+    </p>
+    <p>Hvis feltet  <b>Brug aktuel kortudstr&aelig;kning</b> er markeret, er det kun objekterne i det analyse- og omr&aring;delag, der er synligt inden for den aktuelle kortudstr&aelig;kning, der analyseres.  Hvis feltet ikke er markeret, analyseres alle objekter i b&aring;de analyse- og omr&aring;delaget, ogs&aring; selvom de befinder sig uden for den aktuelle kortudstr&aelig;kning.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="DataCollection">
+        <div><h2>Vis tilgængelige data for</h2></div>
+        <hr/>
+        <div>
+            <p>V&aelig;lg din region, og f&aring; en oversigt over de tilg&aelig;ngelige datasamlinger og attributterne i datasamlingen.  Du kan v&aelig;lge en hel samling eller udvide samlingen og v&aelig;lge en eller flere attributter fra samlingen.  De valgte datasamlinger og attributter f&oslash;jes til resultatlaget.      
+            </p>  
+        </div>
+    </div>
+    <div id="BufferOption">
+        <div><h2>Definér områder at berige</h2></div>
+        <hr/>
+        <div>
+            <p>Det er disse omr&aring;der, der kan beriges med yderligere oplysninger, der findes i datasamlingen. Hvis dit analyselag indeholder punkter eller linjer, oprettes der omr&aring;der omkring de enkelte punkter eller linjer vha. en fugleflugtslinje eller en k&oslash;retid.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputName">
+        <div><h2>Navn på resultatlag</h2></div>
+        <hr/>
+        <div>
+            <p>Dette er navnet p&aring; det lag, som oprettes i  <b>Mit indhold</b> og tilf&oslash;jes kortet.  Standardnavnet er baseret p&aring; analyselagets navn. Hvis laget findes allerede, vil du blive bedt om at bekr&aelig;fte, at du vil overskrive det.
+            </p>
+            <p>Ved hj&aelig;lp af rullelisten  <b>Gem resultat i</b> kan du angive navnet p&aring; en mappe i <b>Mit indhold</b>, hvor resultatet skal gemmes.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

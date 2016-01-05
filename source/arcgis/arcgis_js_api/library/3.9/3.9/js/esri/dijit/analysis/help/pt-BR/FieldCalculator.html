@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Calculadora de Campo</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Calcula os valores para um campo (atributo) baseado em uma f&oacute;rmula que voc&ecirc; especifica.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Expressions">
+        <div><h2>Expressões</h2></div>
+        <hr/>
+        <div>
+            <p>Voc&ecirc; pode criar express&otilde;es para calcular valores para novos ou campos existentes (atributos).
+            </p>
+            <p>Ap&oacute;s selecionar o campo, uma express&atilde;o pode ser constru&iacute;da ao clicar na caixa de express&atilde;o para iniciar o  <b>Construtor de Express&atilde;o</b>.  No <b>Construtor de Express&atilde;o</b>, uma express&atilde;o pode ser criada de qualquer combina&ccedil;&atilde;o de outros campos, operadores num&eacute;ricos, fun&ccedil;&otilde;es de Python e valores num&eacute;ricos e caracteres.  Se estiver calculando valores para um novo campo, voc&ecirc; dever&aacute; definir as propriedades do campo inclusive nome alternativo, tipo de campo e atributos de texto, que ter&aacute; o campo de comprimento do texto.  
+            </p>
+        </div>
+    </div>
+    <div id="OutputLayer">
+        <div><h2>Nome da camada resultante</h2></div>
+        <hr/>
+        <div>
+            <p>Este &eacute; o nome da camada que ser&aacute; criada em  <b>Meu Conte&uacute;do</b> e adicionada no mapa.  O nome padr&atilde;o &eacute; baseado no nome da camada de an&aacute;lise. Se a camada j&aacute; existir, voc&ecirc; ser&aacute; avisado para confirmar se deseja substitu&iacute;-la.
+            </p>
+            <p>Utilizando a caixa suspensa  <b>Salvar resultado em</b>, &eacute; poss&iacute;vel especificar o nome de uma pasta em <b>Meu Conte&uacute;do</b> onde o resultado ser&aacute; salvo.
+            </p> 
+        </div>
+    </div>
+</div>
+</html>

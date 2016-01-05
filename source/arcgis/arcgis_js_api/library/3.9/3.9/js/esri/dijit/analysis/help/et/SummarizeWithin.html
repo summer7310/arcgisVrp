@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Summeeri piirides</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>See t&ouml;&ouml;vahend leiab kahe kihi alusel alad ja selle osad, mis omavahel kattuvad ning mis langevad anal&uuml;&uuml;sikihi piiridesse.  N&auml;iteks:
+        <ul>
+            <li>N&auml;iteks:&Uuml;leujutusalade ulatused vs maakasutuse piirkonnad v&otilde;rdluse tulemusena on leitav iga &uuml;leujutuse piirkonna alla j&auml;&auml;va konkreetse maakasutuse pindala. 
+            </li>
+            <li>Omavalitsuse piirides paiknevate katastri&uuml;ksuste keskmine maamaksu suurus asustus&uuml;ksuste kaupa.
+            </li>
+        </ul>
+        
+    </p>
+    <p>Kui  <b>Kasuta kaardi ulatust</b> on sisse l&uuml;litatud, kasutatakse anal&uuml;&uuml;sil ainult neid objekte, mis antud hetkel on ekraanil n&auml;htavad.  Kui vastav tingimus on v&auml;lja l&uuml;litatud, kasutatakse summeerimisel m&otilde;lema kihi k&otilde;iki objekte s&otilde;ltumata asjaolust, kas need on anal&uuml;&uuml;si k&auml;ivitamise hetkel ekraanil n&auml;htavad v&otilde;i mitte.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Vali kiht summeerimiseks</h2></div>
+        <hr/>
+        <div>
+            <p>Selles kihis olevad objektid, mis langevad anal&uuml;&uuml;sikihi piiridesse, summeeritakse. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>Lisa statistikud</h2></div>
+        <hr/>
+        <div>
+            <p>Teil on v&otilde;imalik valikuliselt arvutada numbriliste atribuutide alusel statistikuid punktidest, mis langevad piiraja-objektide alla. 
+            </p>
+            <p>Kui vastav  <b>punktide arv</b> on m&auml;rgitud, arvutatakse piiraja-objektide alla j&auml;&auml;vate punktide koguarv.  Lisaks sellele saate arvutada statistikuid piiraja-objektide alla j&auml;&auml;vate punktide numbrilistest atribuutidest.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Keskmine</b>&mdash;Arvutab m&auml;&auml;ratud v&auml;lja keskmise
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Standard- h&auml;lve</b>&mdash;M&auml;&auml;ratud v&auml;lja v&auml;&auml;rtuste standardh&auml;lve.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>Lisa statistikud</h2></div>
+        <hr/>
+        <div>
+            <p>Teil on v&otilde;imalik valikuliselt arvutada numbriliste atribuutide alusel statistikuid l&auml;hedaste joonte kaudu. 
+            </p>
+            <p>Kui vastav  <b>joonte kogupikkus</b> on m&auml;rgitud, arvutatakse piiraja-objektide alla j&auml;&auml;vate joonte kogupikkus.  Lisaks sellele saate arvutada statistikuid piiraja-objektide alla j&auml;&auml;vate joonte numbrilistest atribuutidest.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Keskmine</b>&mdash;Arvutab m&auml;&auml;ratud v&auml;lja keskmise
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Standard- h&auml;lve</b>&mdash;M&auml;&auml;ratud v&auml;lja v&auml;&auml;rtuste standardh&auml;lve.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>Lisa statistikud</h2></div>
+        <hr/>
+        <div>
+            <p>Teil on v&otilde;imalik valikuliselt arvutada numbriliste atribuutide alusel statistikuid l&auml;hedaste pindade kaudu. 
+            </p>
+            <p>Kui vastav  <b>Summeeri pindala, kasutades</b> on m&auml;rgitud, arvutatakse piiraja-objektide alla j&auml;&auml;vate alade kogupindala.  Lisaks sellele saate arvutada statistikuid piiraja-objektide alla j&auml;&auml;vate pindade numbrilistest atribuutidest.
+            </p>
+            <ul>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Keskmine</b>&mdash;Arvutab m&auml;&auml;ratud v&auml;lja keskmise
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Summa</b>&mdash;M&auml;&auml;ratud v&auml;lja koguv&auml;&auml;rtus.
+                </li>
+                <li> <b>Standard- h&auml;lve</b>&mdash;M&auml;&auml;ratud v&auml;lja v&auml;&auml;rtuste standardh&auml;lve.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Vali atribuut grupeerimiseks</h2></div>
+        <hr/>
+        <div>
+            <p>See on atribuut  <b>Summeeri</b> objektidest, mida saate kasutada statistikute leidmiseks iga unikaalse atribuutv&auml;&auml;rtuse kaupa. N&auml;iteks kui anal&uuml;&uuml;sikiht sisaldab linnapiiride kihti ja <b>summeeritavad</b> objektid on krundid.  &Uuml;ks maat&uuml;ki atribuutidest on <i>Status</i> , mis sisaldab kahte v&auml;&auml;rtust: VAKANTNE ja H&Otilde;IVATUD. Arvutamaks vakantsete ja h&otilde;ivatud alade kogupindalad linnas, kasuta <i>Status</i> v&auml;lja grupeerimise atribuudina..
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Tulemkihi nimi</h2></div>
+        <hr/>
+        <div>
+            <p>See on kihi nimi, mis luuakse kasutaja  <b>Minu sisu</b>  alla ning lisatakse kaardile.  Vaikimisi nimi on tuletatud kihi anal&uuml;&uuml;si sisust. Kui see kiht juba eksisteerib, saate selle soovi korral &uuml;le kirjutada.
+            </p>
+            <p>Kasutades  <b>Salvesta tulemus</b> kasutaja sisu alla, mille saate valida rippmen&uuml;&uuml;st <b>Minu sisu</b>, kuhu tulemus salvestatakse.
+            </p>
+        </div>
+    </div>
+</div>
+</html>

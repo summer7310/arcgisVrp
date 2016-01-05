@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Stylesheet" href="../css/analysis.css" />
+    <script type="text/javascript">
+        function init() {
+            if (window.location.hash) {
+                var parentDiv, nodes, i, helpId;
+                helpId = window.location.hash.substring(1);
+                parentDiv = document.getElementById("topics");
+                nodes = parentDiv.children;
+                for(i=0; i < nodes.length; i++) {
+                    if(nodes[i].id !== helpId) {
+                        nodes[i].style.display ="none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="topics">
+    <div id="toolDescription" class="largesize">
+        <h2>Dahilinde Özetle</h2><p/>
+        <h2></h2>
+        <hr/>
+    <p>Bu ara&ccedil; analiz katmanındaki alanların sınırları dahilinde olan detayları (ve detay kısımlarını) bulur. &Ouml;rneğin:
+        <ul>
+            <li>Bir boşaltma havzası sınırları katmanı ve arazi kullanım t&uuml;r&uuml;ne g&ouml;re bir arazi kullanım sınırları katmanı verildiğinde, her boşaltma havzası i&ccedil;in arazi kullanım t&uuml;r&uuml;n&uuml;n toplam y&uuml;z &ouml;l&ccedil;&uuml;m&uuml;n&uuml; hesaplayın. 
+            </li>
+            <li>Bir il&ccedil;edeki parsellerin bir katmanı ve şehir sınırlarının bir katmanı verildiğinde, her bir şehir sınırı dahilindeki boş parsellerin ortalama değerini &ouml;zetleyin.
+            </li>
+        </ul>
+        
+    </p>
+    <p> <b>Eğer işaretli ise ge&ccedil;erli harita kapsamını kullan</b>, yalnızca ge&ccedil;erli harita kapsamında g&ouml;r&uuml;n&uuml;r olan analiz katmanındaki ve &ouml;zetlenecek katmandaki detaylar analiz edilecektir. İşaretli değilse hem analiz katmanı hem de &ouml;zetlenecek katmandaki t&uuml;m detaylar, ge&ccedil;erli harita kapsamının dışında olsa bile analiz edilecektir.
+    </p>
+    </div>
+    <!--Parameter divs for each param-->
+    <div id="Summarize">
+        <div><h2>Özetlenecek katmanı seç</h2></div>
+        <hr/>
+        <div>
+            <p>&Ouml;zetlenecek analiz katmanındaki detayların sınırları i&ccedil;inde kalan bu katmandaki &ouml;zellikler. 
+            </p>
+        </div>
+    </div>
+    <div id="StatisticsPoint">
+        <div><h2>İstatistik ekleme kaynağı</h2></div>
+        <hr/>
+        <div>
+            <p>&Ouml;zelliklerin sınırları i&ccedil;inde kalan noktaların sayısal &ouml;znitelikleri i&ccedil;in istatistikleri isteğe bağlı olarak hesaplayabilirsiniz. 
+            </p>
+            <p> <b>Nokta sayısı</b> onay kutusu, işaretlendiğinde, her alan sınırı dahilindeki toplam nokta sayısını hesaplayacaktır. Ek olarak her alan sınırının i&ccedil;indeki noktaların sayısal &ouml;zniteliklerinin istatistiklerini de hesaplayabilirsiniz.
+            </p>
+            <ul>
+                <li> <b>Toplam</b>; Belirtilen alanın toplam değeri.
+                </li>
+                <li> <b>Ortalama</b>; Belirtilen alanın ortalaması
+                </li>
+                <li> <b>Minimum</b>; Belirtilen alandaki en k&uuml;&ccedil;&uuml;k değer
+                </li>
+                <li> <b>Maksimum</b>; Belirtilen alandaki en b&uuml;y&uuml;k değer.
+                </li>
+                <li> <b>Std. Sapma</b>; Belirtilen alandaki değerlerin standart sapması.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsLine">
+        <div><h2>İstatistik ekleme kaynağı</h2></div>
+        <hr/>
+        <div>
+            <p>Yakın &ccedil;izgilerin i&ccedil;inde sayısal &ouml;zniteliklerinin istatistiklerini isteğe bağlı olarak hesaplayabilirsiniz. 
+            </p>
+            <p> <b>İ&ccedil;te kalan &ccedil;izgilerin toplam uzunluğu</b> onay kutusu, işaretlendiğinde, her alan sınırı dahilindeki &ccedil;izgilerin toplam uzunluğunu hesaplayacaktır. Ek olarak her alan sınırının i&ccedil;indeki &ccedil;izgilerin sayısal &ouml;zniteliklerinin istatistiklerini de hesaplayabilirsiniz.
+            </p>
+            <ul>
+                <li> <b>Toplam</b>; Belirtilen alanın toplam değeri.
+                </li>
+                <li> <b>Ortalama</b>; Belirtilen alanın ortalaması
+                </li>
+                <li> <b>Minimum</b>; Belirtilen alandaki en k&uuml;&ccedil;&uuml;k değer
+                </li>
+                <li> <b>Maksimum</b>; Belirtilen alandaki en b&uuml;y&uuml;k değer.
+                </li>
+                <li> <b>Std. Sapma</b>; Belirtilen alandaki değerlerin standart sapması.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="StatisticsPolygon">
+        <div><h2>İstatistik ekleme kaynağı</h2></div>
+        <hr/>
+        <div>
+            <p>Yakın alanların i&ccedil;inde sayısal &ouml;zniteliklerinin istatistiklerini isteğe bağlı olarak hesaplayabilirsiniz. 
+            </p>
+            <p> <b>Toplam alan kullanımı</b> onay kutusu, işaretlendiğinde, analiz katmanının her alan sınırı dahilindeki detayların toplam alanını hesaplayacaktır. Ek olarak her alan sınırının i&ccedil;indeki &ouml;zelliklerin sayısal &ouml;zniteliklerinin istatistiklerini de hesaplayabilirsiniz.
+            </p>
+            <ul>
+                <li> <b>Toplam</b>; Belirtilen alanın toplam değeri.
+                </li>
+                <li> <b>Ortalama</b>; Belirtilen alanın ortalaması
+                </li>
+                <li> <b>Minimum</b>; Belirtilen alandaki en k&uuml;&ccedil;&uuml;k değer
+                </li>
+                <li> <b>Maksimum</b>; Belirtilen alandaki en b&uuml;y&uuml;k değer.
+                </li>
+                <li> <b>Std. Sapma</b>; Belirtilen alandaki değerlerin standart sapması.
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div id="GroupBy">
+        <div><h2>Gruplanacak alanları seçme kriteri</h2></div>
+        <hr/>
+        <div>
+            <p>Bu,  <b>&Ouml;zetle</b> &ouml;zelliğinin bir &ouml;zniteliğidir ve istatistikleri her bir benzersiz &ouml;znitelik değeri i&ccedil;in ayrı hesaplamak amacıyla kullanılır. &Ouml;rneğin analiz katmanının şehit sınırlarını i&ccedil;erdiğini ve <b>&Ouml;zetle</b> &ouml;zelliklerinin parseller olduğunu varsayalım. Parsellerin &ouml;zniteliklerinden biri olan <i>Status</i>, iki değer i&ccedil;erir: VACANT ve OCCUPIED. Şehirlerin sınırları dahilinde kalan boş ve dolu parsellerin toplam alanını hesaplamak i&ccedil;in <i>Status</i>'ı, &ouml;zniteliğe g&ouml;re grup olarak kullanın.
+            </p>
+        </div>
+    </div>
+    <div id="ResultLayerName">
+        <div><h2>Sonuç katmanı adı</h2></div>
+        <hr/>
+        <div>
+            <p>Bu  <b>İ&ccedil;eriğim</b> alanınızda oluşturulacak ve haritaya eklenecek katmanın adıdır. Varsayılan ad, analiz katmanı adına g&ouml;redir. Katman zaten varsa &uuml;zerine yazma isteğinizi onaylamanız istenecektir.
+            </p>
+            <p> <b>Sonu&ccedil;ları kaydet</b> a&ccedil;ılır kutusunu kullanarak <b>İ&ccedil;eriğim</b> alanında sonucun kaydedileceği bir klas&ouml;r adı belirleyebilirsiniz.
+            </p>
+        </div>
+    </div>
+</div>
+</html>
