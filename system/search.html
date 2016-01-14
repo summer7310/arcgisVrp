@@ -7,7 +7,7 @@
     <div class="col-sm-6">
       <input type="email" class="form-control " id="inputEmail3" placeholder="输入货物编号">
     </div>
-    <button type="button" class="btn btn-primary "><span class="glyphicon glyphicon-search"></span>查询</button>
+    <button type="button" class="btn btn-primary "  data-toggle="modal" data-target="#myGood"><span class="glyphicon glyphicon-search"></span>查询</button>
   </div>       	
   <div class="form-group" >
     <label for="inputEmail3" class="col-sm-3 control-label">车辆查询</label>
@@ -38,3 +38,95 @@
     <button type="button" class="btn btn-primary "><span class="glyphicon glyphicon-search"></span>查询</button>
   </div>  
 </form>
+
+<!-- 货物具体信息模态框 -->
+<div class="modal fade" id="myGood" tabindex="1" role="dialog" 
+   aria-labelledby="myGoodLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myGoodLabel">
+               货物具体信息
+            </h4>
+         </div>
+         <div class="modal-body">
+            <form class="form-horizontal">            
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">货物编号</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="0001">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">货物企业</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="杭州晓风图书">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">货物种类</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="书籍">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">货物总量(kg)</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="320">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">配送车辆</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="0002">
+                </div>
+              </div>       
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">配送人员</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="吕册">
+                </div>
+              </div>                       
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">发货地点</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="配送中心">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">收货地点</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="潮王配送点">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">发货时间</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="2015年10月7日 8:30:33">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">到达时间</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="2015年10月7日 18:45:22">
+                </div>
+              </div>
+
+            </form>
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">确定
+            </button>
+            <button type="button" class="btn btn-primary">
+               取消
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

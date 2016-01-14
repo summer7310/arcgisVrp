@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/dojo/dijit/themes/claro/claro.css">
 	<link href="source/arcgis/arcgis_js_api/library/3.9/3.9compact/js/esri/css/esri.css" rel="stylesheet" type="text/css" />
 	<link href="style/main.css" type="text/css" rel="stylesheet">
+
+
 </head>
 <body>
 <!-- 导航栏 -->	
@@ -41,17 +43,19 @@
 				<li><a href="#/track"> <span class="glyphicon glyphicon-eye-open"></span> 路径追踪</a></li>
 				<!-- <li><a href="#/"><span class="glyphicon glyphicon-plane"></span> 交通流量</a></li> -->
 				<li class="dropdown">
-					<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="clearVrp()"><span class="glyphicon glyphicon-random"></span> 车辆调度
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="clearVrp()"><span class="glyphicon glyphicon-random"></span> 物流配送
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#/dataform">参数设置</a></li>
+						<li><a href="#/dataform"> 参数设置</a></li>
 						<li class="divider"></li>
 						<li><a href="#/guide">最短路径</a></li>
+						<li class="divider"></li>
+						<li><a href="#/search">条件查询</a></li>
 					</ul>
 				</li>
 
-				<li><a href="#/search"><span class="glyphicon glyphicon-search"></span> 条件查询</a></li> 
+				<li><a href="#/"><span class="glyphicon glyphicon-search"></span> 条件查询</a></li> 
 				<li class="dropdown">
 					<a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tasks"></span> 信息管理
 						<b class="caret"></b>
@@ -76,6 +80,17 @@
 						<li><a href="#/graph">货物配送数量统计分析</a></li>
 						<li class="divider"></li>
 						<li><a href="#/graph2">货物配送费用统计分析</a></li>
+					</ul>
+				</li> 
+
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bed"></span> 公交调度
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#/busArrange">排班管理</a></li>
+						<li class="divider"></li>
+						<li><a href="#/">其他</a></li>
 					</ul>
 				</li> 
 			</ul>
@@ -242,5 +257,7 @@
 <script type="text/javascript" src="source/arcgis/arcgis_js_api/library/3.9/3.9compact/init.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
+<script type="text/javascript" src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
 
 </html>

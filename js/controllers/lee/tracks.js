@@ -34,6 +34,7 @@ define([
 							$scope.trackData = $scope.track.getData();
 						});
 					}, 2000);
+
 				}
 
 				//停止追踪

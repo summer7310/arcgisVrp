@@ -9,20 +9,23 @@ define([
    'controllers/lee/gmap',
    'controllers/lee/tracks',
    'controllers/sum/vrps',
+   'controllers/sum/busCtr',
    'controllers/lee/help',
    'controllers/sum/graph',
    'controllers/sum/help',
-   'controllers/sum/guide'
+   'controllers/sum/guide',
    
-   ],function(gmap, tracks, vrps){
+   
+   ],function(gmap, tracks, vrps, busCtr){
        
        var init = function(){
            gmap.init();
            tracks.init();
            vrps.init();
+           busCtr.init();
 
             
-           var gisApp = angular.module('gisApp', ['ngRoute', 'tracks', 'vrps', 'graph', 'help', 'helpCtrls', 'guideCtrls']);
+           var gisApp = angular.module('gisApp', ['ngRoute', 'tracks', 'vrps', 'busCtr', 'graph', 'help', 'helpCtrls', 'guideCtrls']);
 
            //路由生成
            gisApp.config(['$routeProvider', function($routeProvider){             
@@ -70,6 +73,11 @@ define([
                    '/driver', {
                    templateUrl: 'system/driver.html',
                    controller: ''
+               }).
+              when(
+                   '/busArrange', {
+                   templateUrl: 'system/busArrange.html',
+                   controller: 'buser'
                }).
                when(
                    '/graph', {

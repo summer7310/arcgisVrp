@@ -1,0 +1,118 @@
+<div class="tab-content" ng-controller="buser">
+<div class="alert alert-info" role="alert" style="font-size:17px;"><span class="glyphicon glyphicon-bookmark"></span>排班管理
+</div>
+<form class="form-horizontal" style="font-size:15.5px;">  
+
+  <div class="form-group">
+    <label for="inputtext4" class="col-sm-3 control-label">选择线路:</label>
+    <div class="col-sm-8">
+      <select class="form-control" id="road">
+        <option>线路1</option>
+        <option>线路2</option>
+        <option>线路3</option>
+        <option>线路4</option>
+      </select>
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <label for="inputtext4" class="col-sm-3 control-label">日期类型:</label>
+    <div class="col-sm-8">
+      <select class="form-control" id="date">
+        <option value="0">工作日</option>
+        <option value="1">双休日</option>
+        <option value="2">节假日</option>  
+      </select>
+    </div>
+  </div> 
+
+
+
+  <div class="form-group" >
+
+    <label for="dtp_input1" class="col-sm-3 control-label">排班日期:</label>
+    <div class="col-sm-8">
+      <div class="input-group date form_datetime" data-date="2015-01-01" data-date-format="yyyy-mm-dd " data-link-field="dtp_input1">
+        <input id="start_time" class="form-control" size="16" type="text" value="" readonly>       
+        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+      </div>
+      <input type="hidden" id="dtp_input1" value="" /> 
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputtext4" class="col-sm-3 control-label">天气情况:</label>
+    <div class="col-sm-8">
+      <select class="form-control" id="weather">
+        <option value="5">晴天</option>
+        <option value="1">多云</option>
+        <option value="2">小雨</option>
+        <option value="3">中雨</option>
+        <option value="4">大雨</option>
+        <option value="0">雪</option>   
+      </select>
+    </div>
+  </div> 
+
+  <div class="form-group" >
+    <div class="col-sm-offset-5 col-sm-5">
+       <button id="vrp" type="button" class="btn btn-primary" ng-click="busArrange()"><span class="glyphicon glyphicon-ok-circle" ></span> <a  data-toggle="modal" data-target="#time_table" style="color:#fff;font-size:20px;">生成时刻表</a></button>
+
+    </div>
+  </div>
+
+</form>
+
+<!-- 生成时刻表 -->
+<div class="modal fade" id="time_table" tabindex="1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="buser">
+   <div class="modal-dialog" style="width:1400px;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               发车时刻表
+            </h4>
+         </div>
+         <div class="modal-body">
+            <div class="table table-striped">
+            <!-- 生成时刻表外部指令 -->
+             <busdata></busdata>
+            </div>
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">保存
+            </button>
+            <button type="button" class="btn btn-primary">
+               取消
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+
+</div>
+<script>
+  $('.form_datetime').datetimepicker({
+    language:  'zh-CN',
+      format: "yyyy-mm-dd",
+      weekStart: 1,
+      todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      forceParse: 1,
+      showMeridian: 1,
+      minView: 2,
+      pickerPosition: "bottom-left"
+  });
+
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
