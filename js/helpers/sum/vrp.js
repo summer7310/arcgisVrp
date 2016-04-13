@@ -156,7 +156,20 @@ define([  "dojo/_base/declare",
     //画路经
     startDraw: function(obj){
       //obj.request(obj);
-      obj.drawLine(obj);
+      //
+      var pn = $('#populationNum').val(),
+          pc = $("#pc").val(),
+          pm = $("#pm").val(),
+          maxFit = $("#maxFit").val(),
+          fate = $("#fate").val(),
+          maxLen = $("#maxLength").val(),
+          maxWeight = $("#maxWeight").val();
+      if(pn==""||pc==""||pm==""||maxFit==""||fate==""||maxLen==""||maxWeight==""){
+        alert("数据不全，请填写完数据！")
+      }else{
+        obj.drawLine(obj);  
+      }    
+      
     },
     //清楚路径
     clear: function(obj){

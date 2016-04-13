@@ -33,6 +33,7 @@ define([
 				// var basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer");
 			 	//$scope.map.addLayer(basemap);
 			 	var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/hangzhou/dsbase/MapServer");
+			 	//var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/hangzhou/basemap/MapServer");
 			 	$scope.map.addLayer(layer);
 			    
 			    // var labels = new ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer");

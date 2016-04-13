@@ -77,10 +77,10 @@ define([
         routeTask.on("solve-complete", showRoute);
         routeTask.on("error", errorHandler);
         //停靠点样式       
-        stopSymbol = new SimpleMarkerSymbol().setStyle(SimpleMarkerSymbol.STYLE_CIRCLE).setSize(2);
-        stopSymbol.outline.setWidth(8).setColor(new Color([60,179,113]));
+        stopSymbol = new SimpleMarkerSymbol().setStyle(SimpleMarkerSymbol.STYLE_CIRCLE).setSize(10);
+        stopSymbol.outline.setWidth(8).setColor(new Color([255,0,0]));
         //障碍点样式
-        barrierSymbol = new SimpleMarkerSymbol().setStyle(SimpleMarkerSymbol.STYLE_X).setSize(10);
+        barrierSymbol = new SimpleMarkerSymbol().setStyle(SimpleMarkerSymbol.STYLE_X).setSize(2);
         barrierSymbol.outline.setWidth(6).setColor(new Color([255,0,0]));
 
         var polylineBarrierSymbol = new SimpleLineSymbol().setColor(new Color([255,0,0]));

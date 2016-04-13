@@ -1,24 +1,26 @@
+<div ng-controller="vrper">
+  
 <div class="alert alert-info" role="alert" style="font-size:17px;"><span class="glyphicon glyphicon-bookmark"></span>物流配送参数设置
 </div>
 <form class="form-horizontal">
   <div class="form-group">
     <label  class="col-sm-4 control-label">种群个体数</label>
     <div class=" col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="种群个体数">
+      <input type="text" class="form-control" id="populationNum" placeholder="种群个体数">
     </div>
     <label  class="control-label">个</label>
   </div>
   <div class="form-group">
     <label  class="col-sm-4 control-label">交叉概率</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="交叉概率">
+      <input type="text" class="form-control" id="pc" placeholder="交叉概率">
     </div>
     <label  class="control-label">%</label>
   </div>  
   <div class="form-group">
     <label  class="col-sm-4 control-label">变异概率</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="变异概率">
+      <input type="text" class="form-control" id="pm" placeholder="变异概率">
     </div>
     <label  class="control-label">%</label>
   </div>
@@ -50,28 +52,28 @@
   <div class="form-group">
     <label  class="col-sm-4 control-label">最大适应值</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="最大适应值">
+      <input type="text" class="form-control" id="maxFit" placeholder="最大适应值">
     </div>
     <label  class="control-label"></label>
   </div> 
   <div class="form-group">
     <label  class="col-sm-4 control-label">单位运输成本</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="单位运输成本">
+      <input type="text" class="form-control" id="fate" placeholder="单位运输成本">
     </div>
     <label  class="control-label">CNY</label>
   </div>  
   <div class="form-group">
     <label  class="col-sm-4 control-label">单车最大行驶距离</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="单车最大行驶距离">
+      <input type="text" class="form-control" id="maxLength" placeholder="单车最大行驶距离">
     </div>
     <label  class="control-label">公里</label>
   </div>
   <div class="form-group">
     <label  class="col-sm-4 control-label">车辆最大载货量</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputtext3" placeholder="车辆最大载货量">
+      <input type="text" class="form-control" id="maxWeight" placeholder="车辆最大载货量">
     </div>
     <label  class="control-label">吨</label>
   </div>
@@ -79,10 +81,11 @@
 
   <div class="form-group">
     <div class="col-sm-offset-4 col-sm-6">
-      <!-- <button id="vrp" type="button" class="btn btn-primary" ng-click="startVrp()"><span class="glyphicon glyphicon-ok-circle"></span> 确定</button>
-      <button id="trackoff" type="button" class="btn btn-danger" ng-click="clearVrp()"><span class="glyphicon glyphicon-remove-circle"></span> 关闭</button> -->
-       <button id="vrp" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span> 确定</button>
-      <button type="reset" class="btn btn-info">取消</button> 
+      <button id="vrp" type="button" class="btn btn-primary" ng-click="startVrp()"><span class="glyphicon glyphicon-ok-circle"></span> 确定</button>
+      <button id="trackoff" type="button" class="btn btn-danger" ng-click="clearVrp()"><span class="glyphicon glyphicon-remove-circle"></span> 关闭</button>
+       <!-- <button id="vrp" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span> 确定</button>
+             <button type="reset" class="btn btn-info">取消</button>  -->
     </div>
   </div>
 </form>
+</div>

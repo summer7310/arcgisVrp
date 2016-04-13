@@ -26,6 +26,7 @@ define([
 				mapObj.addLayer($scope.vrp.getLayer());
 				//开始画路径
 				$scope.startVrp = function(){
+					
 					$scope.vrp.startDraw($scope.vrp);
 				}
 
